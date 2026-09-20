@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "내 이상형은 어떤 상이야?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fff5f7;
+  --card-bg: #ffffff;
+  --text: #3a2229;
+  --text-sub: #9a7a84;
+  --accent: #ff6f91;
+  --accent-dark: #e0466c;
+  --accent-soft: #ffe0e8;
+  --border: #f6d5de;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}

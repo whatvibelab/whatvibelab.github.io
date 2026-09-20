@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 고양이일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fff8ee;
+  --card-bg: #ffffff;
+  --text: #33261c;
+  --text-sub: #957f6c;
+  --accent: #f29a4a;
+  --accent-dark: #d97a24;
+  --accent-soft: #ffe6c8;
+  --border: #f3dfc6;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}

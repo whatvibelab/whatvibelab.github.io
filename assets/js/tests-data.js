@@ -68,4 +68,22 @@ window.TESTS = [
     path: "tests/plant-mate/index.html",
     status: "live",
   },
+  {
+    id: "cat-type",
+    emoji: "🐱",
+    color: "#fff0d9",
+    title: "나는 어떤 고양이일까?",
+    subtitle: "고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 테스트",
+    path: "tests/cat-type/index.html",
+    status: "live",
+  },
+  {
+    id: "ideal-sang",
+    emoji: "💘",
+    color: "#ffe1e8",
+    title: "내 이상형은 어떤 상이야?",
+    subtitle: "끌리는 사람의 모습으로 알아보는 이상형 동물상 테스트",
+    path: "tests/ideal-sang/index.html",
+    status: "live",
+  },
 ];
