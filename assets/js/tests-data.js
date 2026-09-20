@@ -86,4 +86,13 @@ window.TESTS = [
     path: "tests/ideal-sang/index.html",
     status: "live",
   },
+  {
+    id: "chat-reply",
+    emoji: "💬",
+    color: "#dcecff",
+    title: "나는 어떤 답장일까?",
+    subtitle: "메신저를 대하는 태도로 알아보는 나의 답장 유형 테스트",
+    path: "tests/chat-reply/index.html",
+    status: "live",
+  },
 ];
