@@ -95,4 +95,13 @@ window.TESTS = [
     path: "tests/chat-reply/index.html",
     status: "live",
   },
+  {
+    id: "team-role",
+    emoji: "📝",
+    color: "#d6f3ec",
+    title: "나는 어떤 조원일까?",
+    subtitle: "조별과제를 대하는 태도로 알아보는 나의 역할 유형 테스트",
+    path: "tests/team-role/index.html",
+    status: "live",
+  },
 ];
