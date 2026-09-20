@@ -18,6 +18,18 @@
   --radius-sm: 10px;
   --shadow: 0 8px 24px rgba(60, 40, 20, 0.08);
   --max-width: 480px;
+
+  /* 허브 디자인 토큰 (planning/design.md §01) — 스킨(테스트 페이지)은 건드리지 않는다 */
+  --body: #4a3f39; /* 패널 본문 글씨 */
+  --sub: #7a6d64; /* 작은 라벨용 회색 (대비 4.6:1) */
+  --coral-deep: #cc4325; /* 흰 배경 위 숫자·링크 글씨 (대비 4.8:1) */
+  --violet-soft: #ece6ff;
+  --gold-soft: #fff1c7;
+  --gold-mark: #ffe08a; /* 형광펜 */
+  --mint-soft: #d9f4ec;
+  /* 큰 제목·숫자·말풍선 질문용 표시 글꼴. 주아체는 index.html에서 웹폰트로 불러온다(굵기 400 하나뿐 → 항상 400 고정).
+     다른 글꼴로 바꾸려면 이 한 줄만 고치면 된다(대안: "Do Hyeon", "Gowun Dodum"). */
+  --font-display: "Jua", "Pretendard Variable", Pretendard, "Noto Sans KR", "Malgun Gothic", sans-serif;
 }
 
 * {
@@ -844,6 +856,237 @@ button {
 
 .hub-main .tabs.js-tabs .tab-panel + .tab-panel {
   margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   허브 하단 탭 디자인 (planning/design.md 요청 #1)
+   소개 = 일러스트 + 수치 카드 / 이용 = 단계 카드 / FAQ = 채팅 말풍선.
+   기존 .static-info 규칙(h2·p·ol·li)보다 우선하도록 .hub-main 아래에 둔다.
+   -------------------------------------------------------------------------- */
+.hub-main .panel-title {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--text);
+  word-break: keep-all;
+  text-wrap: balance;
+}
+
+.hub-main .panel-title .hl {
+  padding: 0 3px;
+  margin: 0 -3px;
+  background: linear-gradient(transparent 58%, var(--gold-mark) 58%, var(--gold-mark) 92%, transparent 92%);
+}
+
+.hub-main .lead {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--body);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.hub-main .lead strong {
+  font-weight: 800;
+  color: var(--text);
+  background: linear-gradient(transparent 62%, var(--accent-soft) 62%);
+}
+
+/* 탭: 소개 */
+.hub-main .hero {
+  display: block;
+  width: 160px;
+  height: 112px;
+  margin: 0 auto 10px;
+}
+
+.hub-main .stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.hub-main .stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px 12px 10px;
+  border-radius: 18px;
+}
+
+.hub-main .stat:nth-child(1) { background: var(--violet-soft); }
+.hub-main .stat:nth-child(2) { background: var(--accent-soft); }
+.hub-main .stat:nth-child(3) { background: var(--gold-soft); }
+.hub-main .stat:nth-child(4) { background: var(--mint-soft); }
+
+.hub-main .stat img {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 4px rgba(60, 40, 20, 0.12));
+}
+
+.hub-main .stat .num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.hub-main .stat .lab {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sub);
+  word-break: keep-all;
+}
+
+/* 탭: 이용 방법 */
+.hub-main .steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hub-main .step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 14px;
+  border-radius: 20px;
+}
+
+.hub-main .step:nth-child(1) { background: var(--violet-soft); }
+.hub-main .step:nth-child(2) { background: var(--accent-soft); }
+.hub-main .step:nth-child(3) { background: var(--gold-soft); }
+
+/* 다음 단계로 이어지는 점선 */
+.hub-main .step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 100%;
+  height: 12px;
+  border-left: 2.5px dotted #cbbfb3;
+}
+
+.hub-main .step .no {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--coral-deep);
+  box-shadow: 0 3px 8px rgba(60, 40, 20, 0.1);
+}
+
+.hub-main .step p {
+  flex: 1;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--body);
+  word-break: keep-all;
+}
+
+.hub-main .step p b {
+  font-weight: 800;
+  color: var(--text);
+}
+
+.hub-main .step img {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 4px rgba(60, 40, 20, 0.12));
+}
+
+/* 탭: 자주 묻는 질문 — 질문은 오른쪽 코랄 말풍선, 답변은 왼쪽 흰 말풍선 */
+.hub-main .chat {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hub-main .qa {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hub-main .q {
+  align-self: flex-end;
+  max-width: 88%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px 9px 9px;
+  border-radius: 22px 22px 6px 22px;
+  background: var(--accent);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+.hub-main .q img {
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.hub-main .a {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.hub-main .a .av {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.hub-main .a .bubble {
+  margin: 0;
+  max-width: 84%;
+  padding: 12px 15px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 22px 22px 22px 6px;
+  box-shadow: 0 4px 12px rgba(60, 40, 20, 0.05);
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--body);
+  word-break: keep-all;
+}
+
+.hub-main .a .bubble a {
+  color: var(--coral-deep);
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .site-footer {

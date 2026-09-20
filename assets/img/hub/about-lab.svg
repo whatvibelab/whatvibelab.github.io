@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 112" width="160" height="112">
+  <defs>
+    <radialGradient id="ball" cx="34%" cy="28%" r="78%">
+      <stop offset="0" stop-color="#b79cff"/>
+      <stop offset="0.5" stop-color="#6d49dc"/>
+      <stop offset="1" stop-color="#301f7a"/>
+    </radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a7d"/>
+      <stop offset="1" stop-color="#e85f3f"/>
+    </linearGradient>
+    <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8be3c8"/>
+      <stop offset="1" stop-color="#2fae91"/>
+    </linearGradient>
+    <clipPath id="fl"><path d="M25 40H37V58L48 92Q49 96 45 96H17Q13 96 14 92L25 58Z"/></clipPath>
+  </defs>
+  <!-- 실험대 -->
+  <rect x="6" y="97" width="148" height="7" rx="3.500" fill="#eadfd2"/>
+  <ellipse cx="80" cy="98" rx="32" ry="3.500" fill="#000" opacity="0.08"/>
+  <!-- 플라스크 -->
+  <path d="M25 40H37V58L48 92Q49 96 45 96H17Q13 96 14 92L25 58Z" fill="#fff" fill-opacity="0.75"/>
+  <g clip-path="url(#fl)">
+    <rect x="10" y="72" width="42" height="26" fill="url(#liq)"/>
+    <path d="M10 72Q18 68 26 72T42 72T52 72V76H10Z" fill="#b6f0dc"/>
+  </g>
+  <rect x="22" y="35" width="18" height="7" rx="3.500" fill="#fff" fill-opacity="0.95"/>
+  <g fill="#fff" opacity="0.85">
+    <circle cx="24" cy="82" r="2.400"/>
+    <circle cx="33" cy="78" r="1.800"/>
+    <circle cx="30" cy="88" r="1.400"/>
+  </g>
+  <path d="M24.500 50L25.500 62" stroke="#fff" stroke-width="2.500" stroke-linecap="round" opacity="0.9"/>
+  <!-- 크리스탈볼 -->
+  <path d="M56 101c0-8 6-15 14-16h20c8 1 14 8 14 16v.5a2.500 2.500 0 0 1-2.500 2.500H58.500A2.500 2.500 0 0 1 56 101.500z" fill="url(#base)"/>
+  <circle cx="80" cy="55" r="32" fill="url(#ball)"/>
+  <path d="M58 47A24 24 0 0 1 72 31" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="4.500" stroke-linecap="round"/>
+  <path d="M86 39l3.400 9.200 9.200 3.400-9.200 3.400L86 64.200l-3.400-9.200-9.200-3.400 9.200-3.400z" fill="#ffd66b"/>
+  <path d="M99 63l1.600 4.400 4.400 1.600-4.400 1.600L99 75l-1.600-4.400-4.400-1.600 4.400-1.600z" fill="#fff" fill-opacity="0.92"/>
+  <circle cx="67" cy="67" r="2.200" fill="#fff" fill-opacity="0.7"/>
+  <!-- 돋보기 -->
+  <circle cx="126" cy="60" r="17" fill="#fff" fill-opacity="0.6"/>
+  <circle cx="126" cy="60" r="17" fill="none" stroke="#6d49dc" stroke-width="5"/>
+  <path d="M138.500 73L150 86" stroke="#ff7a59" stroke-width="7" stroke-linecap="round"/>
+  <path d="M118.500 54A9 9 0 0 1 126 49" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+  <path d="M129 54l1.800 4.800 4.800 1.800-4.800 1.800-1.800 4.800-1.800-4.800-4.800-1.800 4.800-1.800z" fill="#ffc93c"/>
+  <!-- 떠다니는 반짝이 -->
+  <path d="M22 12l1.800 4.700 4.700 1.800-4.700 1.800L22 25l-1.800-4.700-4.700-1.800 4.700-1.800z" fill="#ffc93c"/>
+  <path d="M140 18l1.400 3.700 3.700 1.400-3.700 1.400-1.400 3.700-1.400-3.700-3.700-1.400 3.700-1.400z" fill="#ff9a7d"/>
+  <path d="M106 8l1.200 3.200 3.200 1.200-3.200 1.200-1.200 3.200-1.200-3.200-3.200-1.200 3.200-1.200z" fill="#b79cff"/>
+  <circle cx="48" cy="20" r="2" fill="#ffc93c"/>
+  <circle cx="152" cy="44" r="2" fill="#b79cff"/>
+</svg>

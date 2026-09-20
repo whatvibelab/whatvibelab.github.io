@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>무슨상연구소 | 나는 어떤 OO일까?</title>
 <meta name="description" content="무슨상연구소 — 성향 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요." />
+<!-- 표시용 글꼴 주아체(Jua, SIL OFL) — 큰 제목·숫자·FAQ 질문에만 쓰고, 한글 조각 분할 제공이라 쓰는 글자만 내려받는다. 못 불러와도 본문 글꼴로 대체됨. -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jua@5/index.css" />
 <link rel="stylesheet" href="assets/css/common.css" />
 <style>
   .hub-mark {
@@ -66,27 +69,42 @@
       </div>
 
       <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
-        <h2>무슨상연구소는 어떤 곳인가요?</h2>
-        <p>무슨상연구소는 요즘 화제가 되는 음식, 취미, 일상 소재를 주제로 몇 가지 질문에 답하면 나와 닮은 유형을 알려주는 성향 테스트 모음이에요. 각 테스트는 16개의 질문과 16가지 결과로 이루어져 있고, 1분 안팎이면 결과를 확인할 수 있어요. 결과는 이름과 한 줄 요약, 설명, 특징, 잘 맞는 궁합으로 보여드리며 친구에게 링크나 이미지 카드로 공유할 수도 있어요. 현재 13개의 테스트와 208가지 결과가 준비돼 있어요.</p>
+        <img class="hero" src="assets/img/hub/about-lab.svg" alt="" width="160" height="112" />
+        <h2 class="panel-title">무슨상연구소는 <span class="hl">어떤 곳</span>인가요?</h2>
+        <p class="lead">무슨상연구소는 요즘 화제가 되는 음식, 취미, 일상 소재를 주제로 몇 가지 질문에 답하면 나와 닮은 유형을 알려주는 <strong>성향 테스트 모음</strong>이에요. 각 테스트는 16개의 질문과 16가지 결과로 이루어져 있고, <strong>1분 안팎</strong>이면 결과를 확인할 수 있어요. 결과는 이름과 한 줄 요약, 설명, 특징, 잘 맞는 궁합으로 보여드리며 친구에게 <strong>링크나 이미지 카드</strong>로 공유할 수도 있어요.</p>
+        <div class="stats">
+          <div class="stat"><img src="assets/img/hub/stat-tests.svg" alt="" width="44" height="44" /><div><span class="num">13개</span><span class="lab">준비된 테스트</span></div></div>
+          <div class="stat"><img src="assets/img/hub/stat-results.svg" alt="" width="44" height="44" /><div><span class="num">208가지</span><span class="lab">나올 수 있는 결과</span></div></div>
+          <div class="stat"><img src="assets/img/hub/stat-time.svg" alt="" width="44" height="44" /><div><span class="num">1분 안팎</span><span class="lab">테스트 하나당</span></div></div>
+          <div class="stat"><img src="assets/img/hub/stat-free.svg" alt="" width="44" height="44" /><div><span class="num">무료</span><span class="lab">가입 없이 바로</span></div></div>
+        </div>
       </div>
 
       <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-howto" aria-labelledby="tab-howto">
-        <h2>이렇게 이용하세요</h2>
-        <ol>
-          <li>마음에 드는 테스트를 골라 시작 버튼을 눌러요. 닉네임은 입력하지 않아도 돼요.</li>
-          <li>각 질문에서 두 가지 중 평소의 나와 더 가까운 쪽을 골라요.</li>
-          <li>결과가 나오면 '이미지로 저장'이나 '링크 공유하기'로 친구와 나눠 보세요.</li>
+        <h2 class="panel-title">이렇게 <span class="hl">이용하세요</span></h2>
+        <ol class="steps">
+          <li class="step"><span class="no">1</span><p><b>마음에 드는 테스트</b>를 골라 시작 버튼을 눌러요. 닉네임은 입력하지 않아도 돼요.</p><img src="assets/img/hub/step-1-pick.svg" alt="" width="56" height="56" /></li>
+          <li class="step"><span class="no">2</span><p>각 질문에서 <b>두 가지 중</b> 평소의 나와 더 가까운 쪽을 골라요.</p><img src="assets/img/hub/step-2-choose.svg" alt="" width="56" height="56" /></li>
+          <li class="step"><span class="no">3</span><p>결과가 나오면 <b>'이미지로 저장'</b>이나 <b>'링크 공유하기'</b>로 친구와 나눠 보세요.</p><img src="assets/img/hub/step-3-share.svg" alt="" width="56" height="56" /></li>
         </ol>
       </div>
 
       <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
-        <h2>자주 묻는 질문</h2>
-        <h3>무료인가요? 회원가입이 필요한가요?</h3>
-        <p>모든 테스트는 무료이고 회원가입이나 로그인 없이 바로 이용할 수 있어요.</p>
-        <h3>결과가 실제 성격과 똑같나요?</h3>
-        <p>재미로 즐기는 콘텐츠예요. 일상 속 선택 장면을 바탕으로 성향을 가볍게 유형화한 것이라 심리검사나 진단을 대신하지 않아요.</p>
-        <h3>내 답변이 저장되나요?</h3>
-        <p>답변과 결과는 서버에 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.</p>
+        <h2 class="panel-title"><span class="hl">자주 묻는</span> 질문</h2>
+        <div class="chat">
+          <div class="qa">
+            <h3 class="q"><img src="assets/img/hub/faq-free.svg" alt="" width="30" height="30" />무료인가요? 회원가입이 필요한가요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">모든 테스트는 무료이고 회원가입이나 로그인 없이 바로 이용할 수 있어요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q"><img src="assets/img/hub/faq-accuracy.svg" alt="" width="30" height="30" />결과가 실제 성격과 똑같나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">재미로 즐기는 콘텐츠예요. 일상 속 선택 장면을 바탕으로 성향을 가볍게 유형화한 것이라 심리검사나 진단을 대신하지 않아요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q"><img src="assets/img/hub/faq-privacy.svg" alt="" width="30" height="30" />내 답변이 저장되나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">답변과 결과는 서버에 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.</p></div>
+          </div>
+        </div>
       </div>
       </div>
     </main>
