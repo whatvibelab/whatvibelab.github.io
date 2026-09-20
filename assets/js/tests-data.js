@@ -6,6 +6,24 @@
 
 window.TESTS = [
   {
+    id: "pizza-seolgi",
+    emoji: "🍡",
+    color: "#f7dde6",
+    title: "나는 어떤 설기일까?",
+    subtitle: "요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트",
+    path: "tests/pizza-seolgi/index.html",
+    status: "live",
+  },
+  {
+    id: "four-cut",
+    emoji: "📸",
+    color: "#e6dcf6",
+    title: "나는 어떤 네컷 포즈일까?",
+    subtitle: "네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트",
+    path: "tests/four-cut/index.html",
+    status: "live",
+  },
+  {
     id: "dujjonku",
     emoji: "🍫",
     color: "#f2c9a0",
@@ -33,30 +51,12 @@ window.TESTS = [
     status: "live",
   },
   {
-    id: "pizza-seolgi",
-    emoji: "🍡",
-    color: "#f7dde6",
-    title: "나는 어떤 설기일까?",
-    subtitle: "요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트",
-    path: "tests/pizza-seolgi/index.html",
-    status: "live",
-  },
-  {
     id: "bomdong-bibimbap",
     emoji: "🥗",
     color: "#f4dcd0",
     title: "나는 어떤 비빔밥일까?",
     subtitle: "제철 나물이 화제인 그 한 그릇, 재료를 고르고 비비는 방식으로 알아보는 유형 테스트",
     path: "tests/bomdong-bibimbap/index.html",
-    status: "live",
-  },
-  {
-    id: "four-cut",
-    emoji: "📸",
-    color: "#e6dcf6",
-    title: "나는 어떤 네컷 포즈일까?",
-    subtitle: "네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트",
-    path: "tests/four-cut/index.html",
     status: "live",
   },
   {
