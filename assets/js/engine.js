@@ -11,7 +11,7 @@
   "use strict";
 
   const SITE_NAME = "무슨상연구소";
-  const SITE_EMOJI = "🔮";
+  const SITE_LOGO_SRC = "../../assets/img/logo.svg"; // 테스트 페이지(tests/<id>/) 기준 경로
   const NICKNAME_KEY = "musunsang_nickname";
 
   // 닉네임/기본값("당신")은 둘 다 받침 있는 글자로 끝나서(님/신) 뒤에
@@ -393,7 +393,7 @@
         .join("");
 
       card.innerHTML = `
-        <div style="font-size:32px;font-weight:800;color:var(--accent-dark);letter-spacing:0.02em;">${SITE_EMOJI} ${SITE_NAME}</div>
+        <div style="display:flex;align-items:center;gap:14px;font-size:32px;font-weight:800;color:var(--accent-dark);letter-spacing:0.02em;"><img src="${SITE_LOGO_SRC}" width="52" height="52" alt="" style="display:block;" />${SITE_NAME}</div>
         <div style="font-size:28px;font-weight:700;color:var(--text-sub);margin-top:16px;">${escapeHtml(displayName)}의 결과</div>
         <div style="font-size:220px;margin:36px 0 20px;line-height:1;">${result.emoji}</div>
         <div style="font-size:76px;font-weight:800;color:var(--text);line-height:1.3;">${escapeHtml(result.name)}</div>

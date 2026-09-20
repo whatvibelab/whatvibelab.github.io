@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="무슨상연구소">
+  <defs>
+    <radialGradient id="ball" cx="34%" cy="28%" r="78%">
+      <stop offset="0" stop-color="#b79cff"/>
+      <stop offset="0.5" stop-color="#6d49dc"/>
+      <stop offset="1" stop-color="#301f7a"/>
+    </radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a7d"/>
+      <stop offset="1" stop-color="#e85f3f"/>
+    </linearGradient>
+  </defs>
+  <!-- 받침 -->
+  <path d="M14 56c0-6 4.5-11 10.5-12h15C45.500 45 50 50 50 56v.5a2.500 2.500 0 0 1-2.500 2.500h-31A2.500 2.500 0 0 1 14 56.500z" fill="url(#base)"/>
+  <!-- 구슬 -->
+  <circle cx="32" cy="28" r="23" fill="url(#ball)"/>
+  <!-- 하이라이트 -->
+  <path d="M16.500 22.500A17 17 0 0 1 27 11.500" fill="none" stroke="#fff" stroke-opacity="0.6" stroke-width="3.500" stroke-linecap="round"/>
+  <!-- 반짝이 -->
+  <path d="M34 19.500l2.300 6.200 6.200 2.300-6.200 2.300L34 36.500l-2.300-6.200-6.200-2.300 6.200-2.300z" fill="#ffd66b"/>
+  <path d="M45.500 38l1.100 3 3 1.100-3 1.100-1.100 3-1.100-3-3-1.100 3-1.100z" fill="#fff" fill-opacity="0.92"/>
+  <circle cx="23" cy="40.500" r="1.500" fill="#fff" fill-opacity="0.7"/>
+</svg>

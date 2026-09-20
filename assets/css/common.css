@@ -593,9 +593,18 @@ button {
 }
 
 .site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 14px;
   font-weight: 800;
   color: var(--accent-dark);
+}
+
+.site-brand-mark {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 .site-header nav {
