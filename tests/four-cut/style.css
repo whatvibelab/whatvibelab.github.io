@@ -1,0 +1,28 @@
+/* ==========================================================================
+   style.css — "네컷사진" 스킨. 라벤더 퍼플 + 크림 팔레트.
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #f6f2fb;
+  --card-bg: #ffffff;
+  --text: #2f2740;
+  --text-sub: #8f86a3;
+  --accent: #8b6fc9;
+  --accent-dark: #6c50ae;
+  --accent-soft: #e6dcf6;
+  --border: #e9e1f4;
+  --shadow: 0 10px 26px rgba(90, 60, 150, 0.12);
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 6%, #ece2fa 0%, transparent 45%),
+    radial-gradient(circle at 92% 92%, #fbe6ef 0%, transparent 40%),
+    var(--bg);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(90, 60, 150, 0.2));
+}

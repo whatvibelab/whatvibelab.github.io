@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>나는 어떤 비빔밥일까? | 무슨상연구소</title>
+<meta name="description" content="비빔밥을 대하는 태도로 알아보는 나의 비빔밥 유형 테스트" />
+<meta property="og:title" content="나는 어떤 비빔밥일까?" />
+<meta property="og:description" content="비빔밥을 대하는 태도로 알아보는 나의 비빔밥 유형 테스트" />
+<link rel="stylesheet" href="../../assets/css/common.css" />
+<link rel="stylesheet" href="style.css" />
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나는 어떤 비빔밥일까? | 무슨상연구소","description":"비빔밥을 대하는 태도로 알아보는 나의 비빔밥 유형 테스트","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"봄동비빔밥이 왜 화제인가요?","acceptedAnswer":{"@type":"Answer","text":"제철 봄동의 아삭한 식감과 새콤달콤한 양념을 살린 비빔밥이 SNS에서 자주 소개되면서 관심이 커졌어요. 이 테스트는 그 분위기를 입구로 삼아 비빔밥을 고르고 비비는 취향을 다뤄요."}},{"@type":"Question","name":"매운맛이나 특정 재료를 못 먹어도 괜찮나요?","acceptedAnswer":{"@type":"Answer","text":"괜찮아요. 결과는 실제 식성이 아니라 재료를 고르고 먹는 태도를 바탕으로 정해지니, 못 먹는 재료가 있어도 평소 습관대로 답하면 돼요."}},{"@type":"Question","name":"테스트는 얼마나 걸리나요?","acceptedAnswer":{"@type":"Answer","text":"질문은 16개이고 약 1분이면 끝나요. 각 질문에서 두 가지 중 나와 더 가까운 쪽을 고르면 돼요."}},{"@type":"Question","name":"결과는 어떻게 정해지나요?","acceptedAnswer":{"@type":"Answer","text":"16개의 답변을 네 가지 성향 축(사람과 어울리는 방식, 정보를 받아들이는 방식, 판단하는 기준, 생활 방식)으로 나눠 집계해서 16가지 결과 중 하나가 정해져요. 재미로 즐기는 콘텐츠이며 의학적·심리학적 진단이 아니에요."}},{"@type":"Question","name":"내 답변이나 결과가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 닉네임은 다음에 다시 입력하지 않도록 이용자 기기의 브라우저에만 기억돼요."}},{"@type":"Question","name":"결과를 친구에게 공유하려면 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"결과 화면의 '링크 공유하기'로 친구가 바로 결과를 볼 수 있는 링크를 보내거나, '이미지로 저장'으로 결과 카드를 만들어 SNS에 올릴 수 있어요."}}]}]}</script>
+<script src="../../assets/js/analytics-config.js"></script>
+<script src="../../assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="../../index.html">🔮 무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="../../index.html">테스트</a>
+        <a href="../../about.html">소개</a>
+      </nav>
+    </header>
+    <p class="disclaimer">재미로 보는 테스트예요. 심리검사가 아니에요.</p>
+<!-- SITE-HEADER:END -->
+    <a class="home-link" href="../../index.html">← 다른 테스트 보기</a>
+
+    <!-- 인트로 -->
+    <section id="screen-intro" class="screen">
+      <div class="intro-emoji" id="intro-emoji">🥗</div>
+      <p class="kicker" id="intro-kicker"></p>
+      <h1 class="intro-title" id="intro-title"></h1>
+      <p class="intro-desc" id="intro-desc"></p>
+      <p class="intro-meta" id="intro-meta"></p>
+      <div class="nickname-field">
+        <label class="nickname-label" for="nickname-input">이 닉네임으로 결과를 받아볼까요?</label>
+        <input type="text" id="nickname-input" class="nickname-input" placeholder="닉네임 입력 (선택)" maxlength="10" autocomplete="off" />
+      </div>
+      <button type="button" class="btn btn-primary" id="start-btn"></button>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button type="button" class="btn-ghost" id="quiz-back-btn">← 이전</button>
+        <span class="quiz-count" id="quiz-count"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+    </section>
+
+    <!-- 결과 -->
+    <section id="screen-result" class="screen" hidden>
+      <p class="result-badge" id="result-badge"></p>
+      <div class="result-emoji" id="result-emoji"></div>
+      <h1 class="result-name" id="result-name"></h1>
+      <p class="result-tagline" id="result-tagline"></p>
+      <p class="result-desc" id="result-desc"></p>
+      <ul class="result-traits" id="result-traits"></ul>
+      <div class="result-match" id="result-match" hidden></div>
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="save-card-btn"></button>
+        <button type="button" class="btn btn-secondary" id="share-btn"></button>
+        <button type="button" class="btn btn-secondary" id="retake-btn"></button>
+      </div>
+
+      <div class="result-recommend" id="result-recommend" hidden>
+        <p class="result-recommend-title">다른 테스트도 해볼래요?</p>
+        <div class="result-recommend-list" id="result-recommend-list"></div>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="result-bottom" hidden></div>
+    </section>
+
+    <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<section class="static-info" id="static-info">
+      <h2>나는 어떤 비빔밥일까? 테스트 소개</h2>
+      <p>제철 나물이 화제인 그 한 그릇, 성향 테스트. 재료를 고르고 비비는 방식까지, 취향은 사람마다 다르죠. 비빔밥을 대하는 태도로 알아보는 나의 비빔밥 유형! 질문은 16개이고 약 1분이면 끝나요. 답변에 따라 16가지 결과 중 하나가 나오며, 결과에는 이름과 한 줄 요약, 설명, 특징, 잘 맞는 궁합이 함께 담겨요. 무슨상연구소의 모든 테스트는 회원가입 없이 무료로 즐길 수 있어요.</p>
+
+      <h2>이런 분께 추천해요</h2>
+      <ul>
+        <li>제철 나물 비빔밥, 봄동비빔밥이 화제라 궁금했던 분</li>
+        <li>비빔밥을 비빌 때 나만의 순서와 방식이 있는 분</li>
+        <li>고추장 양이나 곁들이는 반찬에 확고한 취향이 있는 분</li>
+      </ul>
+
+      <h2>16가지 결과 미리보기</h2>
+      <ul>
+        <li><strong>🌿 산채비빔밥</strong> — 정석에는 이유가 있다</li>
+        <li><strong>🍃 곤드레나물비빔밥</strong> — 구수하고 편안한 그 손맛</li>
+        <li><strong>🐚 꼬막비빔밥</strong> — 쫄깃하지만 잊히지 않는 여운</li>
+        <li><strong>🍄 표고버섯비빔밥</strong> — 진함에는 타협이 없다</li>
+        <li><strong>🍳 계란후라이비빔밥</strong> — 심플해도 확실한 그 한 방</li>
+        <li><strong>🫙 간장베이스비빔밥</strong> — 담백해도 확실한 내 취향</li>
+        <li><strong>🥬 열무비빔밥</strong> — 새콤시원, 몽글몽글한 감성 그 자체</li>
+        <li><strong>🍣 명란비빔밥</strong> — 이 조합이 왜 되는지 궁금해서 시켜봄</li>
+        <li><strong>🥩 육회비빔밥</strong> — 화끈하고 확실한 그 임팩트</li>
+        <li><strong>🌈 알록달록 나물 풀세트비빔밥</strong> — 보는 순간 텐션 업!</li>
+        <li><strong>🌱 봄동비빔밥</strong> — 트렌드엔 내가 제일 빠르지</li>
+        <li><strong>💎 트러플비빔밥</strong> — 왜 이 조합을 안 써봤지?</li>
+        <li><strong>🌶️ 고추장 듬뿍비빔밥</strong> — 확실하게, 망설임 없이</li>
+        <li><strong>🐟 참치마요비빔밥</strong> — 다 같이 먹어야 더 맛있지</li>
+        <li><strong>🦪 전복비빔밥</strong> — 풍성하게 나눠줄수록 더 행복해</li>
+        <li><strong>🐙 낙지비빔밥</strong> — 확실하게, 타협 없이 화끈하게</li>
+      </ul>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>봄동비빔밥이 왜 화제인가요?</h3>
+      <p>제철 봄동의 아삭한 식감과 새콤달콤한 양념을 살린 비빔밥이 SNS에서 자주 소개되면서 관심이 커졌어요. 이 테스트는 그 분위기를 입구로 삼아 비빔밥을 고르고 비비는 취향을 다뤄요.</p>
+      <h3>매운맛이나 특정 재료를 못 먹어도 괜찮나요?</h3>
+      <p>괜찮아요. 결과는 실제 식성이 아니라 재료를 고르고 먹는 태도를 바탕으로 정해지니, 못 먹는 재료가 있어도 평소 습관대로 답하면 돼요.</p>
+      <h3>테스트는 얼마나 걸리나요?</h3>
+      <p>질문은 16개이고 약 1분이면 끝나요. 각 질문에서 두 가지 중 나와 더 가까운 쪽을 고르면 돼요.</p>
+      <h3>결과는 어떻게 정해지나요?</h3>
+      <p>16개의 답변을 네 가지 성향 축(사람과 어울리는 방식, 정보를 받아들이는 방식, 판단하는 기준, 생활 방식)으로 나눠 집계해서 16가지 결과 중 하나가 정해져요. 재미로 즐기는 콘텐츠이며 의학적·심리학적 진단이 아니에요.</p>
+      <h3>내 답변이나 결과가 저장되나요?</h3>
+      <p>답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 닉네임은 다음에 다시 입력하지 않도록 이용자 기기의 브라우저에만 기억돼요.</p>
+      <h3>결과를 친구에게 공유하려면 어떻게 하나요?</h3>
+      <p>결과 화면의 '링크 공유하기'로 친구가 바로 결과를 볼 수 있는 링크를 보내거나, '이미지로 저장'으로 결과 카드를 만들어 SNS에 올릴 수 있어요.</p>
+
+      <h2>함께 보면 좋은 테스트</h2>
+      <ul>
+        <li><a href="../../tests/dujjonku/index.html"><strong>나는 어떤 두쫀쿠일까?</strong></a> — 요즘 핫한 쫀득 초콜릿 쿠키 취향 테스트</li>
+        <li><a href="../../tests/petmatch/index.html"><strong>나는 어떤 반려동물 상이야?</strong></a> — 돌보고 함께하는 방식으로 알아보는 반려동물 유형 테스트</li>
+        <li><a href="../../tests/cafedrink/index.html"><strong>나는 어떤 카페 음료일까?</strong></a> — 메뉴 고르는 습관으로 알아보는 음료 유형 테스트</li>
+        <li><a href="../../tests/pizza-seolgi/index.html"><strong>나는 어떤 설기일까?</strong></a> — 요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트</li>
+        <li><a href="../../tests/four-cut/index.html"><strong>나는 어떤 네컷 포즈일까?</strong></a> — 네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트</li>
+        <li><a href="../../tests/plant-mate/index.html"><strong>나는 어떤 식물일까?</strong></a> — 식물을 키우는 방식으로 알아보는 나를 닮은 식물 테스트</li>
+      </ul>
+    </section>
+<!-- STATIC-INFO:END -->
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="../../index.html">홈</a>
+        <a href="../../about.html">소개</a>
+        <a href="../../terms.html">이용약관</a>
+        <a href="../../privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 성향 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../assets/js/tests-data.js"></script>
+  <script src="config.js"></script>
+  <script src="../../assets/js/engine.js"></script>
+  <script src="../../assets/js/ad-config.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+  <script>
+    MbtiEngine.init(window.QUIZ_CONFIG);
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# 사이트 파일만 공개한다. 기획서·개발 도구·에이전트 설정은 로컬에만 둔다.
+planning/
+tools/
+.claude/
+CLAUDE.md
+README.md

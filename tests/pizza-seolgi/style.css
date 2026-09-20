@@ -1,0 +1,28 @@
+/* ==========================================================================
+   style.css — "설기(피자설기)" 스킨. 로즈 핑크 + 크림 팔레트.
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fdf2f4;
+  --card-bg: #ffffff;
+  --text: #3a2a2e;
+  --text-sub: #a5888f;
+  --accent: #d97a99;
+  --accent-dark: #b85878;
+  --accent-soft: #f7dde6;
+  --border: #f5e3e8;
+  --shadow: 0 10px 26px rgba(160, 60, 90, 0.1);
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 6%, #fbe4ea 0%, transparent 45%),
+    radial-gradient(circle at 92% 92%, #f5e2d8 0%, transparent 40%),
+    var(--bg);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(160, 60, 90, 0.18));
+}

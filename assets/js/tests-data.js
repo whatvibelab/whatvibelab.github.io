@@ -1,0 +1,71 @@
+/* ==========================================================================
+   tests-data.js — 허브(메인) 페이지에 노출할 테스트 목록.
+   새 테스트를 추가하면 이 배열에 한 줄 추가하면 됨.
+   status: "live" (바로가기 가능) | "soon" (준비중, 클릭 비활성)
+   ========================================================================== */
+
+window.TESTS = [
+  {
+    id: "dujjonku",
+    emoji: "🍫",
+    color: "#f2c9a0",
+    title: "나는 어떤 두쫀쿠일까?",
+    subtitle: "요즘 핫한 쫀득 초콜릿 쿠키 취향 테스트",
+    path: "tests/dujjonku/index.html",
+    status: "live",
+  },
+  {
+    id: "petmatch",
+    emoji: "🐾",
+    color: "#d8e6da",
+    title: "나는 어떤 반려동물 상이야?",
+    subtitle: "돌보고 함께하는 방식으로 알아보는 반려동물 유형 테스트",
+    path: "tests/petmatch/index.html",
+    status: "live",
+  },
+  {
+    id: "cafedrink",
+    emoji: "☕",
+    color: "#e3d5c8",
+    title: "나는 어떤 카페 음료일까?",
+    subtitle: "메뉴 고르는 습관으로 알아보는 음료 유형 테스트",
+    path: "tests/cafedrink/index.html",
+    status: "live",
+  },
+  {
+    id: "pizza-seolgi",
+    emoji: "🍡",
+    color: "#f7dde6",
+    title: "나는 어떤 설기일까?",
+    subtitle: "요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트",
+    path: "tests/pizza-seolgi/index.html",
+    status: "live",
+  },
+  {
+    id: "bomdong-bibimbap",
+    emoji: "🥗",
+    color: "#f4dcd0",
+    title: "나는 어떤 비빔밥일까?",
+    subtitle: "제철 나물이 화제인 그 한 그릇, 재료를 고르고 비비는 방식으로 알아보는 유형 테스트",
+    path: "tests/bomdong-bibimbap/index.html",
+    status: "live",
+  },
+  {
+    id: "four-cut",
+    emoji: "📸",
+    color: "#e6dcf6",
+    title: "나는 어떤 네컷 포즈일까?",
+    subtitle: "네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트",
+    path: "tests/four-cut/index.html",
+    status: "live",
+  },
+  {
+    id: "plant-mate",
+    emoji: "🪴",
+    color: "#d5ece5",
+    title: "나는 어떤 식물일까?",
+    subtitle: "식물을 키우는 방식으로 알아보는 나를 닮은 식물 테스트",
+    path: "tests/plant-mate/index.html",
+    status: "live",
+  },
+];

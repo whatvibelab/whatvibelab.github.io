@@ -1,0 +1,28 @@
+/* ==========================================================================
+   style.css — "비빔밥(봄동비빔밥)" 스킨. 연둣빛 크림 + 고추장 레드 팔레트.
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #f4f7ea;
+  --card-bg: #ffffff;
+  --text: #3a3524;
+  --text-sub: #8f9478;
+  --accent: #c1502e;
+  --accent-dark: #9c3d21;
+  --accent-soft: #f4dcd0;
+  --border: #e6ead9;
+  --shadow: 0 10px 26px rgba(120, 90, 40, 0.12);
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 6%, #eaf0da 0%, transparent 45%),
+    radial-gradient(circle at 92% 92%, #f6ddd0 0%, transparent 40%),
+    var(--bg);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(120, 90, 40, 0.2));
+}

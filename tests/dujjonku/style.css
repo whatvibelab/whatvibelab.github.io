@@ -1,0 +1,33 @@
+/* ==========================================================================
+   style.css — "두쫀쿠" 스킨. 피스타치오 그린 + 초콜릿 브라운 + 크림 팔레트.
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/폰트/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fbf3e6;
+  --card-bg: #fffbf3;
+  --text: #4a2f1e;
+  --text-sub: #a3846a;
+  --accent: #7ea856;
+  --accent-dark: #5c823a;
+  --accent-soft: #e6efd7;
+  --border: #f0e2cd;
+  --shadow: 0 10px 26px rgba(122, 82, 40, 0.1);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 8%, #f5e6cd 0%, transparent 45%),
+    radial-gradient(circle at 90% 90%, #e9f0da 0%, transparent 40%),
+    var(--bg);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(122, 82, 40, 0.18));
+}
+
+.kicker,
+.result-badge {
+  letter-spacing: 0.01em;
+}

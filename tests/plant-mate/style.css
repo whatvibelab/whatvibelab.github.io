@@ -1,0 +1,28 @@
+/* ==========================================================================
+   style.css — "식집사(식물)" 스킨. 틸 그린 + 민트 크림 팔레트.
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #eef6f3;
+  --card-bg: #ffffff;
+  --text: #24382f;
+  --text-sub: #7d9489;
+  --accent: #2f8f7b;
+  --accent-dark: #1f6f5e;
+  --accent-soft: #d5ece5;
+  --border: #dcebe5;
+  --shadow: 0 10px 26px rgba(30, 90, 70, 0.12);
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 6%, #dff1e8 0%, transparent 45%),
+    radial-gradient(circle at 92% 92%, #f3eed8 0%, transparent 40%),
+    var(--bg);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(30, 90, 70, 0.2));
+}

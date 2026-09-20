@@ -1,0 +1,689 @@
+/* ==========================================================================
+   common.css — 모든 페이지(허브 + 테스트)가 공유하는 베이스 스타일
+   스킨별 색상은 각 테스트 폴더의 style.css에서 아래 CSS 변수만 덮어쓰면 됨.
+   ========================================================================== */
+
+:root {
+  /* 기본(허브) 팔레트 — 스킨에서 override 가능 */
+  --bg: #faf6f1;
+  --card-bg: #ffffff;
+  --text: #2b2320;
+  --text-sub: #8a7d74;
+  --accent: #ff7a59;
+  --accent-dark: #e85f3f;
+  --accent-soft: #ffe3d9;
+  --border: #eee2d8;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 24px rgba(60, 40, 20, 0.08);
+  --max-width: 480px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system,
+    BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 공용 버튼 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 24px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  width: 100%;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+  color: var(--accent-dark);
+  border: 1.5px solid var(--accent-soft);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-sub);
+  font-weight: 600;
+  padding: 10px 16px;
+}
+
+/* 진행 바 */
+.progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+  width: 0%;
+}
+
+/* 토스트 */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%) translateY(16px);
+  background: rgba(30, 24, 20, 0.92);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 스크린리더 전용 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- 허브(메인) 페이지 ---------- */
+.hub-header {
+  padding: 48px 0 28px;
+  text-align: center;
+}
+
+.hub-logo {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--accent-dark);
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+
+.hub-title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin: 0 0 10px;
+}
+
+.hub-subtitle {
+  font-size: 15px;
+  color: var(--text-sub);
+  margin: 0;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 48px;
+  flex: 1;
+}
+
+.test-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.15s ease;
+}
+
+.test-card.live:active {
+  transform: scale(0.98);
+}
+
+.test-card.soon {
+  opacity: 0.55;
+}
+
+.test-card-emoji {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.test-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.test-card-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.test-card-sub {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.test-card-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.test-card.soon .test-card-badge {
+  background: #eee;
+  color: #999;
+}
+
+.hub-footer {
+  text-align: center;
+  padding: 20px 0 40px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.hub-footer a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* 광고 자리 — ad-config.js에 키를 넣기 전까지는 hidden 상태라 화면에 안 보임 */
+.ad-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto 0;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   테스트(퀴즈) 공용 구조 — 모든 스킨이 공유. 스킨은 CSS 변수/폰트/장식만 덮어씀.
+   ========================================================================== */
+
+.home-link {
+  display: inline-block;
+  padding: 18px 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+/* ---- 인트로 ---- */
+#screen-intro {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 4px;
+  padding-top: 20px;
+}
+
+.intro-emoji {
+  font-size: 64px;
+  margin-bottom: 6px;
+}
+
+.kicker {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 0 0 16px;
+}
+
+.intro-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 14px;
+  white-space: pre-line;
+}
+
+.intro-desc {
+  font-size: 15px;
+  color: var(--text-sub);
+  white-space: pre-line;
+  margin: 0 0 20px;
+  line-height: 1.65;
+}
+
+.intro-meta {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-bottom: 28px;
+}
+
+#screen-intro .btn {
+  max-width: 320px;
+}
+
+.nickname-field {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 0 20px;
+}
+
+.nickname-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sub);
+  margin: 0 0 8px;
+}
+
+.nickname-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  transition: border-color 0.15s ease;
+}
+
+.nickname-input::placeholder {
+  color: var(--text-sub);
+  font-weight: 500;
+}
+
+.nickname-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ---- 퀴즈 ---- */
+.quiz-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6px 0 14px;
+  min-height: 32px;
+}
+
+.quiz-top #quiz-back-btn {
+  padding: 6px 4px;
+}
+
+.quiz-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-left: auto;
+}
+
+.quiz-question {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.5;
+  margin: 28px 0 24px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-btn {
+  text-align: left;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.5;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.option-btn:active {
+  transform: scale(0.98);
+}
+
+.option-btn.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+/* ---- 결과 ---- */
+#screen-result {
+  align-items: center;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.result-badge {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 0 0 18px;
+}
+
+.result-emoji {
+  font-size: 72px;
+  margin-bottom: 8px;
+}
+
+.result-name {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.result-type {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-sub);
+  margin: 0 0 14px;
+}
+
+.result-tagline {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin: 0 0 16px;
+}
+
+.result-desc {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.result-traits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.result-traits li {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.result-traits li::before {
+  content: "✓ ";
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.result-match {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--accent-soft);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 28px;
+}
+
+.result-match-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.result-match-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* 결과 화면 하단 "다른 테스트도 해볼래요?" 추천 */
+.result-recommend {
+  width: 100%;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px dashed var(--border);
+}
+
+.result-recommend-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin: 0 0 14px;
+  text-align: left;
+}
+
+.result-recommend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   사이트 공통 헤더/푸터, 면책 문구, 정적 설명 블록
+   (tools/build-static.js가 각 페이지에 주입하는 마크업용 스타일)
+   ========================================================================== */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0 0;
+}
+
+.site-brand {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent-dark);
+}
+
+.site-header nav {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.disclaimer {
+  margin: 6px 0 0;
+  font-size: 11px;
+  color: var(--text-sub);
+}
+
+.static-info {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px dashed var(--border);
+  text-align: left;
+  color: var(--text-sub);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.static-info h2 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 28px 0 8px;
+}
+
+.static-info h2:first-child {
+  margin-top: 0;
+}
+
+.static-info h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 14px 0 2px;
+}
+
+.static-info p {
+  margin: 0 0 8px;
+}
+
+.static-info ul,
+.static-info ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.static-info li {
+  margin-bottom: 4px;
+}
+
+.static-info li strong {
+  color: var(--text);
+}
+
+.static-info a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.site-footer {
+  margin-top: 28px;
+  padding: 18px 0 40px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  margin-bottom: 8px;
+}
+
+.site-footer a {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.site-footer p {
+  margin: 0;
+}
