@@ -1,5 +1,5 @@
 /* ==========================================================================
-   config.js — "나는 어떤 반려동물 상이야?" 테스트 데이터.
+   config.js — "나는 어떤 반려동물 상일까?" 테스트 데이터.
    engine.js가 이 파일을 읽어서 화면을 그린다. (window.QUIZ_CONFIG)
 
    questions[].options[].axis : "EI" | "SN" | "TF" | "JP"
@@ -9,13 +9,13 @@
 window.QUIZ_CONFIG = {
   meta: {
     id: "petmatch",
-    title: "나는 어떤 반려동물 상이야? | 무슨상연구소",
+    title: "나는 어떤 반려동물 상일까? | 무슨상연구소",
   },
 
   intro: {
     emoji: "🐾",
     kicker: "반려동물을 대하는 방식으로 보는",
-    title: "나는 어떤\n반려동물 상이야?",
+    title: "나는 어떤\n반려동물 상일까?",
     description:
       "반려동물을 돌보고 함께하는 방식으로 알아보는\n나를 꼭 닮은 반려동물 유형!",
     startLabel: "테스트 시작하기 🐶",
