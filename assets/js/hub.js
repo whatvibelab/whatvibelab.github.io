@@ -8,6 +8,8 @@
   function render() {
     const list = document.getElementById("card-list");
     if (!list || !window.TESTS) return;
+    // 생성기(tools/build-static.js)가 카드를 이미 HTML에 넣어 둔 경우엔 다시 그리지 않는다.
+    if (list.children.length) return;
 
     window.TESTS.forEach((t) => {
       const isLive = t.status === "live";
@@ -81,7 +83,9 @@
     });
 
     root.classList.add("js-tabs");
-    select(0);
+    // 처음에 열어 둘 탭은 마크업의 aria-selected="true" (현재 "테스트 모아보기")
+    const initial = tabs.findIndex((t) => t.getAttribute("aria-selected") === "true");
+    select(initial >= 0 ? initial : 0);
   }
 
   document.addEventListener("DOMContentLoaded", () => {

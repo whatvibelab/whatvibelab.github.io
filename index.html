@@ -36,43 +36,41 @@
       <p class="hub-subtitle">성향 테스트 모음 — 요즘 뜨는 컨셉으로 즐기는 나 탐구</p>
     </header>
 
-    <main class="card-list" id="card-list"></main>
-
     <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
-<section class="static-info" id="static-info">
+<main class="hub-main" id="static-info">
       <div class="tabs" id="hub-tabs">
-      <div class="tab-list" role="tablist" aria-label="무슨상연구소 안내">
-        <button type="button" class="tab-btn" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="true">소개</button>
-        <button type="button" class="tab-btn" role="tab" id="tab-tests" aria-controls="panel-tests" aria-selected="false" tabindex="-1">테스트 모아보기</button>
-        <button type="button" class="tab-btn" role="tab" id="tab-howto" aria-controls="panel-howto" aria-selected="false" tabindex="-1">이용 방법</button>
+      <div class="tab-list" role="tablist" aria-label="무슨상연구소 메뉴">
+        <button type="button" class="tab-btn" role="tab" id="tab-tests" aria-controls="panel-tests" aria-selected="true">테스트 모아보기</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="false" tabindex="-1">무슨상연구소는 어떤 곳인가요?</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-howto" aria-controls="panel-howto" aria-selected="false" tabindex="-1">이렇게 이용하세요</button>
         <button type="button" class="tab-btn" role="tab" id="tab-faq" aria-controls="panel-faq" aria-selected="false" tabindex="-1">자주 묻는 질문</button>
       </div>
 
-      <div class="tab-panel" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
+      <div class="tab-panel" role="tabpanel" id="panel-tests" aria-labelledby="tab-tests">
+        <h2 class="sr-only">테스트 모아보기</h2>
+        <div class="card-list" id="card-list">
+          <a class="test-card live" href="tests/pizza-seolgi/index.html"><div class="test-card-emoji" style="background:#f7dde6">🍡</div><div class="test-card-body"><p class="test-card-title">나는 어떤 설기일까?</p><p class="test-card-sub">요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/four-cut/index.html"><div class="test-card-emoji" style="background:#e6dcf6">📸</div><div class="test-card-body"><p class="test-card-title">나는 어떤 네컷 포즈일까?</p><p class="test-card-sub">네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/dujjonku/index.html"><div class="test-card-emoji" style="background:#f2c9a0">🍫</div><div class="test-card-body"><p class="test-card-title">나는 어떤 두쫀쿠일까?</p><p class="test-card-sub">요즘 핫한 쫀득 초콜릿 쿠키 취향 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/petmatch/index.html"><div class="test-card-emoji" style="background:#d8e6da">🐾</div><div class="test-card-body"><p class="test-card-title">나는 어떤 반려동물 상이야?</p><p class="test-card-sub">돌보고 함께하는 방식으로 알아보는 반려동물 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/cafedrink/index.html"><div class="test-card-emoji" style="background:#e3d5c8">☕</div><div class="test-card-body"><p class="test-card-title">나는 어떤 카페 음료일까?</p><p class="test-card-sub">메뉴 고르는 습관으로 알아보는 음료 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/bomdong-bibimbap/index.html"><div class="test-card-emoji" style="background:#f4dcd0">🥗</div><div class="test-card-body"><p class="test-card-title">나는 어떤 비빔밥일까?</p><p class="test-card-sub">제철 나물이 화제인 그 한 그릇, 재료를 고르고 비비는 방식으로 알아보는 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/plant-mate/index.html"><div class="test-card-emoji" style="background:#d5ece5">🪴</div><div class="test-card-body"><p class="test-card-title">나는 어떤 식물일까?</p><p class="test-card-sub">식물을 키우는 방식으로 알아보는 나를 닮은 식물 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/cat-type/index.html"><div class="test-card-emoji" style="background:#fff0d9">🐱</div><div class="test-card-body"><p class="test-card-title">나는 어떤 고양이일까?</p><p class="test-card-sub">고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/ideal-sang/index.html"><div class="test-card-emoji" style="background:#ffe1e8">💘</div><div class="test-card-body"><p class="test-card-title">내 이상형은 어떤 상이야?</p><p class="test-card-sub">끌리는 사람의 모습으로 알아보는 이상형 동물상 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/chat-reply/index.html"><div class="test-card-emoji" style="background:#dcecff">💬</div><div class="test-card-body"><p class="test-card-title">나는 어떤 답장일까?</p><p class="test-card-sub">메신저를 대하는 태도로 알아보는 나의 답장 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/team-role/index.html"><div class="test-card-emoji" style="background:#d6f3ec">📝</div><div class="test-card-body"><p class="test-card-title">나는 어떤 조원일까?</p><p class="test-card-sub">조별과제를 대하는 태도로 알아보는 나의 역할 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/bag-item/index.html"><div class="test-card-emoji" style="background:#e9e0fb">🎒</div><div class="test-card-body"><p class="test-card-title">나는 어떤 가방 속 물건일까?</p><p class="test-card-sub">가방을 싸고 정리하는 습관으로 알아보는 나를 닮은 물건 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/wake-alarm/index.html"><div class="test-card-emoji" style="background:#ffe9d0">⏰</div><div class="test-card-body"><p class="test-card-title">나는 어떤 알람일까?</p><p class="test-card-sub">아침에 일어나는 습관으로 알아보는 나의 알람 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+        </div>
+      </div>
+
+      <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
         <h2>무슨상연구소는 어떤 곳인가요?</h2>
         <p>무슨상연구소는 요즘 화제가 되는 음식, 취미, 일상 소재를 주제로 몇 가지 질문에 답하면 나와 닮은 유형을 알려주는 성향 테스트 모음이에요. 각 테스트는 16개의 질문과 16가지 결과로 이루어져 있고, 1분 안팎이면 결과를 확인할 수 있어요. 결과는 이름과 한 줄 요약, 설명, 특징, 잘 맞는 궁합으로 보여드리며 친구에게 링크나 이미지 카드로 공유할 수도 있어요. 현재 13개의 테스트와 208가지 결과가 준비돼 있어요.</p>
       </div>
 
-      <div class="tab-panel" role="tabpanel" id="panel-tests" aria-labelledby="tab-tests">
-        <h2>테스트 모아보기</h2>
-        <ul class="tm-list">
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/pizza-seolgi/index.html"><strong>나는 어떤 설기일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트. 말랑쫀득 그 설기, 취향은 사람마다 다르죠. 설기를 고르고 즐기는 태도로 알아보는 나의 설기 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/four-cut/index.html"><strong>나는 어떤 네컷 포즈일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트. 부스에 들어가는 순간부터 카운트다운까지, 습관은 사람마다 다르죠. 네컷을 찍는 태도로 알아보는 나의 포즈 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/dujjonku/index.html"><strong>나는 어떤 두쫀쿠일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">요즘 핫한 쫀득 초콜릿 쿠키 취향 테스트. 쫀득하고 진한 그 두쫀쿠, 취향은 사람마다 다르죠. 초콜릿을 대하는 태도로 알아보는 나의 두쫀쿠 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/petmatch/index.html"><strong>나는 어떤 반려동물 상이야?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">돌보고 함께하는 방식으로 알아보는 반려동물 유형 테스트. 반려동물을 돌보고 함께하는 방식으로 알아보는 나를 꼭 닮은 반려동물 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/cafedrink/index.html"><strong>나는 어떤 카페 음료일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">메뉴 고르는 습관으로 알아보는 음료 유형 테스트. 메뉴판을 보는 방식부터 주문하는 습관까지, 카페에서의 취향으로 알아보는 나의 음료 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/bomdong-bibimbap/index.html"><strong>나는 어떤 비빔밥일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">제철 나물이 화제인 그 한 그릇, 재료를 고르고 비비는 방식으로 알아보는 유형 테스트. 재료를 고르고 비비는 방식까지, 취향은 사람마다 다르죠. 비빔밥을 대하는 태도로 알아보는 나의 비빔밥 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/plant-mate/index.html"><strong>나는 어떤 식물일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">식물을 키우는 방식으로 알아보는 나를 닮은 식물 테스트. 식물을 고르고 돌보는 방식엔 그 사람의 성격이 그대로 드러나요. 식집사의 태도로 알아보는 나를 닮은 식물 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/cat-type/index.html"><strong>나는 어떤 고양이일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 테스트. 집사와 사는 고양이의 하루엔 성격이 그대로 드러나요. 고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/ideal-sang/index.html"><strong>내 이상형은 어떤 상이야?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">끌리는 사람의 모습으로 알아보는 이상형 동물상 테스트. 좋아하는 사람 앞에서 마음이 움직이는 순간은 저마다 달라요. 끌리는 사람의 모습으로 알아보는 나의 이상형 동물상!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/chat-reply/index.html"><strong>나는 어떤 답장일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">메신저를 대하는 태도로 알아보는 나의 답장 유형 테스트. 메시지가 도착했을 때 어떻게 답하는지에도 성격이 담겨 있어요. 메신저를 대하는 태도로 알아보는 나의 답장 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/team-role/index.html"><strong>나는 어떤 조원일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">조별과제를 대하는 태도로 알아보는 나의 역할 유형 테스트. 조 편성부터 마감 전날까지, 조별과제엔 그 사람의 역할이 그대로 드러나요. 팀플을 대하는 태도로 알아보는 나의 조원 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/bag-item/index.html"><strong>나는 어떤 가방 속 물건일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">가방을 싸고 정리하는 습관으로 알아보는 나를 닮은 물건 테스트. 가방을 싸고 정리하고 꺼내는 방식엔 그 사람의 성격이 그대로 드러나요. 가방 속 습관으로 알아보는 나를 닮은 물건 유형!</p></details></li>
-        <li class="tm-item"><details class="tm-details"><summary class="tm-summary"><a class="tm-link" href="tests/wake-alarm/index.html"><strong>나는 어떤 알람일까?</strong></a><span class="tm-arrow" aria-hidden="true"></span><span class="sr-only">설명 펼치기·접기</span></summary><p class="tm-desc">아침에 일어나는 습관으로 알아보는 나의 알람 유형 테스트. 알람이 울리는 그 몇 분에 그 사람의 성격이 다 드러나요. 아침에 일어나는 습관으로 알아보는 나의 알람 유형!</p></details></li>
-        </ul>
-      </div>
-
-      <div class="tab-panel" role="tabpanel" id="panel-howto" aria-labelledby="tab-howto">
+      <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-howto" aria-labelledby="tab-howto">
         <h2>이렇게 이용하세요</h2>
         <ol>
           <li>마음에 드는 테스트를 골라 시작 버튼을 눌러요. 닉네임은 입력하지 않아도 돼요.</li>
@@ -81,7 +79,7 @@
         </ol>
       </div>
 
-      <div class="tab-panel" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
+      <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
         <h2>자주 묻는 질문</h2>
         <h3>무료인가요? 회원가입이 필요한가요?</h3>
         <p>모든 테스트는 무료이고 회원가입이나 로그인 없이 바로 이용할 수 있어요.</p>
@@ -91,8 +89,10 @@
         <p>답변과 결과는 서버에 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.</p>
       </div>
       </div>
-    </section>
+    </main>
 <!-- STATIC-INFO:END -->
+
+    
 
     <div class="ad-slot" data-ad-slot="hub-bottom" hidden></div>
 

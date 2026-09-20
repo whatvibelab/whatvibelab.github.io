@@ -313,7 +313,8 @@ button {
     max-width: 760px;
   }
 
-  .hub-wrap .static-info {
+  /* 글 패널만 읽기 좋은 폭으로 (카드 패널은 넓게 유지) */
+  .hub-wrap .tab-text {
     max-width: 560px;
     margin-left: auto;
     margin-right: auto;
@@ -768,9 +769,15 @@ button {
   text-decoration: underline;
 }
 
-/* 허브 하단 안내 탭 (소개 / 테스트 모아보기 / 이용 방법 / 자주 묻는 질문).
+/* 허브 메인 탭 (무슨상연구소는 어떤 곳인가요? / 테스트 모아보기 / 이렇게 이용하세요 / 자주 묻는 질문).
+   헤더 바로 아래에 있고, 처음엔 "테스트 모아보기"(카드 목록)가 열려 있다.
    JS(hub.js)가 .tabs에 js-tabs 클래스를 붙이면 탭 바가 나타나고 선택한 패널만 보인다.
    JS가 없으면 탭 바는 숨겨지고 모든 패널이 그대로 펼쳐진다. */
+.hub-main {
+  flex: 1;
+  padding-bottom: 8px;
+}
+
 .tab-list {
   display: none;
 }
@@ -778,8 +785,9 @@ button {
 .tabs.js-tabs .tab-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 6px;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
 }
 
 .tab-btn {
@@ -822,115 +830,20 @@ button {
   }
 }
 
-.tab-panel + .tab-panel {
-  margin-top: 28px; /* JS 없이 모두 펼쳐 보일 때의 간격 */
-}
-
-.tabs.js-tabs .tab-panel + .tab-panel {
+/* 글 패널(소개/이용/FAQ)은 static-info 타이포그래피를 재사용하되, 페이지 하단 안내용
+   구분선·여백은 빼고 탭 안에서 자연스럽게 보이게 한다. (카드 패널은 static-info가 아님) */
+.hub-main .tab-panel.static-info {
   margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
-/* 허브 "테스트 모아보기" — 테스트마다 화살표를 눌러 설명을 펼치고 접는 목록.
-   <details>/<summary>라 JS 없이도 동작하고, 접힌 설명도 HTML에는 그대로 들어 있다. */
-.static-info ul.tm-list {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.hub-main .tab-panel + .tab-panel {
+  margin-top: 28px; /* JS 없이 모두 펼쳐 보일 때의 패널 간격 */
 }
 
-.tm-item {
-  margin: 0;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-}
-
-.tm-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 14px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.tm-summary::-webkit-details-marker {
-  display: none;
-}
-
-.tm-summary:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: var(--radius-md);
-}
-
-.static-info .tm-link {
-  color: var(--text);
-  font-size: 13px;
-  text-decoration: none;
-}
-
-.static-info .tm-link strong {
-  font-weight: 700;
-}
-
-.tm-arrow {
-  position: relative;
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  transition: background 0.15s ease;
-}
-
-.tm-arrow::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 7px;
-  height: 7px;
-  border-right: 2px solid var(--accent-dark);
-  border-bottom: 2px solid var(--accent-dark);
-  transform: translate(-50%, -70%) rotate(45deg);
-  transition: transform 0.2s ease;
-}
-
-.tm-details[open] .tm-arrow::before {
-  transform: translate(-50%, -30%) rotate(-135deg);
-}
-
-.tm-desc {
-  margin: 0;
-  padding: 0 14px 14px;
-  color: var(--text-sub);
-}
-
-.tm-details[open] .tm-desc {
-  animation: tm-fade 0.2s ease;
-}
-
-@keyframes tm-fade {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tm-arrow::before,
-  .tm-details[open] .tm-desc {
-    transition: none;
-    animation: none;
-  }
+.hub-main .tabs.js-tabs .tab-panel + .tab-panel {
+  margin-top: 0;
 }
 
 .site-footer {
