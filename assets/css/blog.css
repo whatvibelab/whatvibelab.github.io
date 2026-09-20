@@ -1,0 +1,284 @@
+/* ==========================================================================
+   blog.css — 읽을거리(blog/) 페이지 전용 스타일. common.css 위에 얹어서 쓴다.
+   글·목록 페이지는 tools/build-static.js가 만들며, 색은 common.css의 CSS 변수를 그대로 쓴다.
+   ========================================================================== */
+
+.post {
+  flex: 1;
+  padding: 18px 0 32px;
+}
+
+.post-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-sub);
+  margin-bottom: 14px;
+}
+
+.post-crumbs a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-crumbs span:last-child {
+  color: var(--text);
+  font-weight: 600;
+  word-break: keep-all;
+}
+
+.post h1 {
+  font-size: 23px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+  word-break: keep-all;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0 0 4px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.post-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* 요약 상자 (글 첫머리의 **요약** 문단) */
+.post-summary {
+  margin: 18px 0 8px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.post-summary strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: var(--accent-dark);
+}
+
+.post-summary p {
+  margin: 0;
+  word-break: keep-all;
+}
+
+.post-body {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text);
+}
+
+.post-body h2 {
+  font-size: 18px;
+  line-height: 1.45;
+  margin: 34px 0 10px;
+  word-break: keep-all;
+}
+
+.post-body h3 {
+  font-size: 15px;
+  margin: 24px 0 6px;
+}
+
+.post-body p {
+  margin: 0 0 14px;
+  word-break: keep-all;
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.post-body li {
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+
+.post-body a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-body strong {
+  font-weight: 800;
+}
+
+.post-body blockquote {
+  margin: 0 0 16px;
+  padding: 2px 0 2px 14px;
+  border-left: 3px solid var(--border);
+  color: var(--text-sub);
+}
+
+.post-body blockquote p {
+  margin: 0;
+}
+
+.post-body hr {
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 28px 0;
+}
+
+.post-body code {
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  font-size: 0.92em;
+}
+
+/* 표는 좁은 화면에서 가로로만 스크롤 (페이지 자체는 가로 스크롤 없음) */
+.post-table {
+  margin: 0 0 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post-table table {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.post-table th,
+.post-table td {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.post-table th {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+/* 글 아래 테스트 CTA / 이어서 읽기 */
+.post-cta,
+.post-more {
+  margin-top: 36px;
+  padding-top: 26px;
+  border-top: 1px dashed var(--border);
+}
+
+.post-cta h2,
+.post-more h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin: 0 0 14px;
+}
+
+.post-cta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post-more ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post-more li a {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.post-more li span {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-sub);
+  word-break: keep-all;
+}
+
+/* 목록 페이지 */
+.blog-index h2 {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 30px 0 12px;
+}
+
+.blog-lead {
+  margin: 0 0 6px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-sub);
+  word-break: keep-all;
+}
+
+.post-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+
+.post-card:active {
+  transform: scale(0.98);
+}
+
+.post-card-title {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.post-card-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-sub);
+  word-break: keep-all;
+}
+
+.post-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 12px;
+  color: var(--text-sub);
+}

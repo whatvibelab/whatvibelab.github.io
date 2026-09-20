@@ -32,6 +32,12 @@ window.AD_CONFIG = {
       width: 320,
       height: 100,
     },
+    "article-bottom": {
+      adsenseSlot: "",
+      adfitUnit: "",
+      width: 320,
+      height: 100,
+    },
     "result-bottom": {
       adsenseSlot: "",
       adfitUnit: "",
