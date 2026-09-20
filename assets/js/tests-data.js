@@ -104,4 +104,22 @@ window.TESTS = [
     path: "tests/team-role/index.html",
     status: "live",
   },
+  {
+    id: "bag-item",
+    emoji: "🎒",
+    color: "#e9e0fb",
+    title: "나는 어떤 가방 속 물건일까?",
+    subtitle: "가방을 싸고 정리하는 습관으로 알아보는 나를 닮은 물건 테스트",
+    path: "tests/bag-item/index.html",
+    status: "live",
+  },
+  {
+    id: "wake-alarm",
+    emoji: "⏰",
+    color: "#ffe9d0",
+    title: "나는 어떤 알람일까?",
+    subtitle: "아침에 일어나는 습관으로 알아보는 나의 알람 유형 테스트",
+    path: "tests/wake-alarm/index.html",
+    status: "live",
+  },
 ];

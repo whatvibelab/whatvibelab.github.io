@@ -1,0 +1,26 @@
+/* ==========================================================================
+   style.css — "나는 어떤 알람일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fffbea;
+  --card-bg: #ffffff;
+  --text: #3a3320;
+  --text-sub: #9a8f6a;
+  --accent: #f5b301;
+  --accent-dark: #9a6a00; /* 초안 #d99a00은 흰/크림 배경 위 텍스트 대비가 낮아 진하게 조정 */
+  --accent-soft: #fff0b8;
+  --border: #f3e6b0;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}
+
+/* 노란 배경 위에서는 흰 글씨 대비가 낮아 어두운 글자색을 쓴다. */
+.btn-primary {
+  color: var(--text);
+}

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 가방 속 물건일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #f8f5fd;
+  --card-bg: #ffffff;
+  --text: #2c2540;
+  --text-sub: #8b82a3;
+  --accent: #9a7bea;
+  --accent-dark: #7b58d6;
+  --accent-soft: #e9e0fb;
+  --border: #e2d9f5;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}
