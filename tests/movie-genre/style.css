@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 영화 장르일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #f4f5fa;
+  --card-bg: #ffffff;
+  --text: #21243a;
+  --text-sub: #8388a8;
+  --accent: #3f4b8f;
+  --accent-dark: #2f3a75;
+  --accent-soft: #d9dcee;
+  --border: #dfe1ef;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}

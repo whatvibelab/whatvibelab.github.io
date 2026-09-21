@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>나는 어떤 영화 장르일까? | 무슨상연구소</title>
+<meta name="description" content="영화를 고르고 즐기는 습관으로 알아보는 나의 영화 장르 유형 테스트" />
+<meta property="og:title" content="나는 어떤 영화 장르일까?" />
+<meta property="og:description" content="영화를 고르고 즐기는 습관으로 알아보는 나의 영화 장르 유형 테스트" />
+<link rel="stylesheet" href="../../assets/css/common.css" />
+<link rel="stylesheet" href="style.css" />
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg?v=20260921" />
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나는 어떤 영화 장르일까? | 무슨상연구소","description":"영화를 고르고 즐기는 습관으로 알아보는 나의 영화 장르 유형 테스트","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"영화를 자주 보지 않아도 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"그럼요. 영화를 보러 간다면 어떻게 할지 상상하며 답하면 돼요. 결과는 영화를 본 횟수가 아니라 영화를 고르고 즐기는 나의 방식에 맞춰 나와요."}},{"@type":"Question","name":"좋아하는 장르와 다른 결과가 나올 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 결과는 좋아하는 장르가 아니라 영화를 대하는 태도로 정해져요. 액션을 좋아해도 여운을 오래 즐기는 태도라면 잔잔한 독립 영화가 나올 수 있어요."}},{"@type":"Question","name":"질문에 예고편과 엔딩 크레딧 이야기가 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"예고편이 나올 때 들어가도 괜찮은지 시간을 딱 맞춰 입장하는지, 엔딩 크레딧이 끝날 때까지 남아 있는지가 계획과 즉흥, 여운을 즐기는 방식을 잘 나눠 줘서예요."}},{"@type":"Question","name":"특정 영화나 배우가 결과에 나오나요?","acceptedAnswer":{"@type":"Answer","text":"아니에요. 특정 영화 제목이나 배우, 감독 이름은 쓰지 않고 뮤지컬, 시대극, 액션 같은 장르 이름만 사용해요. 어떤 작품을 떠올려도 답할 수 있어요."}},{"@type":"Question","name":"궁합이 좋은 영화 장르는 어떻게 짝지었나요?","acceptedAnswer":{"@type":"Answer","text":"비슷한 장르가 아니라 서로 반대에 가까운 장르로 묶었어요. 웃음과 노래가 쏟아지는 뮤지컬 영화와 고증까지 챙기는 시대극 영화, 결말이 뒤집히는 스릴러 영화와 여운이 남는 독립 영화가 서로의 짝이에요."}},{"@type":"Question","name":"내 답변이나 결과가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 개인정보처리방침에서 확인할 수 있어요."}}]}]}</script>
+<script src="../../assets/js/analytics-config.js"></script>
+<script src="../../assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="../../index.html"><img class="site-brand-mark" src="../../assets/img/logo.svg" alt="" width="22" height="22" />무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="../../index.html">테스트</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../about.html">소개</a>
+      </nav>
+    </header>
+    <p class="disclaimer">재미로 보는 테스트예요. 심리검사가 아니에요.</p>
+<!-- SITE-HEADER:END -->
+        <a class="home-link" href="../../index.html">← 다른 테스트 보기</a>
+
+    <!-- 인트로 -->
+    <section id="screen-intro" class="screen">
+      <div class="intro-emoji" id="intro-emoji">🎬</div>
+      <p class="kicker" id="intro-kicker"></p>
+      <h1 class="intro-title" id="intro-title"></h1>
+      <p class="intro-desc" id="intro-desc"></p>
+      <p class="intro-meta" id="intro-meta"></p>
+      <div class="nickname-field">
+        <label class="nickname-label" for="nickname-input">이 닉네임으로 결과를 받아볼까요?</label>
+        <input type="text" id="nickname-input" class="nickname-input" placeholder="닉네임 입력 (선택)" maxlength="10" autocomplete="off" />
+      </div>
+      <button type="button" class="btn btn-primary" id="start-btn"></button>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button type="button" class="btn-ghost" id="quiz-back-btn">← 이전</button>
+        <span class="quiz-count" id="quiz-count"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+    </section>
+
+    <!-- 결과 -->
+    <section id="screen-result" class="screen" hidden>
+      <p class="result-badge" id="result-badge"></p>
+      <div class="result-emoji" id="result-emoji"></div>
+      <h1 class="result-name" id="result-name"></h1>
+      <p class="result-tagline" id="result-tagline"></p>
+      <p class="result-desc" id="result-desc"></p>
+      <ul class="result-traits" id="result-traits"></ul>
+      <div class="result-match" id="result-match" hidden></div>
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="save-card-btn"></button>
+        <button type="button" class="btn btn-secondary" id="share-btn"></button>
+        <button type="button" class="btn btn-secondary" id="retake-btn"></button>
+      </div>
+
+      <div class="result-recommend" id="result-recommend" hidden>
+        <p class="result-recommend-title">다른 테스트도 해볼래요?</p>
+        <div class="result-recommend-list" id="result-recommend-list"></div>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="result-bottom" hidden></div>
+    </section>
+
+    
+    
+    <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<section class="static-info" id="static-info">
+      <h2>나는 어떤 영화 장르일까? 테스트 소개</h2>
+      <p>영화를 고르고 즐기는 방식에 나의 성향이 그대로 담겨요. 영화 보는 습관으로 알아보는 나의 영화 장르 유형!</p>
+
+      <h2>이 테스트는 이렇게 만들었어요</h2>
+      <p>영화는 무엇을 보느냐보다 고르고 보고 이야기하는 방식이 사람마다 달라서, 영화를 보러 가자는 제안부터 다 본 뒤 기록까지를 16가지 장면으로 나눴어요. 특정 영화나 배우 이름 없이 장르만 썼고, 궁합은 서로 정반대라 잘 맞는 짝으로 묶었어요.</p>
+
+      <h2>이런 분께 추천해요</h2>
+      <ul>
+        <li>영화를 보는 나만의 방식이 있는 분</li>
+        <li>친구와 서로의 영화 취향을 비교해 보고 싶은 분</li>
+        <li>영화관에서 보는 것과 집에서 보는 것 사이에서 취향이 뚜렷한 분</li>
+      </ul>
+
+      <h2>질문 미리보기</h2>
+      <ul>
+        <li><strong>1번. 친구가 &quot;영화 보러 갈래?&quot;라고 한다. 나는?</strong><br />A. 좋아! 같이 볼 사람을 더 모으고 바로 날짜를 잡는다<br />B. 좋아, 근데 사람이 적은 시간대면 더 좋겠다고 말한다</li>
+        <li><strong>5번. 볼 영화를 고를 때 나는?</strong><br />A. 평점과 후기로 검증된 작품을 고른다<br />B. 처음 들어 보는 독특한 소재에 끌린다</li>
+        <li><strong>9번. 영화를 보다가 친구가 눈물을 훔친다. 나는?</strong><br />A. 어느 장면 때문이었는지 나중에 물어본다<br />B. 말없이 손수건을 건네고 같이 마음이 뭉클해진다</li>
+        <li><strong>13번. 영화를 보러 가기 전, 나는?</strong><br />A. 상영 시간과 좌석을 미리 예매해 둔다<br />B. 가서 볼 수 있는 시간대에 맞춰 고른다</li>
+      </ul>
+
+      <h2>16가지 결과 미리보기</h2>
+      <ul>
+        <li><strong>🎤 웃음과 노래가 쏟아지는 뮤지컬 영화</strong> — 노래 나오면 같이 흥얼거려야지<br />즐거움을 온몸으로 표현하는 타입이에요.</li>
+        <li><strong>🏛️ 고증까지 꼼꼼히 챙기는 시대극 영화</strong> — 이 시대 복식은 이게 맞아<br />정확하고 탄탄한 이야기를 좋아하는 타입이에요.</li>
+        <li><strong>💞 가족 이야기로 마음을 데워 주는 휴먼 드라마 영화</strong> — 보고 나면 전화 한 통 하고 싶어져<br />사람 사이의 온기를 소중히 여기는 타입이에요.</li>
+        <li><strong>💥 시작부터 끝까지 쉬지 않고 달리는 액션 영화</strong> — 설명은 나중에, 일단 달리자<br />생각보다 몸이 먼저 움직이는 타입이에요.</li>
+        <li><strong>🌌 여운이 오래 남는 잔잔한 독립 영화</strong> — 엔딩 크레딧이 올라가도 자리를 못 떠나<br />말보다 분위기와 여운을 좋아하는 타입이에요.</li>
+        <li><strong>🌀 결말이 뒤집히는 반전 스릴러 영화</strong> — 이게 끝인 줄 알았지? 아직이야<br />예상을 뒤집는 걸 즐기는 타입이에요.</li>
+        <li><strong>🧩 복선을 촘촘히 깔아 두는 미스터리 영화</strong> — 처음부터 다 계산된 이야기야<br />큰 그림을 설계하는 걸 좋아하는 타입이에요.</li>
+        <li><strong>🎈 설렘이 가득한 로맨틱 코미디 영화</strong> — 이 장면 진짜 귀엽지 않아?<br />두근거리는 순간을 온 마음으로 즐기는 타입이에요.</li>
+        <li><strong>🚗 말 대신 장면으로 보여 주는 로드무비 영화</strong> — 대사가 없어도 다 전해져<br />말수는 적어도 행동으로 보여 주는 타입이에요.</li>
+        <li><strong>🍿 온 가족이 함께 웃는 코미디 영화</strong> — 다 같이 볼 수 있는 게 제일 좋아<br />함께 웃는 시간이 가장 즐거운 타입이에요.</li>
+        <li><strong>🎨 따뜻한 색감이 마음에 남는 애니메이션 영화</strong> — 이 장면은 그림으로 걸어 두고 싶어<br />색과 분위기에서 깊은 감성을 느끼는 타입이에요.</li>
+        <li><strong>🚀 큰 스케일로 판을 여는 SF 블록버스터 영화</strong> — 이왕 하는 거 스케일은 크게 가자<br />큰 그림을 그리며 앞장서는 타입이에요.</li>
+        <li><strong>🌸 잔잔한 일상이 아름다운 힐링 영화</strong> — 아무 일 없어도 좋은 하루였어<br />소소한 순간에서 행복을 찾는 타입이에요.</li>
+        <li><strong>⚖️ 정의를 끝까지 밀어붙이는 법정 영화</strong> — 원칙대로 끝까지 가 보자<br />원칙과 논리로 승부하는 타입이에요.</li>
+        <li><strong>🔭 세계의 원리를 파헤치는 다큐멘터리 영화</strong> — 이게 어떻게 되는 건지 끝까지 알고 싶어<br />사실 뒤의 이유가 궁금한 타입이에요.</li>
+        <li><strong>🤝 함께 이겨 내며 성장하는 스포츠 영화</strong> — 혼자였다면 못 했을 거야, 같이라서 했어<br />함께 성장하는 순간을 소중히 여기는 타입이에요.</li>
+      </ul>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>영화를 자주 보지 않아도 할 수 있나요?</h3>
+      <p>그럼요. 영화를 보러 간다면 어떻게 할지 상상하며 답하면 돼요. 결과는 영화를 본 횟수가 아니라 영화를 고르고 즐기는 나의 방식에 맞춰 나와요.</p>
+      <h3>좋아하는 장르와 다른 결과가 나올 수 있나요?</h3>
+      <p>네. 결과는 좋아하는 장르가 아니라 영화를 대하는 태도로 정해져요. 액션을 좋아해도 여운을 오래 즐기는 태도라면 잔잔한 독립 영화가 나올 수 있어요.</p>
+      <h3>질문에 예고편과 엔딩 크레딧 이야기가 나오는 이유는 무엇인가요?</h3>
+      <p>예고편이 나올 때 들어가도 괜찮은지 시간을 딱 맞춰 입장하는지, 엔딩 크레딧이 끝날 때까지 남아 있는지가 계획과 즉흥, 여운을 즐기는 방식을 잘 나눠 줘서예요.</p>
+      <h3>특정 영화나 배우가 결과에 나오나요?</h3>
+      <p>아니에요. 특정 영화 제목이나 배우, 감독 이름은 쓰지 않고 뮤지컬, 시대극, 액션 같은 장르 이름만 사용해요. 어떤 작품을 떠올려도 답할 수 있어요.</p>
+      <h3>궁합이 좋은 영화 장르는 어떻게 짝지었나요?</h3>
+      <p>비슷한 장르가 아니라 서로 반대에 가까운 장르로 묶었어요. 웃음과 노래가 쏟아지는 뮤지컬 영화와 고증까지 챙기는 시대극 영화, 결말이 뒤집히는 스릴러 영화와 여운이 남는 독립 영화가 서로의 짝이에요.</p>
+      <h3>내 답변이나 결과가 저장되나요?</h3>
+      <p>답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="../../privacy.html">개인정보처리방침</a>에서 확인할 수 있어요.</p>
+
+      <h2>함께 보면 좋은 테스트</h2>
+      <ul>
+        <li><a href="../../tests/weekend-style/index.html"><strong>나는 어떤 주말일까?</strong></a> — 주말에 영화를 보며 쉬는 나의 방식을 이어서 비교해 볼 수 있어요</li>
+        <li><a href="../../tests/deokjil-style/index.html"><strong>나는 어떤 덕질러일까?</strong></a> — 좋아하는 콘텐츠를 즐기는 나만의 방식이 궁금할 때 함께 해 볼 수 있어요</li>
+        <li><a href="../../tests/ideal-sang/index.html"><strong>내 이상형은 어떤 상일까?</strong></a> — 영화 속 주인공처럼 끌리는 사람의 분위기를 동물상으로 알아볼 수 있어요</li>
+      </ul>
+    </section>
+<!-- STATIC-INFO:END -->
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="../../index.html">홈</a>
+        <a href="../../about.html">소개</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../terms.html">이용약관</a>
+        <a href="../../privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 유형 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../assets/js/tests-data.js"></script>
+  <script src="config.js"></script>
+  <script src="../../assets/js/engine.js"></script>
+  <script src="../../assets/js/ad-config.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+  <script>
+    MbtiEngine.init(window.QUIZ_CONFIG);
+  </script>
+</body>
+</html>

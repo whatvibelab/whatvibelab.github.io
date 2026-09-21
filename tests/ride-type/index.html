@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>나는 어떤 탈것일까? | 무슨상연구소</title>
+<meta name="description" content="이동하는 습관으로 알아보는 나의 탈것 유형 테스트" />
+<meta property="og:title" content="나는 어떤 탈것일까?" />
+<meta property="og:description" content="이동하는 습관으로 알아보는 나의 탈것 유형 테스트" />
+<link rel="stylesheet" href="../../assets/css/common.css" />
+<link rel="stylesheet" href="style.css" />
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg?v=20260921" />
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나는 어떤 탈것일까? | 무슨상연구소","description":"이동하는 습관으로 알아보는 나의 탈것 유형 테스트","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"면허가 없거나 차가 없어도 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"그럼요. 질문은 운전이 아니라 이동하는 나의 방식을 묻고, 결과의 탈것도 실제로 타는 것과는 관계가 없어요. 걷거나 대중교통을 이용하는 분도 편하게 답하면 돼요."}},{"@type":"Question","name":"결과에 나온 탈것을 실제로 좋아해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"아니에요. 열기구나 로켓이 나와도 실제로 타 본 적이 없어도 괜찮아요. 결과는 이동하는 습관을 재미있게 빗댄 표현이고, 어떤 탈것이 나와도 좋고 나쁨이 없어요."}},{"@type":"Question","name":"질문에 시간표와 환승 이야기가 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"시간표를 확인하고 여유 있게 출발하는지 시간 되는 대로 나서는지, 경로를 미리 짜 두는지 가다가 정하는지가 계획과 즉흥을 잘 나눠 줘서예요. 실제 노선이나 서비스는 다루지 않아요."}},{"@type":"Question","name":"여행 코스 테스트와 뭐가 다른가요?","acceptedAnswer":{"@type":"Answer","text":"여행 코스 테스트는 여행을 계획하고 즐기는 방식을 다뤄요. 이 테스트는 길을 찾고 이동하고 도착하는 과정 자체를 다뤄서 두 테스트를 함께 해 보면 비교하는 재미가 있어요."}},{"@type":"Question","name":"궁합이 좋은 탈것은 어떻게 짝지었나요?","acceptedAnswer":{"@type":"Answer","text":"비슷한 탈것이 아니라 서로 반대에 가까운 탈것으로 묶었어요. 다 같이 노래하며 달리는 관광버스와 시간표를 지키는 지하철, 항로를 미리 그리는 비행기와 골목으로 핸들을 꺾는 자전거가 서로의 짝이에요."}},{"@type":"Question","name":"내 답변이나 결과가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 개인정보처리방침에서 확인할 수 있어요."}}]}]}</script>
+<script src="../../assets/js/analytics-config.js"></script>
+<script src="../../assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="../../index.html"><img class="site-brand-mark" src="../../assets/img/logo.svg" alt="" width="22" height="22" />무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="../../index.html">테스트</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../about.html">소개</a>
+      </nav>
+    </header>
+    <p class="disclaimer">재미로 보는 테스트예요. 심리검사가 아니에요.</p>
+<!-- SITE-HEADER:END -->
+        <a class="home-link" href="../../index.html">← 다른 테스트 보기</a>
+
+    <!-- 인트로 -->
+    <section id="screen-intro" class="screen">
+      <div class="intro-emoji" id="intro-emoji">🚲</div>
+      <p class="kicker" id="intro-kicker"></p>
+      <h1 class="intro-title" id="intro-title"></h1>
+      <p class="intro-desc" id="intro-desc"></p>
+      <p class="intro-meta" id="intro-meta"></p>
+      <div class="nickname-field">
+        <label class="nickname-label" for="nickname-input">이 닉네임으로 결과를 받아볼까요?</label>
+        <input type="text" id="nickname-input" class="nickname-input" placeholder="닉네임 입력 (선택)" maxlength="10" autocomplete="off" />
+      </div>
+      <button type="button" class="btn btn-primary" id="start-btn"></button>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button type="button" class="btn-ghost" id="quiz-back-btn">← 이전</button>
+        <span class="quiz-count" id="quiz-count"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+    </section>
+
+    <!-- 결과 -->
+    <section id="screen-result" class="screen" hidden>
+      <p class="result-badge" id="result-badge"></p>
+      <div class="result-emoji" id="result-emoji"></div>
+      <h1 class="result-name" id="result-name"></h1>
+      <p class="result-tagline" id="result-tagline"></p>
+      <p class="result-desc" id="result-desc"></p>
+      <ul class="result-traits" id="result-traits"></ul>
+      <div class="result-match" id="result-match" hidden></div>
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="save-card-btn"></button>
+        <button type="button" class="btn btn-secondary" id="share-btn"></button>
+        <button type="button" class="btn btn-secondary" id="retake-btn"></button>
+      </div>
+
+      <div class="result-recommend" id="result-recommend" hidden>
+        <p class="result-recommend-title">다른 테스트도 해볼래요?</p>
+        <div class="result-recommend-list" id="result-recommend-list"></div>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="result-bottom" hidden></div>
+    </section>
+
+    
+    
+    <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<section class="static-info" id="static-info">
+      <h2>나는 어떤 탈것일까? 테스트 소개</h2>
+      <p>길을 찾고 이동하는 방식에 나의 성향이 그대로 담겨요. 이동하는 습관으로 알아보는 나의 탈것 유형!</p>
+
+      <h2>이 테스트는 이렇게 만들었어요</h2>
+      <p>이동은 어디로 가느냐보다 어떻게 가느냐가 사람마다 달라서, 이동 수단을 고르고 길을 찾고 도착한 뒤까지를 16가지 장면으로 나눴어요. 특정 교통 서비스나 지명 없이 누구나 아는 탈것만 썼고, 궁합은 서로 정반대라 함께 가면 잘 맞는 짝으로 묶었어요.</p>
+
+      <h2>이런 분께 추천해요</h2>
+      <ul>
+        <li>이동하는 방식에 나만의 습관이 있는 분</li>
+        <li>친구와 서로의 길 찾기 스타일을 비교해 보고 싶은 분</li>
+        <li>시간표를 꼼꼼히 보는 편인지 발길 닿는 대로 가는 편인지 궁금한 분</li>
+      </ul>
+
+      <h2>질문 미리보기</h2>
+      <ul>
+        <li><strong>1번. 이동하는 중에 옆자리에 낯선 사람이 앉았다. 나는?</strong><br />A. 자연스럽게 말을 걸며 이야기를 나눈다<br />B. 이어폰을 끼고 조용히 이동한다</li>
+        <li><strong>5번. 길을 찾을 때 나는?</strong><br />A. 지도의 경로를 그대로 따라간다<br />B. 지름길이나 새로운 길을 시도해 본다</li>
+        <li><strong>9번. 일행이 지친 표정으로 서 있다. 나는?</strong><br />A. 남은 경로를 정리해서 쉴 곳을 알려 준다<br />B. 자리를 양보하고 괜찮은지 먼저 물어본다</li>
+        <li><strong>13번. 출발하기 전, 나는?</strong><br />A. 시간표를 확인하고 여유 있게 나선다<br />B. 시간이 되는 대로 나선다</li>
+      </ul>
+
+      <h2>16가지 결과 미리보기</h2>
+      <ul>
+        <li><strong>🚌 다 같이 노래하며 달리는 관광버스</strong> — 창문 열고 다 같이 부르자!<br />함께 가는 사람들과 신나게 이동하는 걸 좋아하는 타입이에요.</li>
+        <li><strong>🚇 시간표를 한 치도 어기지 않는 지하철</strong> — 정해진 시간에 정확하게 도착해<br />약속한 시간과 경로를 정확히 지키는 타입이에요.</li>
+        <li><strong>🏕️ 짐과 간식까지 챙겨 싣는 캠핑카</strong> — 필요한 건 다 실어 뒀으니 걱정 마<br />함께 가는 사람들이 편안한지가 가장 중요한 타입이에요.</li>
+        <li><strong>🛴 일단 밟고 나가는 전동 킥보드</strong> — 생각은 가면서 하자<br />생각보다 몸이 먼저 움직이는 타입이에요.</li>
+        <li><strong>🚡 높은 곳에서 천천히 풍경을 내려다보는 케이블카</strong> — 멀리서 보면 다 보이는 것들이 있어<br />한 발 떨어져 조용히 바라보는 걸 좋아하는 타입이에요.</li>
+        <li><strong>🎈 어디로 갈지 바람에 맡기는 열기구</strong> — 어디로 가든 재밌겠지, 일단 떠 보자<br />정해진 길보다 예상 밖의 길이 더 재미있는 타입이에요.</li>
+        <li><strong>✈️ 항로를 미리 그려 두는 비행기</strong> — 출발 전에 도착까지 다 계산했어<br />목적지까지의 길을 미리 설계하는 게 즐거운 타입이에요.</li>
+        <li><strong>🚲 눈에 띈 골목으로 핸들을 꺾는 자전거</strong> — 저 골목 뭐가 있는지 궁금해!<br />가다가 마음에 드는 곳이 보이면 바로 방향을 바꾸는 타입이에요.</li>
+        <li><strong>🛵 필요한 곳까지 조용히 빠르게 가는 스쿠터</strong> — 짐은 가볍게, 길은 빠르게<br />필요한 만큼만 갖추고 효율적으로 움직이는 타입이에요.</li>
+        <li><strong>🚗 친구를 태우러 먼저 출발하는 자동차</strong> — 내가 데리러 갈게, 같이 가자<br />함께 가는 사람들이 편하게 도착하는 게 가장 큰 기쁨인 타입이에요.</li>
+        <li><strong>🚂 창밖을 바라보며 천천히 가는 완행 기차</strong> — 늦게 도착해도 괜찮아, 풍경이 좋잖아<br />이동하는 동안의 분위기를 소중히 여기는 타입이에요.</li>
+        <li><strong>🚄 목적지까지 곧장 달리는 고속 열차</strong> — 정차 없이 목표까지 직행이야<br />목표를 정하면 망설임 없이 달려가는 타입이에요.</li>
+        <li><strong>⛵ 바람 따라 천천히 흘러가는 돛단배</strong> — 서두르지 않아도 도착할 거야<br />정해진 시간보다 지금의 흐름을 즐기는 타입이에요.</li>
+        <li><strong>🚍 노선과 배차 간격이 정확한 시내버스</strong> — 이 시간에는 이 정류장이 맞아<br />정해진 노선과 규칙으로 안정적으로 움직이는 타입이에요.</li>
+        <li><strong>🚀 우주까지 궁금해서 달려가는 로켓</strong> — 저 너머엔 뭐가 있을까?<br />끝없는 호기심이 원동력인 타입이에요.</li>
+        <li><strong>🚢 모두를 한 배에 태우고 나아가는 여객선</strong> — 다 같이 가야 진짜 여행이지<br />함께하는 모두가 무사히 도착하길 바라는 타입이에요.</li>
+      </ul>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>면허가 없거나 차가 없어도 할 수 있나요?</h3>
+      <p>그럼요. 질문은 운전이 아니라 이동하는 나의 방식을 묻고, 결과의 탈것도 실제로 타는 것과는 관계가 없어요. 걷거나 대중교통을 이용하는 분도 편하게 답하면 돼요.</p>
+      <h3>결과에 나온 탈것을 실제로 좋아해야 하나요?</h3>
+      <p>아니에요. 열기구나 로켓이 나와도 실제로 타 본 적이 없어도 괜찮아요. 결과는 이동하는 습관을 재미있게 빗댄 표현이고, 어떤 탈것이 나와도 좋고 나쁨이 없어요.</p>
+      <h3>질문에 시간표와 환승 이야기가 나오는 이유는 무엇인가요?</h3>
+      <p>시간표를 확인하고 여유 있게 출발하는지 시간 되는 대로 나서는지, 경로를 미리 짜 두는지 가다가 정하는지가 계획과 즉흥을 잘 나눠 줘서예요. 실제 노선이나 서비스는 다루지 않아요.</p>
+      <h3>여행 코스 테스트와 뭐가 다른가요?</h3>
+      <p>여행 코스 테스트는 여행을 계획하고 즐기는 방식을 다뤄요. 이 테스트는 길을 찾고 이동하고 도착하는 과정 자체를 다뤄서 두 테스트를 함께 해 보면 비교하는 재미가 있어요.</p>
+      <h3>궁합이 좋은 탈것은 어떻게 짝지었나요?</h3>
+      <p>비슷한 탈것이 아니라 서로 반대에 가까운 탈것으로 묶었어요. 다 같이 노래하며 달리는 관광버스와 시간표를 지키는 지하철, 항로를 미리 그리는 비행기와 골목으로 핸들을 꺾는 자전거가 서로의 짝이에요.</p>
+      <h3>내 답변이나 결과가 저장되나요?</h3>
+      <p>답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="../../privacy.html">개인정보처리방침</a>에서 확인할 수 있어요.</p>
+
+      <h2>함께 보면 좋은 테스트</h2>
+      <ul>
+        <li><a href="../../tests/travel-course/index.html"><strong>나는 어떤 여행 코스일까?</strong></a> — 여행을 계획하고 다니는 나의 방식과 이동 습관을 함께 비교해 볼 수 있어요</li>
+        <li><a href="../../tests/wake-alarm/index.html"><strong>나는 어떤 알람일까?</strong></a> — 출발하는 날 아침에 알람을 대하는 습관을 이어서 볼 수 있어요</li>
+        <li><a href="../../tests/bag-item/index.html"><strong>나는 어떤 가방 속 물건일까?</strong></a> — 이동할 때 챙기는 가방 속 물건 습관도 궁금할 때 함께 해 볼 수 있어요</li>
+      </ul>
+    </section>
+<!-- STATIC-INFO:END -->
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="../../index.html">홈</a>
+        <a href="../../about.html">소개</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../terms.html">이용약관</a>
+        <a href="../../privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 유형 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../assets/js/tests-data.js"></script>
+  <script src="config.js"></script>
+  <script src="../../assets/js/engine.js"></script>
+  <script src="../../assets/js/ad-config.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+  <script>
+    MbtiEngine.init(window.QUIZ_CONFIG);
+  </script>
+</body>
+</html>

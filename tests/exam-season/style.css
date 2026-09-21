@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 시험 기간일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fbfdf0;
+  --card-bg: #ffffff;
+  --text: #2e3320;
+  --text-sub: #93a070;
+  --accent: #8db81f;
+  --accent-dark: #6f9614;
+  --accent-soft: #e8f5c0;
+  --border: #e6efc8;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}
