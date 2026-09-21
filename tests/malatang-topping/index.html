@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>나는 어떤 마라탕 토핑일까? | 무슨상연구소</title>
+<meta name="description" content="재료를 고르는 습관으로 알아보는 나의 마라탕 토핑 유형 테스트" />
+<meta property="og:title" content="나는 어떤 마라탕 토핑일까?" />
+<meta property="og:description" content="재료를 고르는 습관으로 알아보는 나의 마라탕 토핑 유형 테스트" />
+<link rel="stylesheet" href="../../assets/css/common.css" />
+<link rel="stylesheet" href="style.css" />
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나는 어떤 마라탕 토핑일까? | 무슨상연구소","description":"재료를 고르는 습관으로 알아보는 나의 마라탕 토핑 유형 테스트","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"마라탕을 좋아하지 않아도 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"그럼요. 자주 먹지 않아도 마라탕집에서 재료를 고른다면 어떻게 할지 상상하며 답하면 돼요. 결과는 음식 취향이 아니라 재료를 고르는 습관에 맞춰 나와요."}},{"@type":"Question","name":"매운 걸 잘 못 먹으면 불리한 결과가 나오나요?","acceptedAnswer":{"@type":"Answer","text":"아니에요. 맵기 단계를 묻는 질문은 도전하는 태도와 익숙한 걸 고르는 태도를 나누는 장면이에요. 못 맵게 먹는 것도 화끈하게 먹는 것도 좋고 나쁨 없이 담았어요."}},{"@type":"Question","name":"질문에 저울과 가격 이야기가 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"마라탕은 재료를 담은 뒤 무게를 재서 계산하는 음식이라 그 순간의 행동이 잘 드러나요. 저울에 올리기 직전 가늠해 보는지, 일단 올리고 놀라는지가 계획과 즉흥을 나눠요."}},{"@type":"Question","name":"결과가 고수인데 고수를 안 먹어요. 상관없나요?","acceptedAnswer":{"@type":"Answer","text":"상관없어요. 고수는 넣을지 말지 원칙이 확실한 성향을 빗댄 결과이고, 실제로 좋아하는 재료와는 관계가 없어요. 어떤 토핑이 나와도 좋고 나쁨은 없어요."}},{"@type":"Question","name":"궁합이 좋은 토핑은 어떻게 짝지었나요?","acceptedAnswer":{"@type":"Answer","text":"비슷한 토핑이 아니라 서로 반대에 가까운 토핑으로 묶었어요. 올라가면 분위기가 사는 왕새우와 푸릇하게 중심을 잡는 청경채, 은은한 연두부와 호불호를 즐기는 양고기가 서로의 짝이에요."}},{"@type":"Question","name":"내 답변이나 결과가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 개인정보처리방침에서 확인할 수 있어요."}}]}]}</script>
+<script src="../../assets/js/analytics-config.js"></script>
+<script src="../../assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="../../index.html"><img class="site-brand-mark" src="../../assets/img/logo.svg" alt="" width="22" height="22" />무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="../../index.html">테스트</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../about.html">소개</a>
+      </nav>
+    </header>
+    <p class="disclaimer">재미로 보는 테스트예요. 심리검사가 아니에요.</p>
+<!-- SITE-HEADER:END -->
+        <a class="home-link" href="../../index.html">← 다른 테스트 보기</a>
+
+    <!-- 인트로 -->
+    <section id="screen-intro" class="screen">
+      <div class="intro-emoji" id="intro-emoji">🌶️</div>
+      <p class="kicker" id="intro-kicker"></p>
+      <h1 class="intro-title" id="intro-title"></h1>
+      <p class="intro-desc" id="intro-desc"></p>
+      <p class="intro-meta" id="intro-meta"></p>
+      <div class="nickname-field">
+        <label class="nickname-label" for="nickname-input">이 닉네임으로 결과를 받아볼까요?</label>
+        <input type="text" id="nickname-input" class="nickname-input" placeholder="닉네임 입력 (선택)" maxlength="10" autocomplete="off" />
+      </div>
+      <button type="button" class="btn btn-primary" id="start-btn"></button>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button type="button" class="btn-ghost" id="quiz-back-btn">← 이전</button>
+        <span class="quiz-count" id="quiz-count"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+    </section>
+
+    <!-- 결과 -->
+    <section id="screen-result" class="screen" hidden>
+      <p class="result-badge" id="result-badge"></p>
+      <div class="result-emoji" id="result-emoji"></div>
+      <h1 class="result-name" id="result-name"></h1>
+      <p class="result-tagline" id="result-tagline"></p>
+      <p class="result-desc" id="result-desc"></p>
+      <ul class="result-traits" id="result-traits"></ul>
+      <div class="result-match" id="result-match" hidden></div>
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="save-card-btn"></button>
+        <button type="button" class="btn btn-secondary" id="share-btn"></button>
+        <button type="button" class="btn btn-secondary" id="retake-btn"></button>
+      </div>
+
+      <div class="result-recommend" id="result-recommend" hidden>
+        <p class="result-recommend-title">다른 테스트도 해볼래요?</p>
+        <div class="result-recommend-list" id="result-recommend-list"></div>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="result-bottom" hidden></div>
+    </section>
+
+    
+    
+    <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<section class="static-info" id="static-info">
+      <h2>나는 어떤 마라탕 토핑일까? 테스트 소개</h2>
+      <p>마라탕 재료를 고르는 방식에 나의 성격이 그대로 담겨요. 재료를 담는 습관으로 알아보는 나의 마라탕 토핑 유형!</p>
+
+      <h2>이 테스트는 이렇게 만들었어요</h2>
+      <p>마라탕은 재료를 고르는 순간마다 취향이 드러나서, 가게에 가기 전부터 다 먹은 뒤까지를 16가지 장면으로 나눴어요. 결과 16가지는 식감과 존재감이 뚜렷한 토핑으로 정했고, 궁합은 서로 정반대라 잘 맞는 짝으로 묶었어요.</p>
+
+      <h2>이런 분께 추천해요</h2>
+      <ul>
+        <li>마라탕 재료 고르는 나만의 조합이 있는 분</li>
+        <li>친구와 마라탕을 먹으며 서로의 취향을 비교해 보고 싶은 분</li>
+        <li>맵기 단계를 정할 때마다 고민이 많은 분</li>
+      </ul>
+
+      <h2>질문 미리보기</h2>
+      <ul>
+        <li><strong>1번. 친구가 &quot;오늘 마라탕 먹을래?&quot;라고 한다. 나는?</strong><br />A. 좋아! 같이 갈 사람을 더 모으고 바로 가게를 정한다<br />B. 좋아, 근데 조용한 시간대에 소수로 가고 싶다고 말한다</li>
+        <li><strong>5번. 처음 가 보는 마라탕집에서 나는?</strong><br />A. 늘 담던 재료 위주로 안전하게 담는다<br />B. 처음 보는 재료를 하나쯤은 꼭 시도해 본다</li>
+        <li><strong>9번. 친구가 재료를 너무 많이 담고 있다. 나는?</strong><br />A. 양과 무게를 계산해서 알려 준다<br />B. 웃으면서 같이 덜어 주거나 나눠 먹자고 한다</li>
+        <li><strong>13번. 가게에 들어가기 전, 나는?</strong><br />A. 담을 재료를 머릿속으로 미리 정해 둔다<br />B. 가서 눈에 띄는 걸 보고 정한다</li>
+      </ul>
+
+      <h2>16가지 결과 미리보기</h2>
+      <ul>
+        <li><strong>🦐 올라가면 분위기 확 사는 왕새우</strong> — 일단 올려 보자, 분위기가 살잖아<br />그릇에 올라가는 순간 시선을 모으는 걸 즐기는 타입이에요.</li>
+        <li><strong>🥬 푸릇하게 중심을 잡는 청경채</strong> — 기본이 있어야 국물도 산다<br />화려하진 않아도 그릇의 균형을 지키는 타입이에요.</li>
+        <li><strong>🫧 국물을 다 품는 분모자</strong> — 국물도 마음도 다 머금었어<br />주변 사람의 기분과 취향을 조용히 흡수하는 타입이에요.</li>
+        <li><strong>🌭 일단 집고 보는 소시지</strong> — 고민할 시간에 먹자<br />생각보다 손이 먼저 움직이는 타입이에요.</li>
+        <li><strong>🥣 매운맛을 조용히 달래 주는 연두부</strong> — 맵더라도 곁에서 부드럽게<br />겉으론 조용해도 주변의 분위기를 세심하게 살피는 타입이에요.</li>
+        <li><strong>🐑 호불호를 즐기는 양고기</strong> — 다들 안 담는 걸 왜 안 담아?<br />남들이 망설이는 선택에 오히려 흥미를 느끼는 타입이에요.</li>
+        <li><strong>🌿 넣을지 말지 원칙이 확실한 고수</strong> — 취향에 타협은 없다<br />좋고 싫음의 기준이 분명한 타입이에요.</li>
+        <li><strong>🌽 새로운 조합에 눈이 반짝이는 옥수수면</strong> — 이거랑 이거 같이 먹으면 어떨까?<br />아이디어가 떠오르면 바로 시도해 보는 타입이에요.</li>
+        <li><strong>🪷 조용히 식감을 책임지는 연근</strong> — 말은 없어도 존재감은 아삭<br />필요한 순간에 필요한 역할만 조용히 해내는 타입이에요.</li>
+        <li><strong>🌱 어느 그릇에나 어울리는 숙주</strong> — 다 같이 먹으면 숙주가 있어야지<br />누구와 함께여도 자연스럽게 어울리는 타입이에요.</li>
+        <li><strong>🍃 국물에 조용히 스며드는 푸주</strong> — 천천히, 깊게 스며드는 중<br />마음이 통하는 순간을 오래 간직하는 타입이에요.</li>
+        <li><strong>🌶️ 화끈하게 밀어붙이는 건고추</strong> — 맵기 단계? 최고로 간다<br />정한 목표는 끝까지 밀어붙이는 타입이에요.</li>
+        <li><strong>🥚 톡 굴러와 기분을 바꾸는 메추리알</strong> — 작지만 귀엽게 한 알 톡<br />그날의 기분에 자연스럽게 따르는 타입이에요.</li>
+        <li><strong>🍜 그릇을 든든하게 채우는 넓적당면</strong> — 면이 넉넉해야 든든하지<br />정해진 기준과 책임을 성실하게 지키는 타입이에요.</li>
+        <li><strong>🍄 씹을수록 궁금해지는 목이버섯</strong> — 이 식감은 왜 이런 걸까?<br />맛보다 원리가 더 궁금한 타입이에요.</li>
+        <li><strong>🥜 모두를 고소하게 감싸는 땅콩소스</strong> — 다 같이 맛있게 먹자, 내가 감싸 줄게<br />함께 먹는 사람 모두가 즐겁기를 바라는 타입이에요.</li>
+      </ul>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>마라탕을 좋아하지 않아도 할 수 있나요?</h3>
+      <p>그럼요. 자주 먹지 않아도 마라탕집에서 재료를 고른다면 어떻게 할지 상상하며 답하면 돼요. 결과는 음식 취향이 아니라 재료를 고르는 습관에 맞춰 나와요.</p>
+      <h3>매운 걸 잘 못 먹으면 불리한 결과가 나오나요?</h3>
+      <p>아니에요. 맵기 단계를 묻는 질문은 도전하는 태도와 익숙한 걸 고르는 태도를 나누는 장면이에요. 못 맵게 먹는 것도 화끈하게 먹는 것도 좋고 나쁨 없이 담았어요.</p>
+      <h3>질문에 저울과 가격 이야기가 나오는 이유는 무엇인가요?</h3>
+      <p>마라탕은 재료를 담은 뒤 무게를 재서 계산하는 음식이라 그 순간의 행동이 잘 드러나요. 저울에 올리기 직전 가늠해 보는지, 일단 올리고 놀라는지가 계획과 즉흥을 나눠요.</p>
+      <h3>결과가 고수인데 고수를 안 먹어요. 상관없나요?</h3>
+      <p>상관없어요. 고수는 넣을지 말지 원칙이 확실한 성향을 빗댄 결과이고, 실제로 좋아하는 재료와는 관계가 없어요. 어떤 토핑이 나와도 좋고 나쁨은 없어요.</p>
+      <h3>궁합이 좋은 토핑은 어떻게 짝지었나요?</h3>
+      <p>비슷한 토핑이 아니라 서로 반대에 가까운 토핑으로 묶었어요. 올라가면 분위기가 사는 왕새우와 푸릇하게 중심을 잡는 청경채, 은은한 연두부와 호불호를 즐기는 양고기가 서로의 짝이에요.</p>
+      <h3>내 답변이나 결과가 저장되나요?</h3>
+      <p>답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="../../privacy.html">개인정보처리방침</a>에서 확인할 수 있어요.</p>
+
+      <h2>함께 보면 좋은 테스트</h2>
+      <ul>
+        <li><a href="../../tests/bomdong-bibimbap/index.html"><strong>나는 어떤 비빔밥일까?</strong></a> — 한 그릇 메뉴에서 재료를 섞는 나만의 방식을 이어서 볼 수 있어요</li>
+        <li><a href="../../tests/dujjonku/index.html"><strong>나는 어떤 두쫀쿠일까?</strong></a> — 맛과 토핑을 고르는 습관을 초콜릿 쿠키로 비교해 볼 수 있어요</li>
+        <li><a href="../../tests/cafedrink/index.html"><strong>나는 어떤 카페 음료일까?</strong></a> — 식사 뒤에 이어지는 음료 고르기 습관이 궁금할 때 좋아요</li>
+      </ul>
+    </section>
+<!-- STATIC-INFO:END -->
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="../../index.html">홈</a>
+        <a href="../../about.html">소개</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../terms.html">이용약관</a>
+        <a href="../../privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 성향 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../assets/js/tests-data.js"></script>
+  <script src="config.js"></script>
+  <script src="../../assets/js/engine.js"></script>
+  <script src="../../assets/js/ad-config.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+  <script>
+    MbtiEngine.init(window.QUIZ_CONFIG);
+  </script>
+</body>
+</html>

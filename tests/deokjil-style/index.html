@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>나는 어떤 덕질러일까? | 무슨상연구소</title>
+<meta name="description" content="좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형 테스트" />
+<meta property="og:title" content="나는 어떤 덕질러일까?" />
+<meta property="og:description" content="좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형 테스트" />
+<link rel="stylesheet" href="../../assets/css/common.css" />
+<link rel="stylesheet" href="style.css" />
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나는 어떤 덕질러일까? | 무슨상연구소","description":"좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형 테스트","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"좋아하는 대상이 없어도 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능해요. 예전에 좋아했던 것이나 지금 관심 있는 것을 하나 떠올려 답하면 돼요. 결과는 대상이 아니라 좋아하는 마음을 표현하는 방식에 맞춰 나와요."}},{"@type":"Question","name":"특정 가수나 작품을 위한 테스트인가요?","acceptedAnswer":{"@type":"Answer","text":"아니에요. 어떤 대상에도 쓸 수 있도록 특정 이름은 넣지 않았어요. 스포츠, 캐릭터, 작품, 인물 모두 떠올려 답해도 되고, 결과 이름도 응원봉이나 티켓팅 같은 일반어로만 만들었어요."}},{"@type":"Question","name":"질문에 티켓팅과 굿즈 이야기가 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"티켓팅 날짜를 챙기는지 당일에 떠올리는지, 굿즈를 실용으로 고르는지 이야기로 고르는지가 계획과 즉흥, 현실과 상상을 잘 나눠 줘서예요. 좋아하는 마음의 크기를 재는 질문이 아니에요."}},{"@type":"Question","name":"덕질을 많이 하는 사람이 더 좋은 결과인가요?","acceptedAnswer":{"@type":"Answer","text":"아니에요. 현장에서 떼창하는 덕질러도, 조용히 오래 좋아하는 덕질러도 좋고 나쁨이 없어요. 얼마나 쓰는지나 몇 번 가는지와 상관없이 좋아하는 방식만 나눴어요."}},{"@type":"Question","name":"궁합이 좋은 덕질러는 어떻게 짝지었나요?","acceptedAnswer":{"@type":"Answer","text":"비슷한 방식이 아니라 서로 반대에 가까운 방식으로 묶었어요. 무대만 보면 떼창하는 현장 덕질러와 굿즈를 표로 정리하는 기록 덕질러, 조용히 오래 좋아하는 은은한 덕질러와 새 분야로 입덕하는 탐험 덕질러가 서로의 짝이에요."}},{"@type":"Question","name":"내 답변이나 결과가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 개인정보처리방침에서 확인할 수 있어요."}}]}]}</script>
+<script src="../../assets/js/analytics-config.js"></script>
+<script src="../../assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="../../index.html"><img class="site-brand-mark" src="../../assets/img/logo.svg" alt="" width="22" height="22" />무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="../../index.html">테스트</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../about.html">소개</a>
+      </nav>
+    </header>
+    <p class="disclaimer">재미로 보는 테스트예요. 심리검사가 아니에요.</p>
+<!-- SITE-HEADER:END -->
+        <a class="home-link" href="../../index.html">← 다른 테스트 보기</a>
+
+    <!-- 인트로 -->
+    <section id="screen-intro" class="screen">
+      <div class="intro-emoji" id="intro-emoji">💖</div>
+      <p class="kicker" id="intro-kicker"></p>
+      <h1 class="intro-title" id="intro-title"></h1>
+      <p class="intro-desc" id="intro-desc"></p>
+      <p class="intro-meta" id="intro-meta"></p>
+      <div class="nickname-field">
+        <label class="nickname-label" for="nickname-input">이 닉네임으로 결과를 받아볼까요?</label>
+        <input type="text" id="nickname-input" class="nickname-input" placeholder="닉네임 입력 (선택)" maxlength="10" autocomplete="off" />
+      </div>
+      <button type="button" class="btn btn-primary" id="start-btn"></button>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button type="button" class="btn-ghost" id="quiz-back-btn">← 이전</button>
+        <span class="quiz-count" id="quiz-count"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+    </section>
+
+    <!-- 결과 -->
+    <section id="screen-result" class="screen" hidden>
+      <p class="result-badge" id="result-badge"></p>
+      <div class="result-emoji" id="result-emoji"></div>
+      <h1 class="result-name" id="result-name"></h1>
+      <p class="result-tagline" id="result-tagline"></p>
+      <p class="result-desc" id="result-desc"></p>
+      <ul class="result-traits" id="result-traits"></ul>
+      <div class="result-match" id="result-match" hidden></div>
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="save-card-btn"></button>
+        <button type="button" class="btn btn-secondary" id="share-btn"></button>
+        <button type="button" class="btn btn-secondary" id="retake-btn"></button>
+      </div>
+
+      <div class="result-recommend" id="result-recommend" hidden>
+        <p class="result-recommend-title">다른 테스트도 해볼래요?</p>
+        <div class="result-recommend-list" id="result-recommend-list"></div>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="result-bottom" hidden></div>
+    </section>
+
+    
+    
+    <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<section class="static-info" id="static-info">
+      <h2>나는 어떤 덕질러일까? 테스트 소개</h2>
+      <p>좋아하는 게 생기면 나오는 그 행동들에 나의 성향이 담겨 있어요. 좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형!</p>
+
+      <h2>이 테스트는 이렇게 만들었어요</h2>
+      <p>덕질은 좋아하는 대상보다 좋아하는 방식이 사람마다 달라서, 입덕부터 소식이 없는 조용한 시기까지를 16가지 장면으로 나눴어요. 특정 가수나 작품 이름 없이 어떤 대상에도 적용되게 만들었고, 궁합은 서로 정반대라 잘 맞는 짝으로 묶었어요.</p>
+
+      <h2>이런 분께 추천해요</h2>
+      <ul>
+        <li>좋아하는 대상이 생기면 온 마음으로 빠져드는 분</li>
+        <li>친구와 서로의 덕질 방식을 비교해 보고 싶은 분</li>
+        <li>굿즈 모으기, 현장 가기, 조용히 응원하기 중 나만의 방식이 있는 분</li>
+      </ul>
+
+      <h2>질문 미리보기</h2>
+      <ul>
+        <li><strong>1번. 새로 좋아하는 대상이 생겼다. 나는?</strong><br />A. 친구들에게 바로 알리고 같이 입덕시킨다<br />B. 혼자 조용히 자료를 찾아보며 빠져든다</li>
+        <li><strong>5번. 굿즈를 고를 때 나는?</strong><br />A. 실제로 쓸 수 있는 실용적인 걸 고른다<br />B. 세계관이나 이야기가 담긴 특별한 걸 고른다</li>
+        <li><strong>9번. 친구가 굿즈를 살지 말지 고민한다. 나는?</strong><br />A. 필요한 정도와 예산을 같이 따져 준다<br />B. 좋아하는 마음이 크면 사도 된다고 응원해 준다</li>
+        <li><strong>13번. 티켓팅이나 신청 날짜가 다가온다. 나는?</strong><br />A. 일정을 미리 알림으로 설정해 둔다<br />B. 그날이 되어서야 생각난다</li>
+      </ul>
+
+      <h2>16가지 결과 미리보기</h2>
+      <ul>
+        <li><strong>🎤 무대만 보면 떼창부터 나오는 현장 덕질러</strong> — 현장에서는 목이 나가도 좋아<br />좋아하는 대상을 눈앞에서 만나는 순간에 가장 빛나는 타입이에요.</li>
+        <li><strong>🗂️ 굿즈 목록을 표로 정리하는 기록 덕질러</strong> — 언제 무엇을 모았는지 다 적어 뒀어<br />좋아하는 마음을 차곡차곡 쌓아 두는 타입이에요.</li>
+        <li><strong>🧵 친구 몫까지 굿즈를 챙기는 다정 덕질러</strong> — 네 것도 하나 챙겨 왔어<br />좋아하는 마음을 주변 사람과 나누는 게 기쁜 타입이에요.</li>
+        <li><strong>⚡ 티켓팅 전쟁터에 제일 먼저 뛰어드는 실전 덕질러</strong> — 일단 눌러 보자, 되면 되는 거야<br />생각보다 손이 먼저 움직이는 타입이에요.</li>
+        <li><strong>🌙 조용히 오래 좋아하는 은은한 덕질러</strong> — 티는 안 내도 마음은 오래가<br />겉으로 드러내지 않아도 깊고 오래 좋아하는 타입이에요.</li>
+        <li><strong>🧪 새로운 것에 계속 입덕하는 탐험 덕질러</strong> — 이건 또 뭐야, 궁금한데?<br />새로운 분야가 나타나면 호기심에 뛰어드는 타입이에요.</li>
+        <li><strong>📊 일정과 예산을 설계하는 계획 덕질러</strong> — 이번 시즌 계획은 이미 다 세웠어<br />좋아하는 일도 계획 위에서 즐기는 타입이에요.</li>
+        <li><strong>🎈 좋아하는 마음을 온 동네에 영업하는 영업 덕질러</strong> — 이거 진짜 봐야 돼, 내가 보장해!<br />좋아하는 게 생기면 주변 사람 모두에게 알리고 싶은 타입이에요.</li>
+        <li><strong>🔧 굿즈를 직접 만들어 쓰는 손재주 덕질러</strong> — 사는 것보다 만드는 게 더 재밌어<br />좋아하는 마음을 손으로 표현하는 타입이에요.</li>
+        <li><strong>🍱 팬 모임 도시락까지 챙기는 총무 덕질러</strong> — 같이 가면 더 즐겁잖아, 내가 챙길게<br />함께 좋아하는 사람들을 챙기는 게 즐거운 타입이에요.</li>
+        <li><strong>📖 혼자 방 안에서 깊게 파는 감성 덕질러</strong> — 좋아하는 이유는 나만 알면 돼<br />좋아하는 대상의 이야기를 자기만의 세계로 깊게 받아들이는 타입이에요.</li>
+        <li><strong>🚩 응원 프로젝트를 이끄는 대장 덕질러</strong> — 이번엔 다 같이 크게 응원해 보자<br />좋아하는 마음을 함께하는 행동으로 이끄는 타입이에요.</li>
+        <li><strong>🎧 그날 기분 따라 다시 듣는 무드 덕질러</strong> — 오늘은 이 장면이 보고 싶어<br />그날의 기분에 맞춰 좋아하는 걸 꺼내 보는 타입이에요.</li>
+        <li><strong>📅 일정 알림을 매일 맞춰 두는 성실 덕질러</strong> — 소식은 제때 챙겨야 제맛이지<br />좋아하는 일도 성실하게 챙기는 타입이에요.</li>
+        <li><strong>🔍 세계관과 떡밥을 끝까지 파헤치는 분석 덕질러</strong> — 이 장면은 왜 이렇게 만들었을까?<br />좋아하는 대상의 이야기를 분석하는 게 즐거운 타입이에요.</li>
+        <li><strong>💌 좋은 걸 나누려고 입덕 영상을 만들어 주는 전도 덕질러</strong> — 이거 한번 보면 너도 빠질 거야<br />좋아하는 마음을 다른 사람과 나누며 함께 키우는 타입이에요.</li>
+      </ul>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>좋아하는 대상이 없어도 할 수 있나요?</h3>
+      <p>가능해요. 예전에 좋아했던 것이나 지금 관심 있는 것을 하나 떠올려 답하면 돼요. 결과는 대상이 아니라 좋아하는 마음을 표현하는 방식에 맞춰 나와요.</p>
+      <h3>특정 가수나 작품을 위한 테스트인가요?</h3>
+      <p>아니에요. 어떤 대상에도 쓸 수 있도록 특정 이름은 넣지 않았어요. 스포츠, 캐릭터, 작품, 인물 모두 떠올려 답해도 되고, 결과 이름도 응원봉이나 티켓팅 같은 일반어로만 만들었어요.</p>
+      <h3>질문에 티켓팅과 굿즈 이야기가 나오는 이유는 무엇인가요?</h3>
+      <p>티켓팅 날짜를 챙기는지 당일에 떠올리는지, 굿즈를 실용으로 고르는지 이야기로 고르는지가 계획과 즉흥, 현실과 상상을 잘 나눠 줘서예요. 좋아하는 마음의 크기를 재는 질문이 아니에요.</p>
+      <h3>덕질을 많이 하는 사람이 더 좋은 결과인가요?</h3>
+      <p>아니에요. 현장에서 떼창하는 덕질러도, 조용히 오래 좋아하는 덕질러도 좋고 나쁨이 없어요. 얼마나 쓰는지나 몇 번 가는지와 상관없이 좋아하는 방식만 나눴어요.</p>
+      <h3>궁합이 좋은 덕질러는 어떻게 짝지었나요?</h3>
+      <p>비슷한 방식이 아니라 서로 반대에 가까운 방식으로 묶었어요. 무대만 보면 떼창하는 현장 덕질러와 굿즈를 표로 정리하는 기록 덕질러, 조용히 오래 좋아하는 은은한 덕질러와 새 분야로 입덕하는 탐험 덕질러가 서로의 짝이에요.</p>
+      <h3>내 답변이나 결과가 저장되나요?</h3>
+      <p>답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="../../privacy.html">개인정보처리방침</a>에서 확인할 수 있어요.</p>
+
+      <h2>함께 보면 좋은 테스트</h2>
+      <ul>
+        <li><a href="../../tests/chat-reply/index.html"><strong>나는 어떤 답장일까?</strong></a> — 좋아하는 걸 이야기할 때 나오는 메시지 답장 습관을 함께 볼 수 있어요</li>
+        <li><a href="../../tests/ideal-sang/index.html"><strong>내 이상형은 어떤 상일까?</strong></a> — 좋아하는 마음이 향하는 분위기를 동물상으로 알아볼 수 있어요</li>
+        <li><a href="../../tests/bag-item/index.html"><strong>나는 어떤 가방 속 물건일까?</strong></a> — 굿즈와 소지품을 챙기는 방식을 가방 속 물건으로 이어 볼 수 있어요</li>
+      </ul>
+    </section>
+<!-- STATIC-INFO:END -->
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="../../index.html">홈</a>
+        <a href="../../about.html">소개</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../terms.html">이용약관</a>
+        <a href="../../privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 성향 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../assets/js/tests-data.js"></script>
+  <script src="config.js"></script>
+  <script src="../../assets/js/engine.js"></script>
+  <script src="../../assets/js/ad-config.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+  <script>
+    MbtiEngine.init(window.QUIZ_CONFIG);
+  </script>
+</body>
+</html>

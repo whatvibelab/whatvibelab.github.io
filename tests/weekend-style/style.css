@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 주말일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fff8f1;
+  --card-bg: #ffffff;
+  --text: #3c2f28;
+  --text-sub: #a58f80;
+  --accent: #f08a5d;
+  --accent-dark: #d46f43;
+  --accent-soft: #ffe6d5;
+  --border: #f7dfcf;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}

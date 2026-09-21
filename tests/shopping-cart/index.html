@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>나는 어떤 장바구니일까? | 무슨상연구소</title>
+<meta name="description" content="물건을 담고 고르는 습관으로 알아보는 나의 장바구니 유형 테스트" />
+<meta property="og:title" content="나는 어떤 장바구니일까?" />
+<meta property="og:description" content="물건을 담고 고르는 습관으로 알아보는 나의 장바구니 유형 테스트" />
+<link rel="stylesheet" href="../../assets/css/common.css" />
+<link rel="stylesheet" href="style.css" />
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나는 어떤 장바구니일까? | 무슨상연구소","description":"물건을 담고 고르는 습관으로 알아보는 나의 장바구니 유형 테스트","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"쇼핑을 자주 하지 않아도 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"그럼요. 마음에 드는 물건을 발견했다면 어떻게 할지 상상하며 답하면 돼요. 결과는 쇼핑 횟수가 아니라 물건을 담고 고르는 나의 습관에 맞춰 나와요."}},{"@type":"Question","name":"소비 습관을 진단해 주는 테스트인가요?","acceptedAnswer":{"@type":"Answer","text":"아니에요. 소비를 평가하거나 절약 조언을 하지 않아요. 결과에 나온 장바구니는 물건을 고르는 방식을 재미있게 빗댄 표현이고, 알뜰한 쪽도 화끈한 쪽도 좋고 나쁨이 없어요."}},{"@type":"Question","name":"질문에 쿠폰과 배송 이야기가 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"쿠폰을 미리 확인해 두는지 결제 화면에서 발견하는지, 배송이 늦어질 때 원인부터 확인하는지 아쉬워하는지가 계획과 즉흥, 논리와 마음을 잘 나눠 줘서예요."}},{"@type":"Question","name":"특정 쇼핑몰이나 앱을 써야 하나요?","acceptedAnswer":{"@type":"Answer","text":"필요 없어요. 질문에는 어떤 서비스 이름도 쓰지 않았고, 온라인이든 오프라인이든 물건을 담고 고르는 나의 모습을 떠올려 답하면 돼요. 자주 쓰는 사이트가 없어도 괜찮아요."}},{"@type":"Question","name":"궁합이 좋은 장바구니는 어떻게 짝지었나요?","acceptedAnswer":{"@type":"Answer","text":"비슷한 장바구니가 아니라 서로 반대에 가까운 장바구니로 묶었어요. 보는 순간 담는 번개 장바구니와 가격 비교표까지 만드는 꼼꼼 장바구니, 담아만 두고 고민하는 신중 장바구니와 신상만 담는 탐험 장바구니가 서로의 짝이에요."}},{"@type":"Question","name":"내 답변이나 결과가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 개인정보처리방침에서 확인할 수 있어요."}}]}]}</script>
+<script src="../../assets/js/analytics-config.js"></script>
+<script src="../../assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="../../index.html"><img class="site-brand-mark" src="../../assets/img/logo.svg" alt="" width="22" height="22" />무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="../../index.html">테스트</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../about.html">소개</a>
+      </nav>
+    </header>
+    <p class="disclaimer">재미로 보는 테스트예요. 심리검사가 아니에요.</p>
+<!-- SITE-HEADER:END -->
+        <a class="home-link" href="../../index.html">← 다른 테스트 보기</a>
+
+    <!-- 인트로 -->
+    <section id="screen-intro" class="screen">
+      <div class="intro-emoji" id="intro-emoji">🛒</div>
+      <p class="kicker" id="intro-kicker"></p>
+      <h1 class="intro-title" id="intro-title"></h1>
+      <p class="intro-desc" id="intro-desc"></p>
+      <p class="intro-meta" id="intro-meta"></p>
+      <div class="nickname-field">
+        <label class="nickname-label" for="nickname-input">이 닉네임으로 결과를 받아볼까요?</label>
+        <input type="text" id="nickname-input" class="nickname-input" placeholder="닉네임 입력 (선택)" maxlength="10" autocomplete="off" />
+      </div>
+      <button type="button" class="btn btn-primary" id="start-btn"></button>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button type="button" class="btn-ghost" id="quiz-back-btn">← 이전</button>
+        <span class="quiz-count" id="quiz-count"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+    </section>
+
+    <!-- 결과 -->
+    <section id="screen-result" class="screen" hidden>
+      <p class="result-badge" id="result-badge"></p>
+      <div class="result-emoji" id="result-emoji"></div>
+      <h1 class="result-name" id="result-name"></h1>
+      <p class="result-tagline" id="result-tagline"></p>
+      <p class="result-desc" id="result-desc"></p>
+      <ul class="result-traits" id="result-traits"></ul>
+      <div class="result-match" id="result-match" hidden></div>
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="save-card-btn"></button>
+        <button type="button" class="btn btn-secondary" id="share-btn"></button>
+        <button type="button" class="btn btn-secondary" id="retake-btn"></button>
+      </div>
+
+      <div class="result-recommend" id="result-recommend" hidden>
+        <p class="result-recommend-title">다른 테스트도 해볼래요?</p>
+        <div class="result-recommend-list" id="result-recommend-list"></div>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="result-bottom" hidden></div>
+    </section>
+
+    
+    
+    <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<section class="static-info" id="static-info">
+      <h2>나는 어떤 장바구니일까? 테스트 소개</h2>
+      <p>물건을 담고 고르는 방식에 나의 성향이 그대로 나와요. 장바구니를 다루는 습관으로 알아보는 나의 장바구니 유형!</p>
+
+      <h2>이 테스트는 이렇게 만들었어요</h2>
+      <p>장바구니는 무엇을 담았느냐보다 담고 고르고 결제하는 방식이 사람마다 달라서, 마음에 드는 물건을 발견한 순간부터 결제 뒤까지를 16가지 장면으로 나눴어요. 소비의 좋고 나쁨을 가르지 않고 습관의 차이만 담았고, 궁합은 서로 정반대라 잘 맞는 짝으로 묶었어요.</p>
+
+      <h2>이런 분께 추천해요</h2>
+      <ul>
+        <li>장바구니에 담아 두고 오래 고민하는 분</li>
+        <li>친구와 서로의 쇼핑 습관을 비교해 보고 싶은 분</li>
+        <li>후기를 꼼꼼히 읽는 편인지 마음에 들면 바로 담는 편인지 궁금한 분</li>
+      </ul>
+
+      <h2>질문 미리보기</h2>
+      <ul>
+        <li><strong>1번. 마음에 드는 물건을 발견했다. 나는?</strong><br />A. 친구에게 링크를 보내 의견부터 묻는다<br />B. 혼자 조용히 더 살펴본다</li>
+        <li><strong>5번. 물건을 고를 때 나는?</strong><br />A. 소재와 크기 같은 구체적인 정보부터 본다<br />B. 사진의 분위기와 쓰임새를 상상해 본다</li>
+        <li><strong>9번. 친구가 살까 말까 고민한다. 나는?</strong><br />A. 필요성과 대안을 비교해서 정리해 준다<br />B. 마음에 든다면 잘 어울린다고 응원해 준다</li>
+        <li><strong>13번. 장바구니 속 물건은?</strong><br />A. 종류별로 정리하고 주기적으로 비운다<br />B. 담아 둔 채로 오래 쌓아 둔다</li>
+      </ul>
+
+      <h2>16가지 결과 미리보기</h2>
+      <ul>
+        <li><strong>🛍️ 보는 순간 결제까지 3초 걸리는 번개 장바구니</strong> — 예쁘면 됐지, 일단 담자<br />마음에 드는 순간 바로 행동하는 타입이에요.</li>
+        <li><strong>📋 가격 비교표까지 만들어 두는 꼼꼼 장바구니</strong> — 비교하고 나서 담아야 마음이 놓여<br />정보를 충분히 모은 뒤에야 결정하는 타입이에요.</li>
+        <li><strong>🎁 가족 것만 잔뜩 담긴 배려 장바구니</strong> — 내 건 나중에, 네 건 먼저<br />나보다 가까운 사람의 필요를 먼저 살피는 타입이에요.</li>
+        <li><strong>⚡ 품절 직전에 사수하는 타임어택 장바구니</strong> — 지금 아니면 없어!<br />기회가 보이면 빠르게 움직이는 타입이에요.</li>
+        <li><strong>🕯️ 담아만 두고 오래 고민하는 신중 장바구니</strong> — 마음이 정리될 때까지 담아 둘게<br />정말 필요한지 마음속으로 오래 헤아리는 타입이에요.</li>
+        <li><strong>🧪 처음 보는 물건만 담는 신상 탐험 장바구니</strong> — 이건 뭐야, 담아 봐야지<br />새로 나온 것에 호기심이 가장 먼저 반응하는 타입이에요.</li>
+        <li><strong>🧮 필요와 불필요를 나눠 정리하는 정예 장바구니</strong> — 담는 것보다 빼는 게 더 중요해<br />꼭 필요한 것만 남기는 걸 즐기는 타입이에요.</li>
+        <li><strong>🎈 친구에게 링크를 보내 함께 고르는 수다 장바구니</strong> — 이거 어때? 저거 어때?<br />물건을 고르는 시간도 함께하는 즐거움으로 만드는 타입이에요.</li>
+        <li><strong>🔧 쓸모 있는 물건만 조용히 담는 실속 장바구니</strong> — 필요한 것만 딱<br />쓰임이 분명한 물건에 마음이 가는 타입이에요.</li>
+        <li><strong>🤝 같이 사면 더 좋다고 제안하는 나눔 장바구니</strong> — 우리 같이 주문할래?<br />함께 쓰고 나누는 게 즐거운 타입이에요.</li>
+        <li><strong>🌷 분위기에 끌려 담는 감성 장바구니</strong> — 이 물건, 왠지 내 이야기 같아<br />물건에서 이야기와 분위기를 발견하는 타입이에요.</li>
+        <li><strong>🏁 계획한 만큼만 확실하게 끝내는 목표 장바구니</strong> — 계획한 만큼만, 확실하게<br />정한 예산과 목표를 지키며 결정하는 타입이에요.</li>
+        <li><strong>🍃 그날 기분에 맞춰 담았다 뺐다 하는 무드 장바구니</strong> — 오늘은 이 색이 끌리네<br />그날의 기분에 따라 마음이 바뀌는 게 자연스러운 타입이에요.</li>
+        <li><strong>📦 정기 구매까지 정리해 둔 살림 장바구니</strong> — 필요한 건 제때 채워 두는 거야<br />필요한 물건이 떨어지기 전에 미리 챙기는 타입이에요.</li>
+        <li><strong>🔍 후기를 끝까지 읽고서야 담는 분석 장바구니</strong> — 이 물건은 왜 이 가격일까?<br />물건 뒤에 숨은 이유가 궁금한 타입이에요.</li>
+        <li><strong>💝 친구 생일 선물부터 챙겨 담는 선물 장바구니</strong> — 네가 좋아할 만한 걸 찾았어<br />다른 사람이 기뻐하는 모습이 가장 큰 보람인 타입이에요.</li>
+      </ul>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>쇼핑을 자주 하지 않아도 할 수 있나요?</h3>
+      <p>그럼요. 마음에 드는 물건을 발견했다면 어떻게 할지 상상하며 답하면 돼요. 결과는 쇼핑 횟수가 아니라 물건을 담고 고르는 나의 습관에 맞춰 나와요.</p>
+      <h3>소비 습관을 진단해 주는 테스트인가요?</h3>
+      <p>아니에요. 소비를 평가하거나 절약 조언을 하지 않아요. 결과에 나온 장바구니는 물건을 고르는 방식을 재미있게 빗댄 표현이고, 알뜰한 쪽도 화끈한 쪽도 좋고 나쁨이 없어요.</p>
+      <h3>질문에 쿠폰과 배송 이야기가 나오는 이유는 무엇인가요?</h3>
+      <p>쿠폰을 미리 확인해 두는지 결제 화면에서 발견하는지, 배송이 늦어질 때 원인부터 확인하는지 아쉬워하는지가 계획과 즉흥, 논리와 마음을 잘 나눠 줘서예요.</p>
+      <h3>특정 쇼핑몰이나 앱을 써야 하나요?</h3>
+      <p>필요 없어요. 질문에는 어떤 서비스 이름도 쓰지 않았고, 온라인이든 오프라인이든 물건을 담고 고르는 나의 모습을 떠올려 답하면 돼요. 자주 쓰는 사이트가 없어도 괜찮아요.</p>
+      <h3>궁합이 좋은 장바구니는 어떻게 짝지었나요?</h3>
+      <p>비슷한 장바구니가 아니라 서로 반대에 가까운 장바구니로 묶었어요. 보는 순간 담는 번개 장바구니와 가격 비교표까지 만드는 꼼꼼 장바구니, 담아만 두고 고민하는 신중 장바구니와 신상만 담는 탐험 장바구니가 서로의 짝이에요.</p>
+      <h3>내 답변이나 결과가 저장되나요?</h3>
+      <p>답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="../../privacy.html">개인정보처리방침</a>에서 확인할 수 있어요.</p>
+
+      <h2>함께 보면 좋은 테스트</h2>
+      <ul>
+        <li><a href="../../tests/bag-item/index.html"><strong>나는 어떤 가방 속 물건일까?</strong></a> — 장바구니에 담은 물건을 넣어 다니는 가방 속 습관을 이어서 볼 수 있어요</li>
+        <li><a href="../../tests/chat-reply/index.html"><strong>나는 어떤 답장일까?</strong></a> — 친구에게 링크를 보내 의견을 묻는 메시지 습관을 함께 볼 수 있어요</li>
+        <li><a href="../../tests/dujjonku/index.html"><strong>나는 어떤 두쫀쿠일까?</strong></a> — 인기 간식을 사러 가는 계획과 즉흥의 취향을 초콜릿 쿠키로 비교해 볼 수 있어요</li>
+      </ul>
+    </section>
+<!-- STATIC-INFO:END -->
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="../../index.html">홈</a>
+        <a href="../../about.html">소개</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../terms.html">이용약관</a>
+        <a href="../../privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 성향 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../assets/js/tests-data.js"></script>
+  <script src="config.js"></script>
+  <script src="../../assets/js/engine.js"></script>
+  <script src="../../assets/js/ad-config.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+  <script>
+    MbtiEngine.init(window.QUIZ_CONFIG);
+  </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>나는 어떤 여행 코스일까? | 무슨상연구소</title>
+<meta name="description" content="여행을 계획하고 다니는 방식으로 알아보는 나의 여행 코스 유형 테스트" />
+<meta property="og:title" content="나는 어떤 여행 코스일까?" />
+<meta property="og:description" content="여행을 계획하고 다니는 방식으로 알아보는 나의 여행 코스 유형 테스트" />
+<link rel="stylesheet" href="../../assets/css/common.css" />
+<link rel="stylesheet" href="style.css" />
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나는 어떤 여행 코스일까? | 무슨상연구소","description":"여행을 계획하고 다니는 방식으로 알아보는 나의 여행 코스 유형 테스트","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"가 본 여행지가 적어도 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"그럼요. 다녀온 여행이 적어도 여행을 간다면 어떻게 움직일지 상상해서 답하면 돼요. 결과는 여행 경험이 아니라 계획하고 다니는 나의 방식에 맞춰 나와요."}},{"@type":"Question","name":"국내 여행과 해외 여행 중 어느 쪽 기준인가요?","acceptedAnswer":{"@type":"Answer","text":"둘 다 상관없어요. 질문에 특정 지역이나 나라 이름을 넣지 않았고, 숙소·예약·지도처럼 어디를 가더라도 공통인 장면만 골랐어요. 다녀온 곳이든 갈 예정인 곳이든 그대로 답할 수 있어요."}},{"@type":"Question","name":"질문에 일정이 틀어졌을 때가 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"여행은 계획대로 되지 않을 때 그 사람의 방식이 가장 잘 드러나서예요. 계획을 다시 짜는지 오히려 좋다며 흐름에 맡기는지가 계획과 즉흥을 나눠 줘요."}},{"@type":"Question","name":"계획형이 더 좋은 여행자인가요?","acceptedAnswer":{"@type":"Answer","text":"아니에요. 분 단위로 도는 정석 코스도 발길 닿는 대로 걷는 여유 코스도 좋고 나쁨이 없어요. 여행 스타일이 서로 달라서 같이 가면 보완되는 짝으로 만들었어요."}},{"@type":"Question","name":"궁합이 좋은 코스는 어떻게 짝지었나요?","acceptedAnswer":{"@type":"Answer","text":"비슷한 코스가 아니라 서로 반대에 가까운 코스로 묶었어요. 잠은 집에서 자면 된다는 풀타임 코스와 분 단위 일정의 정석 코스, 바다를 오래 보는 조용한 코스와 지도를 끄고 헤매는 탐험 코스가 서로의 짝이에요."}},{"@type":"Question","name":"내 답변이나 결과가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 개인정보처리방침에서 확인할 수 있어요."}}]}]}</script>
+<script src="../../assets/js/analytics-config.js"></script>
+<script src="../../assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="../../index.html"><img class="site-brand-mark" src="../../assets/img/logo.svg" alt="" width="22" height="22" />무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="../../index.html">테스트</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../about.html">소개</a>
+      </nav>
+    </header>
+    <p class="disclaimer">재미로 보는 테스트예요. 심리검사가 아니에요.</p>
+<!-- SITE-HEADER:END -->
+        <a class="home-link" href="../../index.html">← 다른 테스트 보기</a>
+
+    <!-- 인트로 -->
+    <section id="screen-intro" class="screen">
+      <div class="intro-emoji" id="intro-emoji">🧳</div>
+      <p class="kicker" id="intro-kicker"></p>
+      <h1 class="intro-title" id="intro-title"></h1>
+      <p class="intro-desc" id="intro-desc"></p>
+      <p class="intro-meta" id="intro-meta"></p>
+      <div class="nickname-field">
+        <label class="nickname-label" for="nickname-input">이 닉네임으로 결과를 받아볼까요?</label>
+        <input type="text" id="nickname-input" class="nickname-input" placeholder="닉네임 입력 (선택)" maxlength="10" autocomplete="off" />
+      </div>
+      <button type="button" class="btn btn-primary" id="start-btn"></button>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button type="button" class="btn-ghost" id="quiz-back-btn">← 이전</button>
+        <span class="quiz-count" id="quiz-count"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+    </section>
+
+    <!-- 결과 -->
+    <section id="screen-result" class="screen" hidden>
+      <p class="result-badge" id="result-badge"></p>
+      <div class="result-emoji" id="result-emoji"></div>
+      <h1 class="result-name" id="result-name"></h1>
+      <p class="result-tagline" id="result-tagline"></p>
+      <p class="result-desc" id="result-desc"></p>
+      <ul class="result-traits" id="result-traits"></ul>
+      <div class="result-match" id="result-match" hidden></div>
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="save-card-btn"></button>
+        <button type="button" class="btn btn-secondary" id="share-btn"></button>
+        <button type="button" class="btn btn-secondary" id="retake-btn"></button>
+      </div>
+
+      <div class="result-recommend" id="result-recommend" hidden>
+        <p class="result-recommend-title">다른 테스트도 해볼래요?</p>
+        <div class="result-recommend-list" id="result-recommend-list"></div>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="result-bottom" hidden></div>
+    </section>
+
+    
+    
+    <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<section class="static-info" id="static-info">
+      <h2>나는 어떤 여행 코스일까? 테스트 소개</h2>
+      <p>여행을 계획하고 다니는 방식에 나의 성향이 그대로 나와요. 여행 습관으로 알아보는 나의 여행 코스 유형!</p>
+
+      <h2>이 테스트는 이렇게 만들었어요</h2>
+      <p>여행은 계획을 짜는 방식과 낯선 곳에서 움직이는 방식이 사람마다 달라서, 여행을 제안받은 순간부터 마지막 날까지를 16가지 장면으로 나눴어요. 특정 지역 이름 없이 어디를 가더라도 답할 수 있게 만들었고, 궁합은 서로 정반대라 함께 가면 잘 맞는 짝으로 묶었어요.</p>
+
+      <h2>이런 분께 추천해요</h2>
+      <ul>
+        <li>여행을 계획하는 방식에 나만의 스타일이 있는 분</li>
+        <li>여행 친구와 서로의 여행 습관을 비교해 보고 싶은 분</li>
+        <li>일정표를 짜는 것과 발길 닿는 대로 가는 것 사이에서 고민하는 분</li>
+      </ul>
+
+      <h2>질문 미리보기</h2>
+      <ul>
+        <li><strong>1번. 친구가 &quot;우리 여행 가자!&quot;라고 한다. 나는?</strong><br />A. 단톡방에 사람을 더 모으고 날짜부터 잡는다<br />B. 좋아, 근데 누구와 갈지 조용히 생각해 본다</li>
+        <li><strong>5번. 여행지를 고를 때 나는?</strong><br />A. 후기가 검증된 유명한 곳을 고른다<br />B. 아직 덜 알려진 새로운 곳에 끌린다</li>
+        <li><strong>9번. 일행이 다리가 아프다고 한다. 나는?</strong><br />A. 일정을 조정해 효율적으로 쉴 곳을 찾는다<br />B. 일단 앉아서 이야기를 들어 주며 같이 쉰다</li>
+        <li><strong>13번. 출발 전, 나는?</strong><br />A. 일정표를 시간 단위로 정리해 둔다<br />B. 큰 방향만 정하고 나머지는 가서 정한다</li>
+      </ul>
+
+      <h2>16가지 결과 미리보기</h2>
+      <ul>
+        <li><strong>🎡 놀이공원 폐장까지 노는 풀타임 코스</strong> — 잠은 집에서 자면 되지<br />여행의 모든 순간을 꽉 채워 즐기는 타입이에요.</li>
+        <li><strong>🗺️ 분 단위 일정표대로 도는 정석 코스</strong> — 계획대로 가야 마음이 편해<br />미리 짠 계획대로 움직일 때 가장 안정을 느끼는 타입이에요.</li>
+        <li><strong>🏡 일행 취향까지 맞춘 편안한 숙소 중심 코스</strong> — 다들 편하게 쉬었으면 좋겠어<br />함께 가는 사람들이 편안한지가 가장 중요한 타입이에요.</li>
+        <li><strong>🏄 도착해서 바로 정하는 액티비티 코스</strong> — 일단 해 보고 정하자<br />생각보다 몸이 먼저 움직이는 타입이에요.</li>
+        <li><strong>🌊 바다를 오래 바라보는 조용한 코스</strong> — 말 없이도 충분한 여행<br />풍경 앞에서 마음이 정리되는 타입이에요.</li>
+        <li><strong>🧭 지도를 끄고 골목을 헤매는 탐험 코스</strong> — 길을 잃으면 새로운 길이 생겨<br />정해진 길보다 예상 밖의 길이 더 재미있는 타입이에요.</li>
+        <li><strong>🧮 동선까지 최적화한 완벽 코스</strong> — 이동 시간도 계획의 일부야<br />하루의 흐름을 효율적으로 설계하는 게 즐거운 타입이에요.</li>
+        <li><strong>🎈 만난 사람 따라 계획을 바꾸는 즉흥 코스</strong> — 어디로 갈지는 가면서 정하자<br />새로운 사람과 이야기가 나타나면 계획도 유연하게 바꾸는 타입이에요.</li>
+        <li><strong>🎒 짐 하나로 가볍게 다니는 미니멀 코스</strong> — 필요한 것만 있으면 충분해<br />가볍게 움직이는 게 가장 편한 타입이에요.</li>
+        <li><strong>🍽️ 일행 입맛을 다 맞춘 맛집 릴레이 코스</strong> — 다 같이 맛있게 먹어야 여행이지<br />함께 가는 사람들이 즐거운 게 가장 큰 기쁨인 타입이에요.</li>
+        <li><strong>📷 골목과 카페를 사진에 담는 감성 산책 코스</strong> — 그날의 분위기를 담아 가고 싶어<br />소소한 풍경에서 큰 감동을 받는 타입이에요.</li>
+        <li><strong>🚀 출발 전에 예약까지 끝낸 실행 코스</strong> — 이번 여행 목표는 정해졌어<br />목표를 세우면 빠르게 실행에 옮기는 타입이에요.</li>
+        <li><strong>🌿 발길 닿는 대로 걷는 여유 코스</strong> — 여기서 좀 더 앉아 있다 가자<br />정해진 목적지보다 지금 이 순간이 중요한 타입이에요.</li>
+        <li><strong>✅ 체크리스트를 다 지우는 알찬 코스</strong> — 하루를 알차게 쓰는 게 여행이지<br />정한 일정을 빈틈없이 해내는 게 뿌듯한 타입이에요.</li>
+        <li><strong>📚 그곳의 역사를 찾아보다 시간 가는 줄 모르는 탐구 코스</strong> — 이 건물은 왜 여기 있을까?<br />눈앞의 풍경 뒤에 숨은 이야기가 궁금한 타입이에요.</li>
+        <li><strong>🎁 일행 취향에 맞춰 이끌어 주는 가이드 코스</strong> — 다들 좋아할 만한 데로 안내할게<br />함께 가는 사람들이 즐거워하는 모습에서 보람을 느끼는 타입이에요.</li>
+      </ul>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>가 본 여행지가 적어도 할 수 있나요?</h3>
+      <p>그럼요. 다녀온 여행이 적어도 여행을 간다면 어떻게 움직일지 상상해서 답하면 돼요. 결과는 여행 경험이 아니라 계획하고 다니는 나의 방식에 맞춰 나와요.</p>
+      <h3>국내 여행과 해외 여행 중 어느 쪽 기준인가요?</h3>
+      <p>둘 다 상관없어요. 질문에 특정 지역이나 나라 이름을 넣지 않았고, 숙소·예약·지도처럼 어디를 가더라도 공통인 장면만 골랐어요. 다녀온 곳이든 갈 예정인 곳이든 그대로 답할 수 있어요.</p>
+      <h3>질문에 일정이 틀어졌을 때가 나오는 이유는 무엇인가요?</h3>
+      <p>여행은 계획대로 되지 않을 때 그 사람의 방식이 가장 잘 드러나서예요. 계획을 다시 짜는지 오히려 좋다며 흐름에 맡기는지가 계획과 즉흥을 나눠 줘요.</p>
+      <h3>계획형이 더 좋은 여행자인가요?</h3>
+      <p>아니에요. 분 단위로 도는 정석 코스도 발길 닿는 대로 걷는 여유 코스도 좋고 나쁨이 없어요. 여행 스타일이 서로 달라서 같이 가면 보완되는 짝으로 만들었어요.</p>
+      <h3>궁합이 좋은 코스는 어떻게 짝지었나요?</h3>
+      <p>비슷한 코스가 아니라 서로 반대에 가까운 코스로 묶었어요. 잠은 집에서 자면 된다는 풀타임 코스와 분 단위 일정의 정석 코스, 바다를 오래 보는 조용한 코스와 지도를 끄고 헤매는 탐험 코스가 서로의 짝이에요.</p>
+      <h3>내 답변이나 결과가 저장되나요?</h3>
+      <p>답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="../../privacy.html">개인정보처리방침</a>에서 확인할 수 있어요.</p>
+
+      <h2>함께 보면 좋은 테스트</h2>
+      <ul>
+        <li><a href="../../tests/bag-item/index.html"><strong>나는 어떤 가방 속 물건일까?</strong></a> — 여행 짐을 싸고 정리하는 습관을 가방 속 물건으로 이어서 볼 수 있어요</li>
+        <li><a href="../../tests/four-cut/index.html"><strong>나는 어떤 네컷 포즈일까?</strong></a> — 여행지에서 친구와 사진을 찍는 방식이 궁금할 때 함께 해 볼 수 있어요</li>
+        <li><a href="../../tests/wake-alarm/index.html"><strong>나는 어떤 알람일까?</strong></a> — 여행 아침에 눈을 뜨는 나의 알람 습관도 비교해 볼 수 있어요</li>
+      </ul>
+    </section>
+<!-- STATIC-INFO:END -->
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="../../index.html">홈</a>
+        <a href="../../about.html">소개</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../terms.html">이용약관</a>
+        <a href="../../privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 성향 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../assets/js/tests-data.js"></script>
+  <script src="config.js"></script>
+  <script src="../../assets/js/engine.js"></script>
+  <script src="../../assets/js/ad-config.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+  <script>
+    MbtiEngine.init(window.QUIZ_CONFIG);
+  </script>
+</body>
+</html>
