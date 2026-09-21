@@ -176,4 +176,13 @@ window.TESTS = [
     path: "tests/shopping-cart/index.html",
     status: "live",
   },
+  {
+    id: "room-vibe",
+    emoji: "🏠",
+    color: "#f0e6d6",
+    title: "나는 어떤 방일까?",
+    subtitle: "내 방을 꾸미고 쓰는 습관으로 알아보는 나의 방 유형 테스트",
+    path: "tests/room-vibe/index.html",
+    status: "live",
+  },
 ];

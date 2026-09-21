@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>나는 어떤 방일까? | 무슨상연구소</title>
+<meta name="description" content="내 방을 꾸미고 쓰는 습관으로 알아보는 나의 방 유형 테스트" />
+<meta property="og:title" content="나는 어떤 방일까?" />
+<meta property="og:description" content="내 방을 꾸미고 쓰는 습관으로 알아보는 나의 방 유형 테스트" />
+<link rel="stylesheet" href="../../assets/css/common.css" />
+<link rel="stylesheet" href="style.css" />
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나는 어떤 방일까? | 무슨상연구소","description":"내 방을 꾸미고 쓰는 습관으로 알아보는 나의 방 유형 테스트","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"혼자 살지 않아도 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"그럼요. 본가나 기숙사, 룸메이트와 함께 쓰는 방이어도 내 자리를 떠올려 답하면 돼요. 결과는 사는 형태가 아니라 내 공간을 꾸미고 쓰는 나의 습관에 맞춰 나와요."}},{"@type":"Question","name":"방이 깔끔해야 좋은 결과인가요?","acceptedAnswer":{"@type":"Answer","text":"아니에요. 모든 물건이 제자리에 있는 칼각 정리방도, 손이 닿는 곳이 곧 자리인 실험방도 좋고 나쁨이 없어요. 정리 실력이나 인테리어 센스를 평가하는 테스트가 아니에요."}},{"@type":"Question","name":"질문에 이불과 물건 자리 이야기가 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"이불을 아침에 바로 정리하는지 밤에 다시 쓸 거라 그대로 두는지, 새 물건을 사면 놓을 자리를 먼저 정하는지가 계획과 즉흥을 가장 자연스럽게 나눠 줘서예요."}},{"@type":"Question","name":"방을 잘 꾸미지 않는 편이어도 결과가 나오나요?","acceptedAnswer":{"@type":"Answer","text":"네. 꾸미는 정도보다 방을 대하는 태도를 묻는 테스트라서 가구가 적어도 괜찮아요. 손님이 왔을 때, 물건을 정리할 때 어떻게 하는지 떠올려 답하면 돼요."}},{"@type":"Question","name":"궁합이 좋은 방은 어떻게 짝지었나요?","acceptedAnswer":{"@type":"Answer","text":"비슷한 방이 아니라 서로 반대에 가까운 방으로 묶었어요. 친구들이 자꾸 모이는 아지트방과 칼각 정리방, 스탠드 하나만 켜 두는 고요한 밤방과 가구 배치가 매달 바뀌는 실험방이 서로의 짝이에요."}},{"@type":"Question","name":"내 답변이나 결과가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 개인정보처리방침에서 확인할 수 있어요."}}]}]}</script>
+<script src="../../assets/js/analytics-config.js"></script>
+<script src="../../assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="../../index.html"><img class="site-brand-mark" src="../../assets/img/logo.svg" alt="" width="22" height="22" />무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="../../index.html">테스트</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../about.html">소개</a>
+      </nav>
+    </header>
+    <p class="disclaimer">재미로 보는 테스트예요. 심리검사가 아니에요.</p>
+<!-- SITE-HEADER:END -->
+        <a class="home-link" href="../../index.html">← 다른 테스트 보기</a>
+
+    <!-- 인트로 -->
+    <section id="screen-intro" class="screen">
+      <div class="intro-emoji" id="intro-emoji">🏠</div>
+      <p class="kicker" id="intro-kicker"></p>
+      <h1 class="intro-title" id="intro-title"></h1>
+      <p class="intro-desc" id="intro-desc"></p>
+      <p class="intro-meta" id="intro-meta"></p>
+      <div class="nickname-field">
+        <label class="nickname-label" for="nickname-input">이 닉네임으로 결과를 받아볼까요?</label>
+        <input type="text" id="nickname-input" class="nickname-input" placeholder="닉네임 입력 (선택)" maxlength="10" autocomplete="off" />
+      </div>
+      <button type="button" class="btn btn-primary" id="start-btn"></button>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button type="button" class="btn-ghost" id="quiz-back-btn">← 이전</button>
+        <span class="quiz-count" id="quiz-count"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+    </section>
+
+    <!-- 결과 -->
+    <section id="screen-result" class="screen" hidden>
+      <p class="result-badge" id="result-badge"></p>
+      <div class="result-emoji" id="result-emoji"></div>
+      <h1 class="result-name" id="result-name"></h1>
+      <p class="result-tagline" id="result-tagline"></p>
+      <p class="result-desc" id="result-desc"></p>
+      <ul class="result-traits" id="result-traits"></ul>
+      <div class="result-match" id="result-match" hidden></div>
+      <div class="result-actions">
+        <button type="button" class="btn btn-primary" id="save-card-btn"></button>
+        <button type="button" class="btn btn-secondary" id="share-btn"></button>
+        <button type="button" class="btn btn-secondary" id="retake-btn"></button>
+      </div>
+
+      <div class="result-recommend" id="result-recommend" hidden>
+        <p class="result-recommend-title">다른 테스트도 해볼래요?</p>
+        <div class="result-recommend-list" id="result-recommend-list"></div>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="result-bottom" hidden></div>
+    </section>
+
+    
+    
+    <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<section class="static-info" id="static-info">
+      <h2>나는 어떤 방일까? 테스트 소개</h2>
+      <p>내 방을 꾸미고 쓰는 방식에 나의 성향이 그대로 담겨요. 방을 대하는 습관으로 알아보는 나의 방 유형!</p>
+
+      <h2>이 테스트는 이렇게 만들었어요</h2>
+      <p>방은 어떤 가구를 두었느냐보다 방을 꾸미고 쓰는 습관이 사람마다 달라서, 방에 들어선 순간부터 정리와 손님맞이까지를 16가지 장면으로 나눴어요. 특정 가구 브랜드나 인테리어 유행어 없이 일반 표현만 썼고, 궁합은 서로 정반대라 잘 맞는 짝으로 묶었어요.</p>
+
+      <h2>이런 분께 추천해요</h2>
+      <ul>
+        <li>내 방을 꾸미고 쓰는 나만의 방식이 있는 분</li>
+        <li>친구와 서로의 방 스타일을 비교해 보고 싶은 분</li>
+        <li>정리를 잘하는 편인지 편한 대로 두는 편인지 궁금한 분</li>
+      </ul>
+
+      <h2>질문 미리보기</h2>
+      <ul>
+        <li><strong>1번. 친구가 &quot;너희 집 가도 돼?&quot;라고 한다. 나는?</strong><br />A. 좋아! 바로 치우고 초대한다<br />B. 내 공간이라 잠깐 생각할 시간이 필요하다</li>
+        <li><strong>5번. 가구나 소품을 고를 때 나는?</strong><br />A. 크기와 쓰임을 꼼꼼히 확인한다<br />B. 분위기와 느낌이 먼저 마음에 든다</li>
+        <li><strong>9번. 같이 사는 사람이 내 물건을 옮겨 놓았다. 나는?</strong><br />A. 물건 위치의 규칙을 정리해서 이야기한다<br />B. 서운해도 분위기를 위해 넘어간다</li>
+        <li><strong>13번. 방 청소는?</strong><br />A. 정해 둔 요일에 한다<br />B. 눈에 거슬릴 때 몰아서 한다</li>
+      </ul>
+
+      <h2>16가지 결과 미리보기</h2>
+      <ul>
+        <li><strong>🎉 친구들이 자꾸 모이는 아지트방</strong> — 우리 집에서 놀자, 다 와!<br />사람이 모이는 공간이 가장 좋은 타입이에요.</li>
+        <li><strong>📐 모든 물건이 제자리에 있는 칼각 정리방</strong> — 있어야 할 곳에 있어야 마음이 놓여<br />정돈된 공간에서 마음이 편해지는 타입이에요.</li>
+        <li><strong>🕯️ 누가 와도 포근한 담요 가득 쉼터방</strong> — 편하게 쉬다 가, 담요는 여기 있어<br />오는 사람의 편안함을 먼저 생각하는 타입이에요.</li>
+        <li><strong>🏋️ 운동기구와 장비가 굴러다니는 액티브방</strong> — 방은 나가기 전 잠깐 들르는 곳이지<br />몸을 움직이는 게 편한 타입이에요.</li>
+        <li><strong>🌙 스탠드 하나만 켜 두는 고요한 밤방</strong> — 어둑한 조명 아래가 제일 나다워<br />조용한 밤 시간에 마음이 정리되는 타입이에요.</li>
+        <li><strong>🧩 매달 가구 배치가 바뀌는 실험방</strong> — 이 배치는 벌써 질렸어, 바꿔 보자<br />같은 모습이 오래가면 답답한 타입이에요.</li>
+        <li><strong>🖥️ 책상 하나에 모든 게 갖춰진 효율 작업방</strong> — 필요한 건 팔이 닿는 곳에 다 있어<br />필요한 것만 갖추는 걸 즐기는 타입이에요.</li>
+        <li><strong>🎨 벽에 온갖 포스터와 메모가 붙은 아이디어방</strong> — 이것도 붙이고 저것도 붙이고!<br />떠오르는 생각과 좋아하는 것을 눈에 보이게 두는 타입이에요.</li>
+        <li><strong>🛠️ 만들고 고치는 작업대가 있는 손재주방</strong> — 고장 난 건 일단 내가 만져 볼게<br />손으로 만지고 고치는 시간이 즐거운 타입이에요.</li>
+        <li><strong>🍪 간식 서랍이 늘 채워진 손님맞이방</strong> — 오면 먹을 거 있으니까 걱정 마<br />오는 사람을 맞이하는 게 기쁜 타입이에요.</li>
+        <li><strong>📚 책과 소품으로 나만의 세계를 만든 감성방</strong> — 이 방 안에서는 나만의 이야기가 시작돼<br />공간을 이야기와 분위기로 채우는 타입이에요.</li>
+        <li><strong>🗂️ 목표표와 일정표가 벽에 붙은 프로젝트방</strong> — 이번 달 목표는 벽에 다 써 놨어<br />공간도 목표를 이루는 도구로 쓰는 타입이에요.</li>
+        <li><strong>🪴 햇살 드는 창가에 앉아 쉬는 여유방</strong> — 창가에 앉아 있으면 시간이 천천히 가<br />자기 리듬으로 쉬는 걸 소중히 여기는 타입이에요.</li>
+        <li><strong>🧹 청소 시간표대로 돌아가는 규칙방</strong> — 정해진 요일에 정해진 구역, 그게 규칙이지<br />정해 둔 규칙으로 공간을 관리하는 게 편한 타입이에요.</li>
+        <li><strong>💡 궁금한 주제의 자료가 쌓인 탐구방</strong> — 이 자료는 왜 여기 있냐고? 필요하거든<br />호기심이 공간에 그대로 쌓이는 타입이에요.</li>
+        <li><strong>🛋️ 고민 들어 주는 소파가 놓인 다정방</strong> — 앉아 봐, 오늘 있었던 일 얘기해 줘<br />오는 사람의 이야기를 들어 주는 게 즐거운 타입이에요.</li>
+      </ul>
+
+      <h2>자주 묻는 질문</h2>
+      <h3>혼자 살지 않아도 할 수 있나요?</h3>
+      <p>그럼요. 본가나 기숙사, 룸메이트와 함께 쓰는 방이어도 내 자리를 떠올려 답하면 돼요. 결과는 사는 형태가 아니라 내 공간을 꾸미고 쓰는 나의 습관에 맞춰 나와요.</p>
+      <h3>방이 깔끔해야 좋은 결과인가요?</h3>
+      <p>아니에요. 모든 물건이 제자리에 있는 칼각 정리방도, 손이 닿는 곳이 곧 자리인 실험방도 좋고 나쁨이 없어요. 정리 실력이나 인테리어 센스를 평가하는 테스트가 아니에요.</p>
+      <h3>질문에 이불과 물건 자리 이야기가 나오는 이유는 무엇인가요?</h3>
+      <p>이불을 아침에 바로 정리하는지 밤에 다시 쓸 거라 그대로 두는지, 새 물건을 사면 놓을 자리를 먼저 정하는지가 계획과 즉흥을 가장 자연스럽게 나눠 줘서예요.</p>
+      <h3>방을 잘 꾸미지 않는 편이어도 결과가 나오나요?</h3>
+      <p>네. 꾸미는 정도보다 방을 대하는 태도를 묻는 테스트라서 가구가 적어도 괜찮아요. 손님이 왔을 때, 물건을 정리할 때 어떻게 하는지 떠올려 답하면 돼요.</p>
+      <h3>궁합이 좋은 방은 어떻게 짝지었나요?</h3>
+      <p>비슷한 방이 아니라 서로 반대에 가까운 방으로 묶었어요. 친구들이 자꾸 모이는 아지트방과 칼각 정리방, 스탠드 하나만 켜 두는 고요한 밤방과 가구 배치가 매달 바뀌는 실험방이 서로의 짝이에요.</p>
+      <h3>내 답변이나 결과가 저장되나요?</h3>
+      <p>답변과 결과는 서버로 전송되거나 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="../../privacy.html">개인정보처리방침</a>에서 확인할 수 있어요.</p>
+
+      <h2>함께 보면 좋은 테스트</h2>
+      <ul>
+        <li><a href="../../tests/wake-alarm/index.html"><strong>나는 어떤 알람일까?</strong></a> — 내 방에서 눈을 뜨는 아침 알람 습관과 이어서 비교해 볼 수 있어요</li>
+        <li><a href="../../tests/bag-item/index.html"><strong>나는 어떤 가방 속 물건일까?</strong></a> — 방 안의 물건을 챙기고 정리하는 방식을 가방 속 물건으로 볼 수 있어요</li>
+        <li><a href="../../tests/plant-mate/index.html"><strong>나는 어떤 식물일까?</strong></a> — 방 안에서 식물을 돌보는 나의 방식이 궁금할 때 함께 해 볼 수 있어요</li>
+      </ul>
+    </section>
+<!-- STATIC-INFO:END -->
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="../../index.html">홈</a>
+        <a href="../../about.html">소개</a>
+        <a href="../../blog/index.html">읽을거리</a>
+        <a href="../../terms.html">이용약관</a>
+        <a href="../../privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 성향 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="../../assets/js/tests-data.js"></script>
+  <script src="config.js"></script>
+  <script src="../../assets/js/engine.js"></script>
+  <script src="../../assets/js/ad-config.js"></script>
+  <script src="../../assets/js/ads.js"></script>
+  <script>
+    MbtiEngine.init(window.QUIZ_CONFIG);
+  </script>
+</body>
+</html>
