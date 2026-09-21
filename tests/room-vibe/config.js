@@ -17,7 +17,7 @@ window.QUIZ_CONFIG = {
 
   intro: {
     emoji: "🏠",
-    kicker: "내 방을 열어 보면 보이는 성향 테스트",
+    kicker: "내 방을 열어 보면 보이는 유형 테스트",
     title: "나는 어떤\n방일까?",
     description:
       "내 방을 꾸미고 쓰는 방식에 나의 성향이 그대로 담겨요.\n방을 대하는 습관으로 알아보는 나의 방 유형!",

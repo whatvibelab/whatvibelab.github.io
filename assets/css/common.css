@@ -209,6 +209,102 @@ button {
   flex: 1;
 }
 
+/* ---- 테스트 검색 (허브 "테스트 모아보기" 탭 위) — 동작은 assets/js/hub.js ---- */
+.hub-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 0 8px;
+}
+
+.hub-search[hidden],
+.hub-search-clear[hidden],
+.hub-search-empty[hidden] {
+  display: none;
+}
+
+.hub-search-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--sub);
+  pointer-events: none;
+}
+
+.hub-search-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 44px 0 46px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px; /* 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
+  font-weight: 600;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hub-search-input::placeholder {
+  color: var(--sub);
+  font-weight: 500;
+}
+
+.hub-search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.hub-search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.hub-search-clear {
+  position: absolute;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--sub);
+  cursor: pointer;
+}
+
+.hub-search-clear:hover,
+.hub-search-clear:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.hub-search-status {
+  margin: 0 4px 8px;
+  font-size: 13px;
+  color: var(--sub);
+}
+
+.hub-search-status:empty {
+  margin: 0;
+}
+
+.hub-search-empty {
+  margin: 24px 8px 48px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--sub);
+}
+
+.test-card.is-filtered {
+  display: none !important;
+}
+
 .test-card {
   display: flex;
   align-items: center;
@@ -894,6 +990,46 @@ button {
   font-weight: 800;
   color: var(--text);
   background: linear-gradient(transparent 62%, var(--accent-soft) 62%);
+}
+
+/* 소개·이용 탭의 보충 안내 (소제목 + 본문 + 목록) */
+.hub-main .sub-title {
+  margin: 28px 0 8px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--text);
+  word-break: keep-all;
+}
+
+.hub-main .info-text {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--body);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.hub-main .info-text b,
+.hub-main .info-list b {
+  font-weight: 800;
+  color: var(--text);
+}
+
+.hub-main .info-list {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--body);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.hub-main .info-list li {
+  margin-bottom: 6px;
 }
 
 /* 탭: 소개 */

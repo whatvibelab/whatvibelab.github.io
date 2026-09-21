@@ -17,7 +17,7 @@ window.QUIZ_CONFIG = {
 
   intro: {
     emoji: "🛋️",
-    kicker: "쉬는 날을 쓰는 방식, 성향 테스트",
+    kicker: "쉬는 날을 쓰는 방식, 유형 테스트",
     title: "나는 어떤\n주말일까?",
     description:
       "쉬는 날을 어떻게 보내는지에 나의 성향이 그대로 나와요.\n주말을 보내는 습관으로 알아보는 나의 주말 유형!",

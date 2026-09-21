@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>무슨상연구소 | 나는 어떤 OO일까?</title>
-<meta name="description" content="무슨상연구소 — 성향 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요." />
+<meta name="description" content="무슨상연구소 — 유형 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요." />
 <!-- 표시용 글꼴 주아체(Jua, SIL OFL) — 큰 제목·숫자·FAQ 질문에만 쓰고, 한글 조각 분할 제공이라 쓰는 글자만 내려받는다. 못 불러와도 본문 글꼴로 대체됨. -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jua@5/index.css" />
@@ -24,8 +24,8 @@
 <meta property="og:locale" content="ko_KR" />
 <meta name="twitter:card" content="summary" />
 <meta property="og:title" content="무슨상연구소 | 나는 어떤 OO일까?" />
-<meta property="og:description" content="무슨상연구소 — 성향 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요." />
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"무슨상연구소","description":"무슨상연구소 — 성향 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요.","inLanguage":"ko-KR"}]}</script>
+<meta property="og:description" content="무슨상연구소 — 유형 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요." />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"무슨상연구소","description":"무슨상연구소 — 유형 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요.","inLanguage":"ko-KR"}]}</script>
 <script src="assets/js/analytics-config.js"></script>
 <script src="assets/js/analytics.js"></script>
 <!-- SEO:END -->
@@ -36,7 +36,7 @@
       <img class="hub-mark" src="assets/img/logo.svg" alt="" width="56" height="56" />
       <p class="hub-logo">무슨상연구소</p>
       <h1 class="hub-title">나는 어떤<br />OO일까?</h1>
-      <p class="hub-subtitle">성향 테스트 모음 — 요즘 뜨는 컨셉으로 즐기는 나 탐구</p>
+      <p class="hub-subtitle">유형 테스트 모음 — 요즘 뜨는 컨셉으로 즐기는 나 탐구</p>
     </header>
 
     <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
@@ -51,49 +51,92 @@
 
       <div class="tab-panel" role="tabpanel" id="panel-tests" aria-labelledby="tab-tests">
         <h2 class="sr-only">테스트 모아보기</h2>
+        <!-- 테스트 검색 — hub.js가 hidden을 풀고 카드(data-search)를 걸러 준다. JS가 없으면 숨겨진 채 전체 목록이 보인다. -->
+        <form class="hub-search" id="hub-search" role="search" hidden>
+          <label class="sr-only" for="hub-search-input">테스트 검색</label>
+          <svg class="hub-search-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input class="hub-search-input" id="hub-search-input" type="search" name="q" placeholder="테스트 검색 (예: 마라탕, 알람, ㅈㅁ)" autocomplete="off" enterkeyhint="search" />
+          <button class="hub-search-clear" id="hub-search-clear" type="button" aria-label="검색어 지우기" hidden>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </form>
+        <p class="hub-search-status" id="hub-search-status" role="status" aria-live="polite"></p>
         <div class="card-list" id="card-list">
-          <a class="test-card live" href="tests/pizza-seolgi/index.html"><div class="test-card-emoji" style="background:#f7dde6">🍡</div><div class="test-card-body"><p class="test-card-title">나는 어떤 설기일까?</p><p class="test-card-sub">요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/four-cut/index.html"><div class="test-card-emoji" style="background:#e6dcf6">📸</div><div class="test-card-body"><p class="test-card-title">나는 어떤 네컷 포즈일까?</p><p class="test-card-sub">네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/dujjonku/index.html"><div class="test-card-emoji" style="background:#f2c9a0">🍫</div><div class="test-card-body"><p class="test-card-title">나는 어떤 두쫀쿠일까?</p><p class="test-card-sub">요즘 핫한 쫀득 초콜릿 쿠키 취향 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/petmatch/index.html"><div class="test-card-emoji" style="background:#d8e6da">🐾</div><div class="test-card-body"><p class="test-card-title">나는 어떤 반려동물 상일까?</p><p class="test-card-sub">돌보고 함께하는 방식으로 알아보는 반려동물 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/cafedrink/index.html"><div class="test-card-emoji" style="background:#e3d5c8">☕</div><div class="test-card-body"><p class="test-card-title">나는 어떤 카페 음료일까?</p><p class="test-card-sub">메뉴 고르는 습관으로 알아보는 음료 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/bomdong-bibimbap/index.html"><div class="test-card-emoji" style="background:#f4dcd0">🥗</div><div class="test-card-body"><p class="test-card-title">나는 어떤 비빔밥일까?</p><p class="test-card-sub">제철 나물이 화제인 그 한 그릇, 재료를 고르고 비비는 방식으로 알아보는 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/plant-mate/index.html"><div class="test-card-emoji" style="background:#d5ece5">🪴</div><div class="test-card-body"><p class="test-card-title">나는 어떤 식물일까?</p><p class="test-card-sub">식물을 키우는 방식으로 알아보는 나를 닮은 식물 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/cat-type/index.html"><div class="test-card-emoji" style="background:#fff0d9">🐱</div><div class="test-card-body"><p class="test-card-title">나는 어떤 고양이일까?</p><p class="test-card-sub">고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/ideal-sang/index.html"><div class="test-card-emoji" style="background:#ffe1e8">💘</div><div class="test-card-body"><p class="test-card-title">내 이상형은 어떤 상일까?</p><p class="test-card-sub">끌리는 사람의 모습으로 알아보는 이상형 동물상 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/chat-reply/index.html"><div class="test-card-emoji" style="background:#dcecff">💬</div><div class="test-card-body"><p class="test-card-title">나는 어떤 답장일까?</p><p class="test-card-sub">메신저를 대하는 태도로 알아보는 나의 답장 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/team-role/index.html"><div class="test-card-emoji" style="background:#d6f3ec">📝</div><div class="test-card-body"><p class="test-card-title">나는 어떤 조원일까?</p><p class="test-card-sub">조별과제를 대하는 태도로 알아보는 나의 역할 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/bag-item/index.html"><div class="test-card-emoji" style="background:#e9e0fb">🎒</div><div class="test-card-body"><p class="test-card-title">나는 어떤 가방 속 물건일까?</p><p class="test-card-sub">가방을 싸고 정리하는 습관으로 알아보는 나를 닮은 물건 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/wake-alarm/index.html"><div class="test-card-emoji" style="background:#ffe9d0">⏰</div><div class="test-card-body"><p class="test-card-title">나는 어떤 알람일까?</p><p class="test-card-sub">아침에 일어나는 습관으로 알아보는 나의 알람 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/malatang-topping/index.html"><div class="test-card-emoji" style="background:#ffd6d8">🌶️</div><div class="test-card-body"><p class="test-card-title">나는 어떤 마라탕 토핑일까?</p><p class="test-card-sub">재료를 고르는 습관으로 알아보는 나의 마라탕 토핑 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/deokjil-style/index.html"><div class="test-card-emoji" style="background:#eadcff">💖</div><div class="test-card-body"><p class="test-card-title">나는 어떤 덕질러일까?</p><p class="test-card-sub">좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/winter-snack/index.html"><div class="test-card-emoji" style="background:#d3eef3">🍠</div><div class="test-card-body"><p class="test-card-title">나는 어떤 겨울 간식일까?</p><p class="test-card-sub">간식을 고르고 나누는 방식으로 알아보는 나의 겨울 간식 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/travel-course/index.html"><div class="test-card-emoji" style="background:#d4e5f7">🧳</div><div class="test-card-body"><p class="test-card-title">나는 어떤 여행 코스일까?</p><p class="test-card-sub">여행을 계획하고 다니는 방식으로 알아보는 나의 여행 코스 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/weekend-style/index.html"><div class="test-card-emoji" style="background:#ffe6d5">🛋️</div><div class="test-card-body"><p class="test-card-title">나는 어떤 주말일까?</p><p class="test-card-sub">쉬는 날을 보내는 방식으로 알아보는 나의 주말 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/shopping-cart/index.html"><div class="test-card-emoji" style="background:#d9f0e3">🛒</div><div class="test-card-body"><p class="test-card-title">나는 어떤 장바구니일까?</p><p class="test-card-sub">물건을 담고 고르는 습관으로 알아보는 나의 장바구니 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
-          <a class="test-card live" href="tests/room-vibe/index.html"><div class="test-card-emoji" style="background:#f0e6d6">🏠</div><div class="test-card-body"><p class="test-card-title">나는 어떤 방일까?</p><p class="test-card-sub">내 방을 꾸미고 쓰는 습관으로 알아보는 나의 방 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/pizza-seolgi/index.html" data-search="나는 어떤 설기일까? 요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트 말랑쫀득 그 설기, 취향은 사람마다 다르죠. 설기를 고르고 즐기는 태도로 알아보는 나의 설기 유형! 오리지널 인절미설기 알록달록 무지개설기 든든한 팥설기 화끈한 피자설기 은은한 쑥설기 카페 콜라보 카라멜마끼아또설기 묵직한 흑설탕설기 발빠른 초코설기 고소한 견과류설기 짭짤달콤 치즈설기 포근한 밤설기 카리스마 흑임자설기 부드러운 단호박설기 군더더기 없는 백설기 은은쌉쌀한 녹차설기 다정한 딸기설기"><div class="test-card-emoji" style="background:#f7dde6">🍡</div><div class="test-card-body"><p class="test-card-title">나는 어떤 설기일까?</p><p class="test-card-sub">요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/four-cut/index.html" data-search="나는 어떤 네컷 포즈일까? 네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트 부스에 들어가는 순간부터 카운트다운까지, 습관은 사람마다 다르죠. 네컷을 찍는 태도로 알아보는 나의 포즈 유형! 정직한 증명사진 컷 가장자리 지킴이 컷 무드 감성 컷 시크한 무표정 컷 무심한 한 손 컷 눈 감았는데 그게 국룰인 컷 얼굴 반쯤 가린 수줍은 컷 각도 연구가 컷 얼굴 잡아당기는 장난꾸러기 컷 손하트 스팸러 컷 브이 포즈 대장 컷 소품 풀세트 기획자 컷 칼각 직캠 컷 이마 맞대기 컷 센터 양보 감독 컷 총감독 컷"><div class="test-card-emoji" style="background:#e6dcf6">📸</div><div class="test-card-body"><p class="test-card-title">나는 어떤 네컷 포즈일까?</p><p class="test-card-sub">네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/dujjonku/index.html" data-search="나는 어떤 두쫀쿠일까? 요즘 핫한 쫀득 초콜릿 쿠키 취향 테스트 쫀득하고 진한 그 두쫀쿠, 취향은 사람마다 다르죠. 초콜릿을 대하는 태도로 알아보는 나의 두쫀쿠 유형! 오리지널 다크초콜릿 두쫀쿠 밀크초콜릿 두쫀쿠 라벤더 얼그레이 두쫀쿠 다크 카카오 84% 두쫀쿠 솔티 카라멜 두쫀쿠 딸기 크림치즈 두쫀쿠 라즈베리 화이트초코 두쫀쿠 말차 다크초콜릿 두쫀쿠 스파이시 초코칩 두쫀쿠 레인보우 스프링클 두쫀쿠 통 피스타치오 두쫀쿠 스모크 블루베리 아몬드 두쫀쿠 클래식 땅콩버터 두쫀쿠 허니버터 두쫀쿠 초코듬뿍 헤이즐넛 두쫀쿠 트리플 초콜릿 두쫀쿠"><div class="test-card-emoji" style="background:#f2c9a0">🍫</div><div class="test-card-body"><p class="test-card-title">나는 어떤 두쫀쿠일까?</p><p class="test-card-sub">요즘 핫한 쫀득 초콜릿 쿠키 취향 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/petmatch/index.html" data-search="나는 어떤 반려동물 상일까? 돌보고 함께하는 방식으로 알아보는 반려동물 유형 테스트 반려동물을 돌보고 함께하는 방식으로 알아보는 나를 꼭 닮은 반려동물 유형! 진돗개 골든리트리버 러시안블루 스코티시폴드 페럿 토끼 햄스터 고슴도치 웰시코기 포메라니안 비숑프리제 앵무새 시바견 코리안숏헤어 래브라도리트리버 도베르만"><div class="test-card-emoji" style="background:#d8e6da">🐾</div><div class="test-card-body"><p class="test-card-title">나는 어떤 반려동물 상일까?</p><p class="test-card-sub">돌보고 함께하는 방식으로 알아보는 반려동물 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/cafedrink/index.html" data-search="나는 어떤 카페 음료일까? 메뉴 고르는 습관으로 알아보는 음료 유형 테스트 메뉴판을 보는 방식부터 주문하는 습관까지, 카페에서의 취향으로 알아보는 나의 음료 유형! 아메리카노 바닐라라떼 얼그레이 라떼 콜드브루 에스프레소 딸기라떼 자몽허니블랙티 콜드브루 오트라떼 더블샷 아이스아메리카노 딸기프라페 카라멜마키아또 오늘의 시그니처 음료 아이스아메리카노 카페모카 화이트모카 트리플 에스프레소 라떼"><div class="test-card-emoji" style="background:#e3d5c8">☕</div><div class="test-card-body"><p class="test-card-title">나는 어떤 카페 음료일까?</p><p class="test-card-sub">메뉴 고르는 습관으로 알아보는 음료 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/bomdong-bibimbap/index.html" data-search="나는 어떤 비빔밥일까? 제철 나물이 화제인 그 한 그릇, 재료를 고르고 비비는 방식으로 알아보는 유형 테스트 재료를 고르고 비비는 방식까지, 취향은 사람마다 다르죠. 비빔밥을 대하는 태도로 알아보는 나의 비빔밥 유형! 산채비빔밥 곤드레나물비빔밥 꼬막비빔밥 표고버섯비빔밥 계란후라이비빔밥 간장베이스비빔밥 열무비빔밥 명란비빔밥 육회비빔밥 알록달록 나물 풀세트비빔밥 봄동비빔밥 트러플비빔밥 고추장 듬뿍비빔밥 참치마요비빔밥 전복비빔밥 낙지비빔밥"><div class="test-card-emoji" style="background:#f4dcd0">🥗</div><div class="test-card-body"><p class="test-card-title">나는 어떤 비빔밥일까?</p><p class="test-card-sub">제철 나물이 화제인 그 한 그릇, 재료를 고르고 비비는 방식으로 알아보는 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/plant-mate/index.html" data-search="나는 어떤 식물일까? 식물을 키우는 방식으로 알아보는 나를 닮은 식물 테스트 식물을 고르고 돌보는 방식엔 그 사람의 성격이 그대로 드러나요. 식집사의 태도로 알아보는 나를 닮은 식물 유형! 정해진 날에만 물 받는 선인장 존재감 폭발 히비스커스 곁을 묵묵히 지키는 스투키 휴양지 텐션 야자수 은은한 여운의 라벤더 구멍이 뻥뻥 몬스테라 곧게 뻗어 자라는 행운대 해만 보면 신나는 해바라기 바람 따라 흔들리는 팜파스그래스 모두에게 다정한 데이지 고요한 물 위의 연꽃 가시까지 완벽한 장미 기분 따라 피는 튤립 늘 반듯하게 다듬어진 율마 왜 네잎인지 궁금한 클로버 다 함께 키워내는 새싹"><div class="test-card-emoji" style="background:#d5ece5">🪴</div><div class="test-card-body"><p class="test-card-title">나는 어떤 식물일까?</p><p class="test-card-sub">식물을 키우는 방식으로 알아보는 나를 닮은 식물 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/cat-type/index.html" data-search="나는 어떤 고양이일까? 고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 테스트 집사와 사는 고양이의 하루엔 성격이 그대로 드러나요. 고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 유형! 애교 폭발 치즈냥이 한결같은 브리티시숏헤어 고양이 껌딱지 랙돌 고양이 에너지 폭주 벵갈 고양이 신비로운 올화이트냥이 엉뚱 발랄 젖소냥이 시크한 올블랙냥이 호기심 대장 삼색냥이 무심한 스핑크스 고양이 마당발 메인쿤 고양이 몽상가 노르웨이숲 고양이 카리스마 페르시안 고양이 식빵 굽는 먼치킨 고양이 칼각 턱시도냥이 관찰왕 고등어냥이 수다쟁이 샴 고양이"><div class="test-card-emoji" style="background:#fff0d9">🐱</div><div class="test-card-body"><p class="test-card-title">나는 어떤 고양이일까?</p><p class="test-card-sub">고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/ideal-sang/index.html" data-search="내 이상형은 어떤 상일까? 끌리는 사람의 모습으로 알아보는 이상형 동물상 테스트 좋아하는 사람 앞에서 마음이 움직이는 순간은 저마다 달라요. 끌리는 사람의 모습으로 알아보는 나의 이상형 동물상! 꼬리부터 흔드는 강아지상 한번 한 약속은 기억하는 코끼리상 슬쩍 챙겨주는 토끼상 센스 넘치는 여우상 깊은 눈빛의 부엉이상 말이 통하는 돌고래상 멀리 내다보는 독수리상 호기심 가득한 다람쥐상 무심한 듯 다정한 고양이상 모두가 좋아하는 판다상 순하고 감성적인 사슴상 앞장서는 늑대상 자유로운 수달상 든든한 곰상 궁금한 게 많은 너구리상 함께 걸어주는 펭귄상"><div class="test-card-emoji" style="background:#ffe1e8">💘</div><div class="test-card-body"><p class="test-card-title">내 이상형은 어떤 상일까?</p><p class="test-card-sub">끌리는 사람의 모습으로 알아보는 이상형 동물상 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/chat-reply/index.html" data-search="나는 어떤 답장일까? 메신저를 대하는 태도로 알아보는 나의 답장 유형 테스트 메시지가 도착했을 때 어떻게 답하는지에도 성격이 담겨 있어요. 메신저를 대하는 태도로 알아보는 나의 답장 유형! 이모티콘 폭격 답장 확인했습니다 답장 밥은 먹었냐는 안부 답장 그냥 전화할게 통화 답장 한참 뒤 도착한 진심 장문 답장 짤로 대답하는 밈 답장 용건만 간단히 답장 리액션 폭발 답장 ㅇㅋ 한마디 쿨한 답장 분위기 챙기는 맞장구 답장 썼다 지웠다 고민한 답장 결론부터 정리하는 리더 답장 느릿느릿 여유 있는 답장 1분 컷 칼답 답장 생각이 길어지는 분석 답장 기분까지 챙기는 다정한 답장"><div class="test-card-emoji" style="background:#dcecff">💬</div><div class="test-card-body"><p class="test-card-title">나는 어떤 답장일까?</p><p class="test-card-sub">메신저를 대하는 태도로 알아보는 나의 답장 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/team-role/index.html" data-search="나는 어떤 조원일까? 조별과제를 대하는 태도로 알아보는 나의 역할 유형 테스트 조 편성부터 마감 전날까지, 조별과제엔 그 사람의 역할이 그대로 드러나요. 팀플을 대하는 태도로 알아보는 나의 조원 유형! 발표 시간에 빛나는 조원 출처까지 정리하는 자료 조사 조원 다 챙겨 주는 살림 조원 임기응변 만렙 조원 조용히 흐름을 잡는 조원 아이디어 폭격 조원 판 짜는 기획 조원 킥오프 텐션 조원 말없이 해오는 해결사 조원 일정 챙기는 총무 조원 감성 ppt 장인 조원 자동 팀장 조원 막판 스퍼트 조원 마감 지킴이 반장 조원 허점 찾는 꼼꼼 검수 조원 모두를 북돋는 응원 조원"><div class="test-card-emoji" style="background:#d6f3ec">📝</div><div class="test-card-body"><p class="test-card-title">나는 어떤 조원일까?</p><p class="test-card-sub">조별과제를 대하는 태도로 알아보는 나의 역할 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/bag-item/index.html" data-search="나는 어떤 가방 속 물건일까? 가방을 싸고 정리하는 습관으로 알아보는 나를 닮은 물건 테스트 가방을 싸고 정리하고 꺼내는 방식엔 그 사람의 성격이 그대로 드러나요. 가방 속 습관으로 알아보는 나를 닮은 물건 유형! 꺼내면 분위기 사는 립틴트 정해진 자리를 지키는 카드지갑 필요한 순간에 짠 나오는 반창고 잠깐 나가도 챙기는 선글라스 속마음을 적어 두는 작은 노트 이야기가 붙은 독특한 키링 칼각으로 정리된 파우치 열면 색이 쏟아지는 컬러펜 말없이 든든한 보조배터리 나눠 먹으려고 챙긴 사탕 몇 번이고 다시 펴는 책 한 권 일정이 빼곡한 플래너 손끝까지 챙기는 핸드크림 매일 채워 다니는 텀블러 나만의 세계로 들어가는 이어폰 친구 몫까지 챙겨 온 여분 우산"><div class="test-card-emoji" style="background:#e9e0fb">🎒</div><div class="test-card-body"><p class="test-card-title">나는 어떤 가방 속 물건일까?</p><p class="test-card-sub">가방을 싸고 정리하는 습관으로 알아보는 나를 닮은 물건 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/wake-alarm/index.html" data-search="나는 어떤 알람일까? 아침에 일어나는 습관으로 알아보는 나의 알람 유형 테스트 알람이 울리는 그 몇 분에 그 사람의 성격이 다 드러나요. 아침에 일어나는 습관으로 알아보는 나의 알람 유형! 좋아하는 노래로 깨우는 플레이리스트 알람 딱 한 번만 울리는 정직 알람 식구들 아침까지 챙기는 모닝 케어 알람 눈 뜨자마자 튀어나가는 즉시 기상 알람 조용한 새벽을 좋아하는 고요한 알람 매일 소리가 바뀌는 랜덤 알람 수면 시간까지 계산한 설계 알람 오늘이 기대돼서 눈 떠지는 설렘 알람 말없이 조용히 끄는 진동 알람 서로 깨워 주는 짝꿍 알람 5분만 더 이불 속 감성 알람 끄자마자 일정을 정리하는 실행 알람 다시 잠드는 것도 자연스러운 스누즈 알람 운동화부터 신는 아침 루틴 알람 끄고 나서 딴생각에 빠지는 알람 친구에게 좋은 아침을 전하는 응원 알람"><div class="test-card-emoji" style="background:#ffe9d0">⏰</div><div class="test-card-body"><p class="test-card-title">나는 어떤 알람일까?</p><p class="test-card-sub">아침에 일어나는 습관으로 알아보는 나의 알람 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/malatang-topping/index.html" data-search="나는 어떤 마라탕 토핑일까? 재료를 고르는 습관으로 알아보는 나의 마라탕 토핑 유형 테스트 마라탕 재료를 고르는 방식에 나의 성격이 그대로 담겨요. 재료를 담는 습관으로 알아보는 나의 마라탕 토핑 유형! 올라가면 분위기 확 사는 왕새우 푸릇하게 중심을 잡는 청경채 국물을 다 품는 분모자 일단 집고 보는 소시지 매운맛을 조용히 달래 주는 연두부 호불호를 즐기는 양고기 넣을지 말지 원칙이 확실한 고수 새로운 조합에 눈이 반짝이는 옥수수면 조용히 식감을 책임지는 연근 어느 그릇에나 어울리는 숙주 국물에 조용히 스며드는 푸주 화끈하게 밀어붙이는 건고추 톡 굴러와 기분을 바꾸는 메추리알 그릇을 든든하게 채우는 넓적당면 씹을수록 궁금해지는 목이버섯 모두를 고소하게 감싸는 땅콩소스"><div class="test-card-emoji" style="background:#ffd6d8">🌶️</div><div class="test-card-body"><p class="test-card-title">나는 어떤 마라탕 토핑일까?</p><p class="test-card-sub">재료를 고르는 습관으로 알아보는 나의 마라탕 토핑 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/deokjil-style/index.html" data-search="나는 어떤 덕질러일까? 좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형 테스트 좋아하는 게 생기면 나오는 그 행동들에 나의 성향이 담겨 있어요. 좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형! 무대만 보면 떼창부터 나오는 현장 덕질러 굿즈 목록을 표로 정리하는 기록 덕질러 친구 몫까지 굿즈를 챙기는 다정 덕질러 티켓팅 전쟁터에 제일 먼저 뛰어드는 실전 덕질러 조용히 오래 좋아하는 은은한 덕질러 새로운 것에 계속 입덕하는 탐험 덕질러 일정과 예산을 설계하는 계획 덕질러 좋아하는 마음을 온 동네에 영업하는 영업 덕질러 굿즈를 직접 만들어 쓰는 손재주 덕질러 팬 모임 도시락까지 챙기는 총무 덕질러 혼자 방 안에서 깊게 파는 감성 덕질러 응원 프로젝트를 이끄는 대장 덕질러 그날 기분 따라 다시 듣는 무드 덕질러 일정 알림을 매일 맞춰 두는 성실 덕질러 세계관과 떡밥을 끝까지 파헤치는 분석 덕질러 좋은 걸 나누려고 입덕 영상을 만들어 주는 전도 덕질러"><div class="test-card-emoji" style="background:#eadcff">💖</div><div class="test-card-body"><p class="test-card-title">나는 어떤 덕질러일까?</p><p class="test-card-sub">좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/winter-snack/index.html" data-search="나는 어떤 겨울 간식일까? 간식을 고르고 나누는 방식으로 알아보는 나의 겨울 간식 유형 테스트 추운 날 간식 노점 앞에서 드러나는 나의 습관을 살펴봐요. 간식을 고르고 나누는 방식으로 알아보는 나의 겨울 간식 유형! 정석대로 익어 가는 군고구마 씨앗이 톡톡 터지는 씨앗호떡 국물까지 챙겨 주는 어묵꼬치 받자마자 후후 불며 먹는 계란빵 은은하게 몸을 녹여 주는 유자차 팥도 슈크림도 섞어 보는 실험 붕어빵 껍질까지 계획적으로 까는 군밤 마시멜로를 얹어 보는 핫초코 말없이 노릇하게 구워진 가래떡 구이 모임마다 하나씩 챙겨 가는 호두과자 김 서린 창가에서 먹는 찐빵 다 같이 시키라고 정해 주는 떡볶이 두 손으로 감싸 쥔 따뜻한 밤라떼 줄 서서라도 원조를 고집하는 팥 붕어빵 까다 말고 딴생각에 빠지는 귤 한 봉지 나눠 주며 웃게 만드는 국화빵"><div class="test-card-emoji" style="background:#d3eef3">🍠</div><div class="test-card-body"><p class="test-card-title">나는 어떤 겨울 간식일까?</p><p class="test-card-sub">간식을 고르고 나누는 방식으로 알아보는 나의 겨울 간식 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/travel-course/index.html" data-search="나는 어떤 여행 코스일까? 여행을 계획하고 다니는 방식으로 알아보는 나의 여행 코스 유형 테스트 여행을 계획하고 다니는 방식에 나의 성향이 그대로 나와요. 여행 습관으로 알아보는 나의 여행 코스 유형! 놀이공원 폐장까지 노는 풀타임 코스 분 단위 일정표대로 도는 정석 코스 일행 취향까지 맞춘 편안한 숙소 중심 코스 도착해서 바로 정하는 액티비티 코스 바다를 오래 바라보는 조용한 코스 지도를 끄고 골목을 헤매는 탐험 코스 동선까지 최적화한 완벽 코스 만난 사람 따라 계획을 바꾸는 즉흥 코스 짐 하나로 가볍게 다니는 미니멀 코스 일행 입맛을 다 맞춘 맛집 릴레이 코스 골목과 카페를 사진에 담는 감성 산책 코스 출발 전에 예약까지 끝낸 실행 코스 발길 닿는 대로 걷는 여유 코스 체크리스트를 다 지우는 알찬 코스 그곳의 역사를 찾아보다 시간 가는 줄 모르는 탐구 코스 일행 취향에 맞춰 이끌어 주는 가이드 코스"><div class="test-card-emoji" style="background:#d4e5f7">🧳</div><div class="test-card-body"><p class="test-card-title">나는 어떤 여행 코스일까?</p><p class="test-card-sub">여행을 계획하고 다니는 방식으로 알아보는 나의 여행 코스 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/weekend-style/index.html" data-search="나는 어떤 주말일까? 쉬는 날을 보내는 방식으로 알아보는 나의 주말 유형 테스트 쉬는 날을 어떻게 보내는지에 나의 성향이 그대로 나와요. 주말을 보내는 습관으로 알아보는 나의 주말 유형! 약속 세 개를 몰아 잡은 풀약속 주말 밀린 집안일을 끝내고 쉬는 정돈 주말 가까운 사람을 위해 요리하는 다정 주말 눈 뜨자마자 밖으로 나가는 액티브 주말 조용히 일기를 쓰며 마음을 정리하는 충전 주말 갑자기 떠오른 계획으로 굴러가는 번개 주말 한 주를 미리 설계해 두는 준비 주말 누구랑 뭐 할지 고민하다 재밌게 흘러가는 물음표 주말 혼자 뭔가를 고치고 만드는 취미 몰입 주말 동네 모임과 안부 인사로 채우는 어울림 주말 이불 속에서 영화 한 편을 보는 뒹굴 주말 목표를 정해 알차게 해내는 성과 주말 산책하다 마음 가는 곳에 머무르는 여유 주말 새벽 운동으로 시작해 계획표를 채우는 규칙 주말 궁금한 주제를 파다 하루가 사라지는 몰입 주말 친구 일정을 챙기며 다 같이 모이게 만드는 소집 주말"><div class="test-card-emoji" style="background:#ffe6d5">🛋️</div><div class="test-card-body"><p class="test-card-title">나는 어떤 주말일까?</p><p class="test-card-sub">쉬는 날을 보내는 방식으로 알아보는 나의 주말 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/shopping-cart/index.html" data-search="나는 어떤 장바구니일까? 물건을 담고 고르는 습관으로 알아보는 나의 장바구니 유형 테스트 물건을 담고 고르는 방식에 나의 성향이 그대로 나와요. 장바구니를 다루는 습관으로 알아보는 나의 장바구니 유형! 보는 순간 결제까지 3초 걸리는 번개 장바구니 가격 비교표까지 만들어 두는 꼼꼼 장바구니 가족 것만 잔뜩 담긴 배려 장바구니 품절 직전에 사수하는 타임어택 장바구니 담아만 두고 오래 고민하는 신중 장바구니 처음 보는 물건만 담는 신상 탐험 장바구니 필요와 불필요를 나눠 정리하는 정예 장바구니 친구에게 링크를 보내 함께 고르는 수다 장바구니 쓸모 있는 물건만 조용히 담는 실속 장바구니 같이 사면 더 좋다고 제안하는 나눔 장바구니 분위기에 끌려 담는 감성 장바구니 계획한 만큼만 확실하게 끝내는 목표 장바구니 그날 기분에 맞춰 담았다 뺐다 하는 무드 장바구니 정기 구매까지 정리해 둔 살림 장바구니 후기를 끝까지 읽고서야 담는 분석 장바구니 친구 생일 선물부터 챙겨 담는 선물 장바구니"><div class="test-card-emoji" style="background:#d9f0e3">🛒</div><div class="test-card-body"><p class="test-card-title">나는 어떤 장바구니일까?</p><p class="test-card-sub">물건을 담고 고르는 습관으로 알아보는 나의 장바구니 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/room-vibe/index.html" data-search="나는 어떤 방일까? 내 방을 꾸미고 쓰는 습관으로 알아보는 나의 방 유형 테스트 내 방을 꾸미고 쓰는 방식에 나의 성향이 그대로 담겨요. 방을 대하는 습관으로 알아보는 나의 방 유형! 친구들이 자꾸 모이는 아지트방 모든 물건이 제자리에 있는 칼각 정리방 누가 와도 포근한 담요 가득 쉼터방 운동기구와 장비가 굴러다니는 액티브방 스탠드 하나만 켜 두는 고요한 밤방 매달 가구 배치가 바뀌는 실험방 책상 하나에 모든 게 갖춰진 효율 작업방 벽에 온갖 포스터와 메모가 붙은 아이디어방 만들고 고치는 작업대가 있는 손재주방 간식 서랍이 늘 채워진 손님맞이방 책과 소품으로 나만의 세계를 만든 감성방 목표표와 일정표가 벽에 붙은 프로젝트방 햇살 드는 창가에 앉아 쉬는 여유방 청소 시간표대로 돌아가는 규칙방 궁금한 주제의 자료가 쌓인 탐구방 고민 들어 주는 소파가 놓인 다정방"><div class="test-card-emoji" style="background:#f0e6d6">🏠</div><div class="test-card-body"><p class="test-card-title">나는 어떤 방일까?</p><p class="test-card-sub">내 방을 꾸미고 쓰는 습관으로 알아보는 나의 방 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
         </div>
+        <p class="hub-search-empty" id="hub-search-empty" hidden></p>
       </div>
 
       <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
         <img class="hero" src="assets/img/hub/about-lab.svg" alt="" width="160" height="112" />
         <h2 class="panel-title">무슨상연구소는 <span class="hl">어떤 곳</span>인가요?</h2>
-        <p class="lead">무슨상연구소는 요즘 화제가 되는 음식, 취미, 일상 소재를 주제로 몇 가지 질문에 답하면 나와 닮은 유형을 알려주는 <strong>성향 테스트 모음</strong>이에요. 각 테스트는 16개의 질문과 16가지 결과로 이루어져 있고, <strong>1분 안팎</strong>이면 결과를 확인할 수 있어요. 결과는 이름과 한 줄 요약, 설명, 특징, 잘 맞는 궁합으로 보여드리며 친구에게 <strong>링크나 이미지 카드</strong>로 공유할 수도 있어요.</p>
+        <p class="lead">무슨상연구소는 요즘 화제가 되는 음식, 취미, 일상 소재를 주제로 몇 가지 질문에 답하면 나와 닮은 유형을 알려주는 <strong>유형 테스트 모음</strong>이에요. 각 테스트는 16개의 질문과 16가지 결과로 이루어져 있고, <strong>1분 안팎</strong>이면 결과를 확인할 수 있어요. 결과는 이름과 한 줄 요약, 설명, 특징, 잘 맞는 궁합으로 보여드리며 친구에게 <strong>링크나 이미지 카드</strong>로 공유할 수도 있어요.</p>
         <div class="stats">
           <div class="stat"><img src="assets/img/hub/stat-tests.svg" alt="" width="44" height="44" /><div><span class="num">20개</span><span class="lab">준비된 테스트</span></div></div>
           <div class="stat"><img src="assets/img/hub/stat-results.svg" alt="" width="44" height="44" /><div><span class="num">320가지</span><span class="lab">나올 수 있는 결과</span></div></div>
           <div class="stat"><img src="assets/img/hub/stat-time.svg" alt="" width="44" height="44" /><div><span class="num">1분 안팎</span><span class="lab">테스트 하나당</span></div></div>
           <div class="stat"><img src="assets/img/hub/stat-free.svg" alt="" width="44" height="44" /><div><span class="num">무료</span><span class="lab">가입 없이 바로</span></div></div>
         </div>
+        <h3 class="sub-title">이런 소재를 재미있게 풀어요</h3>
+        <p class="info-text">두쫀쿠, 카페 음료, 피자설기, 마라탕 토핑처럼 요즘 화제인 음식부터 알람, 주말, 가방 속 물건 같은 일상, 반려동물·식물·고양이 같은 취미까지 소재를 계속 넓히고 있어요. 소재는 달라도 모두 "나는 어떤 ○○일까?"라는 같은 질문에서 시작해요.</p>
+        <h3 class="sub-title">테스트는 이렇게 만들어져요</h3>
+        <p class="info-text">각 테스트는 소재 안에서 실제로 겪는 장면을 16개의 질문으로 만들어요. 카페 음료 테스트는 새로 생긴 카페를 발견했을 때나 주문이 잘못 나왔을 때를, 알람 테스트는 알람이 울려서 눈을 뜬 첫 순간을 묻는 식이에요. 질문마다 두 가지 중 하나를 고르면 사람과 어울리는 방식, 정보를 받아들이는 방식, 판단하는 기준, 생활 방식이라는 네 가지 기준으로 답이 모여 16가지 결과 중 하나가 정해져요. 더 자세한 기준은 <a href="blog/design-how-tests-are-made/index.html">무슨상연구소 테스트는 이렇게 설계해요 — 16문항·16결과를 만드는 다섯 가지 원칙</a> 글에 정리해 두었어요.</p>
+        <h3 class="sub-title">결과는 이렇게 보여드려요</h3>
+        <p class="info-text">결과에는 소재에 어울리는 이름과 이모지, 한 줄 요약, 설명, 특징 세 가지, 그리고 잘 맞는 궁합이 담겨요. 궁합은 비슷한 결과가 아니라 서로 부족한 부분을 채워 주는 반대 성향의 결과로 골랐어요. 친구와 결과를 비교하며 "우리는 어디가 다를까?" 하고 이야기해 보세요.</p>
+        <h3 class="sub-title">이런 분께 추천해요</h3>
+        <ul class="info-list">
+          <li>친구와 결과를 비교하며 이야기 나누는 걸 좋아하는 분</li>
+          <li>1분 안팎으로 가볍게 즐길 거리를 찾는 분</li>
+          <li>요즘 화제인 소재로 나를 표현해 보고 싶은 분</li>
+          <li>결과 카드를 SNS나 메신저로 공유하고 싶은 분</li>
+        </ul>
+        <h3 class="sub-title">무슨상연구소가 지키는 것</h3>
+        <ul class="info-list">
+          <li><b>재미로 즐기는 콘텐츠예요.</b> 심리검사나 진단을 대신하지 않아요.</li>
+          <li><b>결과에 좋고 나쁨을 두지 않아요.</b> 결과 모두 나름의 매력으로 만들었어요.</li>
+          <li><b>가입 없이 이용해요.</b> 답변과 결과는 서버에 저장하지 않아요. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>에서 확인할 수 있어요.</li>
+          <li><b>특정 브랜드나 인물의 이름을 앞세우지 않아요.</b> 누구나 아는 일반적인 표현으로 만들어요.</li>
+        </ul>
+        <p class="info-text">테스트가 만들어진 과정과 결과 짝 이야기는 <a href="blog/index.html">읽을거리</a>에서 볼 수 있어요.</p>
       </div>
 
       <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-howto" aria-labelledby="tab-howto">
         <h2 class="panel-title">이렇게 <span class="hl">이용하세요</span></h2>
         <ol class="steps">
-          <li class="step"><span class="no">1</span><p><b>마음에 드는 테스트</b>를 골라 시작 버튼을 눌러요. 닉네임은 입력하지 않아도 돼요.</p><img src="assets/img/hub/step-1-pick.svg" alt="" width="56" height="56" /></li>
-          <li class="step"><span class="no">2</span><p>각 질문에서 <b>두 가지 중</b> 평소의 나와 더 가까운 쪽을 골라요.</p><img src="assets/img/hub/step-2-choose.svg" alt="" width="56" height="56" /></li>
-          <li class="step"><span class="no">3</span><p>결과가 나오면 <b>'이미지로 저장'</b>이나 <b>'링크 공유하기'</b>로 친구와 나눠 보세요.</p><img src="assets/img/hub/step-3-share.svg" alt="" width="56" height="56" /></li>
+          <li class="step"><span class="no">1</span><p><b>마음에 드는 테스트</b>를 골라 시작 버튼을 눌러요. 테스트가 많다면 목록 위 검색창에 소재나 결과 이름, 초성(예: ㅁㄹㅌ)을 넣어 찾을 수 있어요.</p><img src="assets/img/hub/step-1-pick.svg" alt="" width="56" height="56" /></li>
+          <li class="step"><span class="no">2</span><p>각 질문에서 <b>두 가지 중</b> 평소의 나와 더 가까운 쪽을 골라요. 정답은 없으니 먼저 떠오르는 쪽을 고르면 되고, 16개 질문에 1분 안팎이 걸려요.</p><img src="assets/img/hub/step-2-choose.svg" alt="" width="56" height="56" /></li>
+          <li class="step"><span class="no">3</span><p>결과가 나오면 <b>이름·한 줄 요약·설명·특징·잘 맞는 궁합</b>을 확인하고, <b>'이미지로 저장'</b>이나 <b>'링크 공유하기'</b>로 친구와 나눠 보세요.</p><img src="assets/img/hub/step-3-share.svg" alt="" width="56" height="56" /></li>
         </ol>
+        <h3 class="sub-title">닉네임을 넣으면 이렇게 달라져요</h3>
+        <p class="info-text">시작 화면에서 닉네임을 입력하면 결과 화면과 저장하는 이미지 카드, 공유 링크에 함께 나와요. 다음에 다시 입력하지 않아도 되도록 내 기기의 브라우저에만 기억되고 서버로 보내지 않아요. 다만 링크로 공유하면 닉네임도 링크에 담기니, 넣고 싶지 않다면 비워 두세요.</p>
+        <h3 class="sub-title">친구가 내 링크를 열면</h3>
+        <p class="info-text">링크를 받은 친구는 질문에 답하지 않고도 내 결과를 바로 볼 수 있어요. 결과 아래의 <b>'나도 테스트 하러가기'</b> 버튼을 누르면 같은 테스트를 직접 해 볼 수도 있어요.</p>
+        <h3 class="sub-title">더 재미있게 즐기는 방법</h3>
+        <ul class="info-list">
+          <li>친구와 같은 테스트를 하고 결과를 비교해 보세요. 서로의 궁합 결과가 나오면 더 재미있어요.</li>
+          <li>소재가 다른 테스트를 몇 개 해 보세요. 장면이 달라서 결과가 달라지는 것도 자연스러워요.</li>
+          <li>기분이나 상황이 다를 때 다시 해 보세요. 결과가 바뀌었다면 그게 그날의 나예요.</li>
+          <li>결과 설명에서 "맞아, 나 이래!" 싶은 문장 하나만 찾아도 충분해요.</li>
+        </ul>
       </div>
 
       <div class="tab-panel static-info tab-text" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq">
@@ -101,15 +144,47 @@
         <div class="chat">
           <div class="qa">
             <h3 class="q"><img src="assets/img/hub/faq-free.svg" alt="" width="30" height="30" />무료인가요? 회원가입이 필요한가요?</h3>
-            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">모든 테스트는 무료이고 회원가입이나 로그인 없이 바로 이용할 수 있어요.</p></div>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">모든 테스트는 무료이고 회원가입이나 로그인 없이 바로 이용할 수 있어요. 앱을 설치할 필요도 없이 스마트폰과 PC의 웹 브라우저에서 바로 열려요.</p></div>
           </div>
           <div class="qa">
             <h3 class="q"><img src="assets/img/hub/faq-accuracy.svg" alt="" width="30" height="30" />결과가 실제 성격과 똑같나요?</h3>
-            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">재미로 즐기는 콘텐츠예요. 일상 속 선택 장면을 바탕으로 성향을 가볍게 유형화한 것이라 심리검사나 진단을 대신하지 않아요.</p></div>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">재미로 즐기는 콘텐츠예요. 일상 속 선택 장면을 바탕으로 성향을 가볍게 유형화한 것이라 심리검사나 진단을 대신하지 않아요. 결과 이름은 나의 여러 면 중 한 부분을 재미있게 빗댄 표현이에요.</p></div>
           </div>
           <div class="qa">
             <h3 class="q"><img src="assets/img/hub/faq-privacy.svg" alt="" width="30" height="30" />내 답변이 저장되나요?</h3>
             <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">답변과 결과는 서버에 저장되지 않고 이용자의 브라우저 안에서만 처리돼요. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q">테스트 하나에 얼마나 걸리나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">16개의 질문에 두 가지 중 하나를 고르는 방식이라 1분 안팎이면 끝나요. 오래 고민하지 말고 먼저 떠오르는 쪽을 고르면 돼요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q"><img src="assets/img/hub/faq-privacy.svg" alt="" width="30" height="30" />닉네임은 꼭 입력해야 하나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">아니에요. 입력하지 않아도 모든 기능을 쓸 수 있어요. 입력하면 결과 화면과 이미지 카드, 공유 링크에 함께 나오고, 다음에 다시 입력하지 않도록 내 기기의 브라우저에만 기억돼요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q">결과는 어떻게 공유하나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">결과 화면에서 '이미지로 저장'을 누르면 결과 카드를 이미지로 저장하거나 공유할 수 있고, '링크 공유하기'를 누르면 링크를 보낼 수 있어요. 기기에 따라 공유 창이 열리거나 링크가 복사돼요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q">친구가 내 링크를 열면 어떻게 보이나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">링크를 받은 친구는 질문에 답하지 않고도 내 결과를 바로 볼 수 있어요. 결과 아래의 '나도 테스트 하러가기'를 누르면 같은 테스트를 직접 해 볼 수 있어요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q"><img src="assets/img/hub/faq-accuracy.svg" alt="" width="30" height="30" />다시 해도 같은 결과가 나오나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">'다시 테스트하기'로 언제든 다시 할 수 있어요. 같은 사람도 기분과 상황에 따라 다르게 고를 수 있어서 결과가 달라질 수 있고, 소재가 다른 테스트에서는 다른 유형이 나오는 것도 자연스러워요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q">좋은 결과와 나쁜 결과가 따로 있나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">없어요. 결과 모두 나름의 매력을 담아 만들었고, 어떤 결과가 나와도 좋고 나쁨이 없어요. 서로 반대인 결과끼리 잘 맞는 짝이 되도록 궁합을 정했어요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q">테스트를 검색할 수 있나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">네. '테스트 모아보기' 위의 검색창에 소재나 결과 이름을 넣으면 걸러서 보여줘요. 예를 들어 '아침'이나 '아메리카노'를 넣거나, 초성(ㅁㄹㅌ)만 넣어도 찾을 수 있어요.</p></div>
+          </div>
+          <div class="qa">
+            <h3 class="q"><img src="assets/img/hub/faq-privacy.svg" alt="" width="30" height="30" />광고가 나오나요?</h3>
+            <div class="a"><img class="av" src="assets/img/hub/faq-avatar.svg" alt="" width="36" height="36" /><p class="bubble">운영을 위해 광고가 표시될 수 있어요. 광고와 쿠키에 관한 내용은 <a href="privacy.html">개인정보처리방침</a>의 '광고 및 쿠키' 항목에서 확인할 수 있어요.</p></div>
           </div>
         </div>
       </div>

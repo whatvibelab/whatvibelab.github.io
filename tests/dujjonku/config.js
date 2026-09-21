@@ -14,7 +14,7 @@ window.QUIZ_CONFIG = {
 
   intro: {
     emoji: "🍪",
-    kicker: "요즘 핫한 그 쿠키, 성향 테스트",
+    kicker: "요즘 핫한 그 쿠키, 유형 테스트",
     title: "나는 어떤\n두쫀쿠일까?",
     description:
       "쫀득하고 진한 그 두쫀쿠, 취향은 사람마다 다르죠.\n초콜릿을 대하는 태도로 알아보는 나의 두쫀쿠 유형!",
