@@ -1,23 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="무슨상연구소">
   <defs>
-    <radialGradient id="ball" cx="34%" cy="28%" r="78%">
-      <stop offset="0" stop-color="#b79cff"/>
-      <stop offset="0.5" stop-color="#6d49dc"/>
-      <stop offset="1" stop-color="#301f7a"/>
-    </radialGradient>
-    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ff9a7d"/>
-      <stop offset="1" stop-color="#e85f3f"/>
+    <clipPath id="wvl-body"><path d="M25 12H39V26L55 52Q58.5 58.5 51 58.5H13Q5.5 58.5 9 52L25 26Z"/></clipPath>
+    <linearGradient id="wvl-liq" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#82cbff"/>
+      <stop offset="1" stop-color="#2a86ff"/>
+    </linearGradient>
+    <linearGradient id="wvl-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9f6ff"/>
     </linearGradient>
   </defs>
-  <!-- 받침 -->
-  <path d="M14 56c0-6 4.5-11 10.5-12h15C45.500 45 50 50 50 56v.5a2.500 2.500 0 0 1-2.500 2.500h-31A2.500 2.500 0 0 1 14 56.500z" fill="url(#base)"/>
-  <!-- 구슬 -->
-  <circle cx="32" cy="28" r="23" fill="url(#ball)"/>
-  <!-- 하이라이트 -->
-  <path d="M16.500 22.500A17 17 0 0 1 27 11.500" fill="none" stroke="#fff" stroke-opacity="0.6" stroke-width="3.500" stroke-linecap="round"/>
-  <!-- 반짝이 -->
-  <path d="M34 19.500l2.300 6.200 6.200 2.300-6.200 2.300L34 36.500l-2.300-6.200-6.200-2.300 6.200-2.300z" fill="#ffd66b"/>
-  <path d="M45.500 38l1.100 3 3 1.100-3 1.100-1.100 3-1.100-3-3-1.100 3-1.100z" fill="#fff" fill-opacity="0.92"/>
-  <circle cx="23" cy="40.500" r="1.500" fill="#fff" fill-opacity="0.7"/>
+  <!-- 유리병 -->
+  <path d="M25 12H39V26L55 52Q58.5 58.5 51 58.5H13Q5.5 58.5 9 52L25 26Z" fill="url(#wvl-glass)"/>
+  <!-- 액체 (병 목까지 가득) -->
+  <g clip-path="url(#wvl-body)">
+    <rect x="0" y="19" width="64" height="46" fill="url(#wvl-liq)"/>
+    <path d="M0 19Q8 15 16 19T32 19T48 19T64 19V23H0Z" fill="#c6e8ff"/>
+    <g fill="#fff" fill-opacity="0.85">
+      <circle cx="16.500" cy="52" r="2.300"/>
+      <circle cx="47.500" cy="49" r="2"/>
+      <circle cx="44.500" cy="39.500" r="1.500"/>
+      <circle cx="21" cy="42.500" r="1.400"/>
+    </g>
+  </g>
+  <!-- 병 입구 -->
+  <rect x="21" y="7.500" width="22" height="6.500" rx="3.250" fill="#ffc93c"/>
+  <!-- 유리 하이라이트 -->
+  <path d="M28 14.500V17.500" stroke="#fff" stroke-width="2.800" stroke-linecap="round" opacity="0.95"/>
+  <path d="M15 51.500L19.500 43.500" stroke="#fff" stroke-width="2.800" stroke-linecap="round" opacity="0.55"/>
+  <!-- 물음표 ("무슨?") -->
+  <path d="M25.500 37.500a6.500 6.500 0 1 1 10.400 5.200c-2.400 1.600-3.900 2.900-3.900 5.300" transform="translate(0 -4.500)" fill="none" stroke="#fff" stroke-width="5.200" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 물음표의 점 = 반짝이 -->
+  <path d="M32 48.100l1.300 2.600 2.600 1.300-2.600 1.300-1.300 2.600-1.300-2.600-2.600-1.300 2.600-1.300z" fill="#ffe066"/>
+  <!-- 피어오르는 반짝이 -->
+  <path d="M46 2l1.900 5 5 1.900-5 1.900-1.900 5-1.900-5-5-1.900 5-1.900z" fill="#ffc93c"/>
+  <path d="M54.500 19l1.200 3.200 3.200 1.200-3.200 1.200-1.200 3.200-1.200-3.200-3.200-1.200 3.200-1.200z" fill="#ff8a6b"/>
+  <circle cx="17" cy="6" r="2" fill="#ffc93c"/>
 </svg>

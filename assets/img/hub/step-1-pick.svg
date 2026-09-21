@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <rect x="7" y="13" width="38" height="36" rx="8" fill="#000" opacity="0.07"/>
   <rect x="6" y="10" width="38" height="36" rx="8" fill="#fff"/>
-  <path d="M6 18a8 8 0 0 1 8-8h22a8 8 0 0 1 8 8v6H6z" fill="#d9ccff"/>
+  <path d="M6 18a8 8 0 0 1 8-8h22a8 8 0 0 1 8 8v6H6z" fill="#cfe6ff"/>
   <circle cx="16" cy="17" r="4.500" fill="#ffc93c"/>
   <circle cx="14.700" cy="15.700" r="1.300" fill="#fff" opacity="0.8"/>
-  <rect x="12" y="30" width="26" height="3.400" rx="1.700" fill="#d9cff7"/>
-  <rect x="12" y="37" width="16" height="3.400" rx="1.700" fill="#eae4fb"/>
+  <rect x="12" y="30" width="26" height="3.400" rx="1.700" fill="#cfe4ff"/>
+  <rect x="12" y="37" width="16" height="3.400" rx="1.700" fill="#e6f2ff"/>
   <circle cx="38" cy="34" r="8" fill="none" stroke="#ff7a59" stroke-opacity="0.6" stroke-width="2.200"/>
   <circle cx="38" cy="34" r="14" fill="none" stroke="#ff7a59" stroke-opacity="0.3" stroke-width="2"/>
   <path d="M38 34L38 58L44.500 52L48.500 61L53.500 58.800L49.500 50L58 50Z" fill="#3a2a2a" stroke="#fff" stroke-width="2.400" stroke-linejoin="round"/>

@@ -23,7 +23,7 @@
   --body: #4a3f39; /* 패널 본문 글씨 */
   --sub: #7a6d64; /* 작은 라벨용 회색 (대비 4.6:1) */
   --coral-deep: #cc4325; /* 흰 배경 위 숫자·링크 글씨 (대비 4.8:1) */
-  --violet-soft: #ece6ff;
+  --blue-soft: #e3f1ff; /* 보조색 바탕(로고 스카이 블루 계열) */
   --gold-soft: #fff1c7;
   --gold-mark: #ffe08a; /* 형광펜 */
   --mint-soft: #d9f4ec;
@@ -1054,7 +1054,7 @@ button {
   border-radius: 18px;
 }
 
-.hub-main .stat:nth-child(1) { background: var(--violet-soft); }
+.hub-main .stat:nth-child(1) { background: var(--blue-soft); }
 .hub-main .stat:nth-child(2) { background: var(--accent-soft); }
 .hub-main .stat:nth-child(3) { background: var(--gold-soft); }
 .hub-main .stat:nth-child(4) { background: var(--mint-soft); }
@@ -1102,7 +1102,7 @@ button {
   border-radius: 20px;
 }
 
-.hub-main .step:nth-child(1) { background: var(--violet-soft); }
+.hub-main .step:nth-child(1) { background: var(--blue-soft); }
 .hub-main .step:nth-child(2) { background: var(--accent-soft); }
 .hub-main .step:nth-child(3) { background: var(--gold-soft); }
 

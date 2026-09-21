@@ -10,8 +10,8 @@
   <rect x="16" y="21.500" width="13" height="3.400" rx="1.700" fill="#fff" fill-opacity="0.65"/>
   <circle cx="45" cy="19.500" r="6.500" fill="#fff"/>
   <path d="M41.800 19.700l2.400 2.400 4-4.800" fill="none" stroke="#e85f3f" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="9" y="37" width="46" height="19" rx="9.500" fill="#fff" stroke="#d9cff7" stroke-width="2"/>
-  <rect x="17" y="43" width="22" height="3.400" rx="1.700" fill="#d9cff7"/>
-  <rect x="17" y="49" width="14" height="3.400" rx="1.700" fill="#eae4fb"/>
-  <circle cx="45" cy="46.500" r="5" fill="none" stroke="#d9cff7" stroke-width="2"/>
+  <rect x="9" y="37" width="46" height="19" rx="9.500" fill="#fff" stroke="#cfe4ff" stroke-width="2"/>
+  <rect x="17" y="43" width="22" height="3.400" rx="1.700" fill="#cfe4ff"/>
+  <rect x="17" y="49" width="14" height="3.400" rx="1.700" fill="#e6f2ff"/>
+  <circle cx="45" cy="46.500" r="5" fill="none" stroke="#cfe4ff" stroke-width="2"/>
 </svg>

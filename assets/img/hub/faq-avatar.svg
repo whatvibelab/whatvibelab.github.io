@@ -1,19 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="무슨상연구소">
   <defs>
-    <radialGradient id="ball" cx="34%" cy="28%" r="78%">
-      <stop offset="0" stop-color="#b79cff"/>
-      <stop offset="0.5" stop-color="#6d49dc"/>
-      <stop offset="1" stop-color="#301f7a"/>
-    </radialGradient>
-    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ff9a7d"/>
-      <stop offset="1" stop-color="#e85f3f"/>
+    <clipPath id="wvl-body"><path d="M25 12H39V26L55 52Q58.5 58.5 51 58.5H13Q5.5 58.5 9 52L25 26Z"/></clipPath>
+    <linearGradient id="wvl-liq" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#82cbff"/>
+      <stop offset="1" stop-color="#2a86ff"/>
+    </linearGradient>
+    <linearGradient id="wvl-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9f6ff"/>
     </linearGradient>
   </defs>
-  <path d="M17 60c0-5.500 3.500-9.500 8.500-10.500h13c5 1 8.500 5 8.500 10.500v.5a2 2 0 0 1-2 2H19a2 2 0 0 1-2-2z" fill="url(#base)"/>
-  <circle cx="32" cy="29" r="25" fill="url(#ball)"/>
-  <path d="M13 22A20 20 0 0 1 25 9.500" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="3.500" stroke-linecap="round"/>
-  <path d="M34 19l2.600 7 7 2.600-7 2.600-2.600 7-2.600-7-7-2.600 7-2.600z" fill="#ffd66b"/>
-  <path d="M46 36l1.200 3.300 3.300 1.200-3.300 1.200L46 45l-1.200-3.300-3.300-1.200 3.300-1.200z" fill="#fff" fill-opacity="0.92"/>
-  <circle cx="21" cy="37" r="1.700" fill="#fff" fill-opacity="0.7"/>
+  <path d="M25 12H39V26L55 52Q58.5 58.5 51 58.5H13Q5.5 58.5 9 52L25 26Z" fill="url(#wvl-glass)"/>
+  <g clip-path="url(#wvl-body)">
+    <rect x="0" y="19" width="64" height="46" fill="url(#wvl-liq)"/>
+    <path d="M0 19Q8 15 16 19T32 19T48 19T64 19V23H0Z" fill="#c6e8ff"/>
+  </g>
+  <rect x="20" y="6.500" width="24" height="8" rx="4" fill="#ffc93c"/>
+  <path d="M25.500 37.500a6.500 6.500 0 1 1 10.400 5.200c-2.400 1.600-3.900 2.900-3.900 5.300" transform="translate(0 -4.500)" fill="none" stroke="#fff" stroke-width="6.400" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 47l1.500 3 3 1.500-3 1.500-1.500 3-1.500-3-3-1.500 3-1.500z" transform="translate(0 0.400)" fill="#ffe066"/>
+  <path d="M48 1l2.300 6 6 2.300-6 2.300-2.300 6-2.300-6-6-2.300 6-2.300z" fill="#ffc93c"/>
 </svg>
