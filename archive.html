@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>무슨상 아카이브 | 무슨상연구소</title>
+<meta name="description" content="지금까지 완료한 유형 테스트 결과를 한 곳에 모아 보고, 나의 성향 경향을 한 줄로 확인해요. 이 기기의 브라우저에만 기록돼요." />
+<link rel="stylesheet" href="assets/css/common.css" />
+<style>
+  .doc { padding: 24px 0 24px; }
+  .doc h1 { font-size: 22px; margin-bottom: 8px; }
+  .doc > .lead { font-size: 14px; color: var(--text-sub); line-height: 1.7; margin: 0 0 24px; }
+  /* 카드(.test-card)는 허브와 같은 스타일을 써야 해서 이 밑줄 규칙 밖에 둔다(아래 archive-list 참고). */
+  .doc > .lead a,
+  .archive-empty a { color: var(--accent-dark); text-decoration: underline; }
+
+  /* 인사이트 한 줄 */
+  .archive-insight {
+    margin: 0 0 20px;
+    padding: 16px 18px;
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  .archive-insight strong { color: var(--accent-dark); }
+
+  /* 완료한 테스트 카드 그리드 — 허브 .card-list .test-card 스타일 재사용 */
+  .archive-list { display: flex; flex-direction: column; gap: 10px; margin: 0 0 24px; }
+  .archive-list .test-card-sub { white-space: normal; }
+  .archive-card-date {
+    flex-shrink: 0;
+    align-self: flex-start;
+    font-size: 11px;
+    color: var(--text-sub);
+  }
+
+  .archive-empty {
+    padding: 32px 20px;
+    text-align: center;
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
+    border: 1px dashed var(--border);
+    color: var(--text-sub);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .archive-empty a { font-weight: 700; }
+
+  .archive-actions { display: flex; gap: 10px; }
+  .archive-actions .btn { flex: 1; }
+
+  @media (min-width: 768px) {
+    .archive-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  }
+</style>
+<!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=20260921" />
+<meta property="og:site_name" content="무슨상연구소" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="무슨상 아카이브 | 무슨상연구소" />
+<meta property="og:description" content="지금까지 완료한 유형 테스트 결과를 한 곳에 모아 보고, 나의 성향 경향을 한 줄로 확인해요. 이 기기의 브라우저에만 기록돼요." />
+<meta property="og:image" content="https://whatvibelab.com/assets/img/og-default.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://whatvibelab.com/archive.html" />
+<meta property="og:url" content="https://whatvibelab.com/archive.html" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"무슨상 아카이브 | 무슨상연구소","description":"지금까지 완료한 유형 테스트 결과를 한 곳에 모아 보고, 나의 성향 경향을 한 줄로 확인해요. 이 기기의 브라우저에만 기록돼요.","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소","url":"https://whatvibelab.com/"},"url":"https://whatvibelab.com/archive.html"}]}</script>
+<script src="assets/js/analytics-config.js"></script>
+<script src="assets/js/analytics.js"></script>
+<!-- SEO:END -->
+</head>
+<body>
+  <div class="wrap">
+    <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<header class="site-header">
+      <a class="site-brand" href="index.html"><img class="site-brand-mark" src="assets/img/logo.svg" alt="" width="22" height="22" />무슨상연구소</a>
+      <nav aria-label="사이트 메뉴">
+        <a href="index.html">테스트</a>
+        <a href="blog/index.html">읽을거리</a>
+        <a href="about.html">소개</a>
+      </nav>
+    </header>
+<!-- SITE-HEADER:END -->
+    <main class="doc">
+      <h1>무슨상 아카이브</h1>
+      <p class="lead">
+        지금까지 완료한 테스트 결과를 모아 보여드려요. 결과는 서버가 아니라
+        <strong>이 기기의 브라우저에만</strong> 기록되고, 테스트당 가장 최근 결과 1건만 남아요.
+        자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.
+      </p>
+
+      <div id="archive-app">
+        <noscript>
+          <p class="archive-empty">아카이브는 자바스크립트가 있어야 볼 수 있어요. 브라우저의 자바스크립트를 켜 주세요.</p>
+        </noscript>
+      </div>
+    </main>
+
+    <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<footer class="site-footer">
+      <nav aria-label="사이트 정보">
+        <a href="index.html">홈</a>
+        <a href="about.html">소개</a>
+        <a href="blog/index.html">읽을거리</a>
+        <a href="archive.html">내 아카이브</a>
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </nav>
+      <p>© 2026 무슨상연구소 · 재미로 즐기는 유형 테스트 모음</p>
+    </footer>
+<!-- SITE-FOOTER:END -->
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="assets/js/results-index.js"></script>
+  <script src="assets/js/archive.js"></script>
+  <script src="assets/js/ad-config.js"></script>
+  <script src="assets/js/ads.js"></script>
+</body>
+</html>

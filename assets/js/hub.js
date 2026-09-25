@@ -255,9 +255,30 @@
     }
   }
 
+  // "오늘의 무슨상"(dev.md #36) — 열 때마다 384개 결과 중 하나를 새로 무작위로 뽑아 보여준다.
+  // 빌드 시점에 미리 하나(날짜 기반) 넣어 둔 카드를 여기서 다시 무작위로 바꿔 끼우는 것.
+  function initTodayPick() {
+    const el = document.getElementById("today-pick");
+    const list = window.RESULTS_INDEX;
+    if (!el || !list || !list.length) return;
+    const pick = list[Math.floor(Math.random() * list.length)];
+    const emoji = el.querySelector(".today-pick-emoji");
+    const text = el.querySelector(".today-pick-text strong");
+    const tagline = el.querySelector(".today-pick-tagline");
+    const link = el.querySelector(".today-pick-link");
+    if (emoji) emoji.textContent = pick.emoji;
+    if (text) text.textContent = "'" + pick.name + "'";
+    if (tagline) tagline.textContent = pick.tagline;
+    if (link) {
+      link.href = pick.path;
+      link.textContent = pick.testTitle + " 해보기 →";
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     render();
     initTabs();
     initSearch();
+    initTodayPick();
   });
 })();

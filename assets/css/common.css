@@ -301,6 +301,59 @@ button {
   color: var(--sub);
 }
 
+/* "오늘의 무슨상"(dev.md #36) — 검색창 아래 작은 카드. 테스트마다 이모지·문구 길이가 달라
+   로딩 시(hub.js가 다시 뽑을 때) 레이아웃이 흔들리지 않도록 최소 높이를 준다. */
+.today-pick {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.today-pick-emoji {
+  flex-shrink: 0;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.today-pick-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.today-pick-text {
+  margin: 0 0 2px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  word-break: keep-all;
+}
+
+.today-pick-text strong {
+  font-weight: 800;
+  color: var(--accent-dark);
+}
+
+.today-pick-tagline {
+  margin: 0 0 4px;
+  font-size: 12.5px;
+  color: var(--sub);
+  word-break: keep-all;
+}
+
+.today-pick-link {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
 .test-card.is-filtered {
   display: none !important;
 }

@@ -23,9 +23,12 @@
 <meta property="og:site_name" content="무슨상연구소" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ko_KR" />
-<meta name="twitter:card" content="summary" />
 <meta property="og:title" content="무슨상연구소 | 나는 어떤 OO일까?" />
 <meta property="og:description" content="무슨상연구소 — 유형 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요." />
+<meta property="og:image" content="https://whatvibelab.com/assets/img/og-default.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="canonical" href="https://whatvibelab.com/" />
 <meta property="og:url" content="https://whatvibelab.com/" />
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"무슨상연구소","url":"https://whatvibelab.com/","description":"무슨상연구소 — 유형 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요.","inLanguage":"ko-KR"}]}</script>
@@ -64,6 +67,14 @@
           </button>
         </form>
         <p class="hub-search-status" id="hub-search-status" role="status" aria-live="polite"></p>
+        <div class="today-pick" id="today-pick">
+          <span class="today-pick-emoji" aria-hidden="true">🐌</span>
+          <div class="today-pick-body">
+            <p class="today-pick-text">오늘 당신은 왠지 <strong>'느릿느릿 여유 있는 답장'</strong> 같은 날이에요</p>
+            <p class="today-pick-tagline">급할 거 없잖아, 천천히</p>
+            <a class="today-pick-link" href="tests/chat-reply/index.html">나는 어떤 답장일까? 해보기 →</a>
+          </div>
+        </div>
         <div class="card-list" id="card-list">
           <a class="test-card live" href="tests/pizza-seolgi/index.html" data-search="나는 어떤 설기일까? 요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트 말랑쫀득 그 설기, 취향은 사람마다 다르죠. 설기를 고르고 즐기는 태도로 알아보는 나의 설기 유형! 오리지널 인절미설기 알록달록 무지개설기 든든한 팥설기 화끈한 피자설기 은은한 쑥설기 카페 콜라보 카라멜마끼아또설기 묵직한 흑설탕설기 발빠른 초코설기 고소한 견과류설기 짭짤달콤 치즈설기 포근한 밤설기 카리스마 흑임자설기 부드러운 단호박설기 군더더기 없는 백설기 은은쌉쌀한 녹차설기 다정한 딸기설기"><div class="test-card-emoji" style="background:#f7dde6">🍡</div><div class="test-card-body"><p class="test-card-title">나는 어떤 설기일까?</p><p class="test-card-sub">요즘 화제인 피자설기, 설기를 고르고 즐기는 태도로 알아보는 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
           <a class="test-card live" href="tests/four-cut/index.html" data-search="나는 어떤 네컷 포즈일까? 네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트 부스에 들어가는 순간부터 카운트다운까지, 습관은 사람마다 다르죠. 네컷을 찍는 태도로 알아보는 나의 포즈 유형! 정직한 증명사진 컷 가장자리 지킴이 컷 무드 감성 컷 시크한 무표정 컷 무심한 한 손 컷 눈 감았는데 그게 국룰인 컷 얼굴 반쯤 가린 수줍은 컷 각도 연구가 컷 얼굴 잡아당기는 장난꾸러기 컷 손하트 스팸러 컷 브이 포즈 대장 컷 소품 풀세트 기획자 컷 칼각 직캠 컷 이마 맞대기 컷 센터 양보 감독 컷 총감독 컷"><div class="test-card-emoji" style="background:#e6dcf6">📸</div><div class="test-card-body"><p class="test-card-title">나는 어떤 네컷 포즈일까?</p><p class="test-card-sub">네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
@@ -206,12 +217,13 @@
     <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
 <footer class="hub-footer">
       새로운 테스트가 계속 추가될 예정이에요 🍪<br />
-      <a href="index.html">홈</a> · <a href="about.html">소개</a> · <a href="blog/index.html">읽을거리</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a>
+      <a href="index.html">홈</a> · <a href="about.html">소개</a> · <a href="blog/index.html">읽을거리</a> · <a href="archive.html">내 아카이브</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a>
     </footer>
 <!-- SITE-FOOTER:END -->
   </div>
 
   <script src="assets/js/tests-data.js"></script>
+  <script src="assets/js/results-index.js"></script>
   <script src="assets/js/hub.js"></script>
   <script src="assets/js/ad-config.js"></script>
   <script src="assets/js/ads.js"></script>

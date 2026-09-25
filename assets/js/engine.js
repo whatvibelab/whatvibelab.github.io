@@ -13,6 +13,19 @@
   const SITE_NAME = "무슨상연구소";
   const SITE_LOGO_SRC = "../../assets/img/logo.svg"; // 테스트 페이지(tests/<id>/) 기준 경로
   const NICKNAME_KEY = "musunsang_nickname";
+  const ARCHIVE_KEY = "musunsang_archive"; // { "<testId>": { code, date } } — 테스트당 최신 결과 1건만 (archive.html이 읽음)
+
+  // 내가 직접 완주한 결과만 기록한다(공유 링크로 남의 결과를 보러 온 경우는 저장하지 않음).
+  function saveToArchive(testId, code) {
+    try {
+      const raw = localStorage.getItem(ARCHIVE_KEY);
+      const archive = raw ? JSON.parse(raw) : {};
+      archive[testId] = { code: code, date: new Date().toISOString().slice(0, 10) };
+      localStorage.setItem(ARCHIVE_KEY, JSON.stringify(archive));
+    } catch (e) {
+      /* 시크릿 모드 등 localStorage 접근 불가 시 조용히 무시 */
+    }
+  }
 
   // 닉네임/기본값("당신")은 둘 다 받침 있는 글자로 끝나서(님/신) 뒤에
   // 어떤 조사(은/이/을)를 붙여도 항상 자연스럽다 — 매번 조사를 골라 붙이지
@@ -169,6 +182,7 @@
         return;
       }
       const shared = !!(opts && opts.shared);
+      if (!shared) saveToArchive(config.meta.id, type);
       // 공유 링크로 들어온 경우 URL의 닉네임(보낸 사람)을, 아니면 방금
       // 입력한 내 닉네임을 결과 화면 전체에서 이어서 쓴다.
       const sharerNickname = shared ? (opts && opts.sharerNickname) || "" : "";
