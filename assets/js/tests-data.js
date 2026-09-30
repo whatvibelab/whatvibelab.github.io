@@ -265,4 +265,22 @@ window.TESTS = [
     path: "tests/shoe-type/index.html",
     status: "live",
   },
+  {
+    id: "playlist-type",
+    emoji: "🎧",
+    color: "#e2e3fb",
+    title: "나는 어떤 플레이리스트일까?",
+    subtitle: "음악을 대하는 습관으로 알아보는 나의 플레이리스트 유형 테스트",
+    path: "tests/playlist-type/index.html",
+    status: "live",
+  },
+  {
+    id: "study-cafe",
+    emoji: "✏️",
+    color: "#f5e8c9",
+    title: "나는 어떤 카공템일까?",
+    subtitle: "카페에서 공부하는 습관으로 알아보는 나의 카공템 유형 테스트",
+    path: "tests/study-cafe/index.html",
+    status: "live",
+  },
 ];

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 플레이리스트일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #f4f4fc;
+  --card-bg: #ffffff;
+  --text: #292a45;
+  --text-sub: #8d8fb0;
+  --accent: #4a4ed1;
+  --accent-dark: #3a3ea8;
+  --accent-soft: #e2e3fb;
+  --border: #e2e2f2;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}
