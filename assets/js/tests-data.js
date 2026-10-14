@@ -283,4 +283,22 @@ window.TESTS = [
     path: "tests/study-cafe/index.html",
     status: "live",
   },
+  {
+    id: "scent-type",
+    emoji: "🌿",
+    color: "#eef0cf",
+    title: "나는 어떤 향일까?",
+    subtitle: "향을 고르고 맡는 습관으로 알아보는 나의 향 유형 테스트",
+    path: "tests/scent-type/index.html",
+    status: "live",
+  },
+  {
+    id: "gallery-type",
+    emoji: "🖼️",
+    color: "#fbdcea",
+    title: "나는 어떤 사진첩일까?",
+    subtitle: "사진을 찍고 모으는 습관으로 알아보는 나의 사진첩 유형 테스트",
+    path: "tests/gallery-type/index.html",
+    status: "live",
+  },
 ];
