@@ -13,6 +13,7 @@
   const SITE_NAME = "무슨상연구소";
   const SITE_LOGO_SRC = "../../assets/img/logo.svg"; // 테스트 페이지(tests/<id>/) 기준 경로
   const NICKNAME_KEY = "musunsang_nickname";
+  const OPTION_TAP_GUARD_MS = 250; // 새 질문이 뜬 직후 이 시간 동안은 선택지 탭을 무시 (더블탭 오입력 방지)
   const ARCHIVE_KEY = "musunsang_archive"; // { "<testId>": { code, date } } — 테스트당 최신 결과 1건만 (archive.html이 읽음)
 
   // 내가 직접 완주한 결과만 기록한다(공유 링크로 남의 결과를 보러 온 경우는 저장하지 않음).
@@ -91,6 +92,7 @@
       index: 0,
       nickname: "",
       answers: new Array(config.questions.length).fill(null),
+      renderedAt: 0, // 마지막으로 질문을 그린 시각 (selectOption 의 연속 탭 방지용)
     };
 
     // ---------- 인트로 ----------
@@ -131,6 +133,11 @@
       const backBtn = $("quiz-back-btn");
       if (backBtn) backBtn.hidden = state.index === 0;
 
+      // 직전 탭의 포커스가 남지 않게 하고, 새 질문이 그려진 직후 잠깐은 탭을 무시한다
+      // (모바일에서 빠른 연속 탭·더블탭이 다음 질문 답으로 바로 들어가는 것 방지)
+      if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+      state.renderedAt = Date.now();
+
       const optionsWrap = $("quiz-options");
       optionsWrap.innerHTML = "";
       q.options.forEach((opt) => {
@@ -148,6 +155,7 @@
     }
 
     function selectOption(opt) {
+      if (Date.now() - state.renderedAt < OPTION_TAP_GUARD_MS) return;
       state.answers[state.index] = { axis: opt.axis, dir: opt.dir };
       const total = config.questions.length;
       if (state.index < total - 1) {

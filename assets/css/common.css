@@ -695,9 +695,13 @@ button {
   transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
 }
 
-.option-btn:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
+/* 마우스가 있는 기기에서만 hover 강조 — 터치 기기는 탭한 자리에 :hover 가 남아서,
+   같은 자리에 새로 그려진 다음 질문 선택지가 "미리 눌린 것처럼"(.selected 와 같은 모양) 보였음 */
+@media (hover: hover) and (pointer: fine) {
+  .option-btn:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
 }
 
 .option-btn:active {
