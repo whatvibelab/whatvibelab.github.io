@@ -60,7 +60,7 @@ window.QUIZ_CONFIG = {
       },
     ],
     related: [
-      { id: "pizza-seolgi", reason: "말랑한 떡 간식을 고르는 태도를 설기로 나눈 테스트예요" },
+      { id: "pizza-seolgi", reason: "말랑한 떡 간식을 고르는 태도를 피자설기로 나눈 테스트예요" },
       { id: "cafedrink", reason: "따뜻한 음료를 고를 때의 습관을 카페 메뉴로 비교해 볼 수 있어요" },
       { id: "wake-alarm", reason: "추운 날 아침에 이불 속에서 알람을 대하는 습관도 궁금할 때 좋아요" },
     ],

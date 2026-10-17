@@ -58,7 +58,7 @@ window.QUIZ_CONFIG = {
     ],
     related: [
       { id: "dujjonku", reason: "카페에서 함께 고르는 디저트 취향을 초콜릿 쿠키로 볼 수 있어요" },
-      { id: "pizza-seolgi", reason: "음료 옆에 놓을 간식을 고르는 태도를 설기로 나눈 테스트예요" },
+      { id: "pizza-seolgi", reason: "음료 옆에 놓을 간식을 고르는 태도를 피자설기로 나눈 테스트예요" },
       { id: "chat-reply", reason: "카페에서 친구와 나누는 메시지 답장 습관을 함께 볼 수 있어요" },
     ],
   },

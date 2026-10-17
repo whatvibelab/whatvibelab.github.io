@@ -57,7 +57,7 @@ window.QUIZ_CONFIG = {
       },
     ],
     related: [
-      { id: "pizza-seolgi", reason: "같은 디저트 취향을 말랑한 설기로 풀어 본 테스트예요" },
+      { id: "pizza-seolgi", reason: "같은 디저트 취향을 말랑한 피자설기로 풀어 본 테스트예요" },
       { id: "cafedrink", reason: "디저트와 잘 어울리는 음료를 고르는 습관을 볼 수 있어요" },
       { id: "bomdong-bibimbap", reason: "재료를 고르는 태도를 한 그릇 음식으로 나눈 유형이에요" },
     ],

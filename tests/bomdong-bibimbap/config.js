@@ -61,7 +61,7 @@ window.QUIZ_CONFIG = {
       },
     ],
     related: [
-      { id: "pizza-seolgi", reason: "요즘 화제인 간식을 고르는 태도를 설기로 나눈 테스트예요" },
+      { id: "pizza-seolgi", reason: "요즘 화제인 간식을 고르는 태도를 피자설기로 나눈 테스트예요" },
       { id: "dujjonku", reason: "맛을 고르고 사러 가는 습관을 초콜릿 쿠키로 풀어 봤어요" },
       { id: "cafedrink", reason: "한 끼 다음에 고르는 음료 습관이 궁금할 때 좋아요" },
     ],
