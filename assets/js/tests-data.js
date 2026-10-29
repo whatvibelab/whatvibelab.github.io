@@ -301,4 +301,13 @@ window.TESTS = [
     path: "tests/gallery-type/index.html",
     status: "live",
   },
+  {
+    id: "tree-ornament",
+    emoji: "🎄",
+    color: "#f6d9de",
+    title: "나는 어떤 트리 장식일까?",
+    subtitle: "크리스마스를 준비하는 습관으로 알아보는 나의 트리 장식 유형 테스트",
+    path: "tests/tree-ornament/index.html",
+    status: "live",
+  },
 ];

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 트리 장식일까?" 스킨. (draft 제안 팔레트, accent는 ΔE 확인 후 크림슨으로 조정)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fdf6f2;
+  --card-bg: #ffffff;
+  --text: #3a2422;
+  --text-sub: #a07f79;
+  --accent: #b0223f;
+  --accent-dark: #8c1a32;
+  --accent-soft: #f6d9de;
+  --border: #f1dde0;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}
