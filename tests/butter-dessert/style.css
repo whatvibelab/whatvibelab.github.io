@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 버터 디저트일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fffaee;
+  --card-bg: #ffffff;
+  --text: #3b2f1e;
+  --text-sub: #a08c6a;
+  --accent: #d19a1e;
+  --accent-dark: #a97a12;
+  --accent-soft: #fbefc8;
+  --border: #f3e6c4;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}
