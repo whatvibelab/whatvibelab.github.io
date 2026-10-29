@@ -22,7 +22,10 @@ window.AD_CONFIG = {
   network: null, // null(광고 없음) | "adsense" | "adfit"
 
   adsense: {
-    client: "", // 예: "ca-pub-1234567890123456"
+    // 애드센스 퍼블리셔 ID (2026-10-29 등록). tools/build-static.js 가 이 값을 읽어
+    // 모든 페이지 <head>의 애드센스 코드(사이트 소유권 확인용)와 루트 ads.txt 를 만든다.
+    // network 가 null 인 동안에는 광고 자리(.ad-slot)는 계속 숨겨진다.
+    client: "ca-pub-1429945929826005",
   },
 
   slots: {
