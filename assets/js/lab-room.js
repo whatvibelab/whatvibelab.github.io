@@ -352,8 +352,8 @@
       return { x: nx, y: ny };
     }
 
-    // 평소 모드에서 가구를 꾹(0.45초) 누르면 배치 모드로 바뀌면서 그 가구를 바로 집어 든다.
-    const LONG_PRESS_MS = 450;
+    // 평소 모드에서 가구를 누른 채 끌면 그 가구만 바로 옮긴다(편집창 없이, 2026-11-22 woody).
+    // 보관함·뒤집기 같은 편집은 아래 HUD 의 "배치 바꾸기" 버튼으로만 들어간다.
     let lp = null;
     function cancelLongPress() {
       if (lp) clearTimeout(lp.timer);
@@ -361,26 +361,15 @@
     }
     canvas.addEventListener("contextmenu", (ev) => ev.preventDefault()); // 휴대폰 길게 누르기 메뉴 막기
 
-    // 평소 모드에서 가구 집어 들기 — 꾹 누르기(long) 또는 누른 채 바로 끌기(2026-11-22 woody: 꾹 안 눌러도 끌면 이동)
-    // 손을 떼면 그 자리에 놓이고 배치 모드도 닫힌다(endDrag 의 fromLong).
-    function startQuickDrag(l, long) {
-      opts.onLongPress && opts.onLongPress(); // 바깥(archive.js)에서 배치 모드 켜기 → setEdit(true)
-      if (!edit) edit = true;
+    // 평소 모드에서 가구 집어 들기 — 누른 채 끌기. 손을 떼면 그 자리에 놓이고 끝(endDrag 의 fromLong).
+    function startQuickDrag(l) {
+      if (!edit) edit = true; // 방 안에서만 잠깐 배치 상태 (바깥 편집창은 열지 않음)
       player.path = [];
       player.pending = null;
       drag = { id: l.id, offX: l.offX, offY: l.offY, sx: l.sx, sy: l.sy, moved: true, tx: l.tx, ty: l.ty, fromLong: true };
       setPicked(l.id);
       opts.onDrag && opts.onDrag(true);
       suppressClick = true;
-      if (long) {
-        try {
-          // 실제로 화면을 만진 적이 있을 때만(아니면 브라우저가 막고 콘솔 오류를 남김)
-          const ua = navigator.userActivation;
-          if (navigator.vibrate && (!ua || ua.hasBeenActive)) navigator.vibrate(15);
-        } catch (e) {
-          /* 무시 */
-        }
-      }
       try {
         canvas.setPointerCapture(l.pid);
       } catch (e) {
@@ -396,12 +385,6 @@
         cancelLongPress();
         if (!it0 || it0.door) return;
         lp = { id: it0.id, offX: p0.tx - it0.x, offY: it0.wall ? 0 : p0.ty - it0.y, sx: ev.clientX, sy: ev.clientY, tx: p0.tx, ty: p0.ty, pid: ev.pointerId };
-        lp.timer = setTimeout(() => {
-          const l = lp;
-          lp = null;
-          if (!l) return;
-          startQuickDrag(l, true);
-        }, LONG_PRESS_MS);
         return;
       }
       const p = toLocal(ev);
@@ -423,7 +406,7 @@
       if (lp && Math.abs(ev.clientX - lp.sx) + Math.abs(ev.clientY - lp.sy) > 8) {
         const l = lp;
         cancelLongPress();
-        startQuickDrag(l, false);
+        startQuickDrag(l);
       }
       if (!edit) return;
       const p = toLocal(ev);
@@ -456,13 +439,19 @@
       if (!cancel && it) {
         const tt = dragTarget(it, d.tx, d.ty, d);
         if (tt.x === it.x && tt.y === it.y) {
+          if (d.fromLong) {
+            // 끌다가 제자리에 놓음 → 그냥 끝
+            setPicked(null);
+            opts.onQuickDropEnd && opts.onQuickDropEnd();
+            return;
+          }
           setPicked(d.id);
           hint(`${it.name}: 끌어서 옮기거나, 아래 버튼으로 뒤집기·넣기`);
           return;
         }
         if (moveTo(d.id, tt.x, tt.y)) {
           setPicked(null);
-          // 꾹 눌러 시작한 이동은 손을 떼면 끝 — 배치 모드도 바로 닫는다(확인 버튼 없이, 2026-11-22 woody)
+          // 평소 모드에서 끌어 옮긴 것은 손을 떼면 끝 — 확인 버튼 없이 (2026-11-22 woody)
           if (d.fromLong) {
             opts.onQuickDropEnd && opts.onQuickDropEnd();
             hint(`${it.name} 자리를 옮겼어요!`);

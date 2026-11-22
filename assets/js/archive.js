@@ -100,7 +100,7 @@
         <button type="button" class="hud-me" id="lab-head" aria-label="내 정보 열기"></button>
         <p class="hud-hint" id="room-hint" aria-live="polite">바닥을 눌러 움직이고, 물건을 눌러 보세요</p>
         <div class="hud-btns">
-          <button type="button" class="hud-btn" id="room-edit" aria-label="배치 바꾸기" title="배치 바꾸기">🛠</button>
+          <button type="button" class="hud-btn hud-btn-edit" id="room-edit" aria-label="배치 바꾸기" title="배치 바꾸기">🛠<span class="hud-btn-label">배치 바꾸기</span></button>
           <button type="button" class="hud-btn" id="room-reset" aria-label="처음 배치로" title="처음 배치로" hidden>↺</button>
           <button type="button" class="hud-btn" id="hud-help" aria-label="도움말" title="도움말">❓</button>
           <button type="button" class="hud-btn" id="hud-exit" aria-label="연구소 나가기" title="나가기">🚪</button>
@@ -129,11 +129,12 @@
       onUse: (action) => openPanel(action),
       tickets: () => P.tickets(),
       isBlocked: () => !!openAction, // 가구 창이 열려 있으면 키보드로 움직이지 않음
-      onPick: (info) => showPickTools(info),
-      onLongPress: () => {
-        if (!room.isEdit()) setEditMode(true);
+      // 뒤집기·넣기 도구는 "배치 바꾸기"로 들어온 편집 화면에서만 (평소에 끌어 옮길 때는 창 없음)
+      onPick: (info) => {
+        const dock = document.getElementById("edit-dock");
+        if (!info || (dock && !dock.hidden)) showPickTools(info);
       },
-      // 꾹 눌러 끌어 옮긴 뒤 손을 떼면 배치 모드 끝(확인 버튼 생략)
+      // 평소 모드에서 가구를 끌어 옮긴 뒤 손을 떼면 끝(확인 버튼 생략)
       onQuickDropEnd: () => {
         if (room.isEdit()) setEditMode(false);
       },
@@ -330,7 +331,8 @@
           <li><b>쓸 수 있는 물건</b> 위에 <b>말풍선 아이콘</b>이 떠 있고 테두리가 반짝여요. 가까이 가면 말풍선이 노랗게 바뀌어요. 표시가 없는 화분·러그·창문은 장식이에요.</li>
           <li><b>물건 쓰기</b> 물건을 누르면 옆까지 가서 열어요. 가까이 서서 스페이스·엔터를 눌러도 돼요.</li>
           <li><b>옷장</b> 꾸미기 · <b>달력</b> 출석 · <b>책장</b> 도감 · <b>상장 액자</b> 상장 · <b>책상</b> 연구 기록 · <b>뽑기 기계</b> 아이템 뽑기 · <b>문</b> 나가기</li>
-          <li><b>🛠 배치 바꾸기</b> 가구를 <b>꾹 누르면</b> 바로 집어서 끌 수 있어요(배치 모드가 자동으로 켜져요). 🛠 버튼으로도 켤 수 있고, 배치는 이 기기에 저장돼요.</li>
+          <li><b>가구 옮기기</b> 가구를 누른 채 끌어서 원하는 자리에 놓으면 돼요.</li>
+          <li><b>🛠 배치 바꾸기</b> 아래 버튼을 누르면 보관함에서 가구를 꺼내 놓거나, 뒤집기·넣기·처음 배치로 되돌리기를 할 수 있어요. 배치는 이 기기에 저장돼요.</li>
           <li><b>내 정보</b> 왼쪽 아래 이름을 누르면 레벨·경험치·이름 바꾸기가 있어요.</li>
         </ul>
         <p class="lab-help">기록은 서버가 아니라 이 기기의 브라우저에만 저장돼요. 브라우저 기록을 지우거나 다른 기기로 바꾸면 처음부터 시작해요. <a href="privacy.html">개인정보처리방침</a></p>`;
@@ -641,7 +643,7 @@
     room.setEdit(on);
     const editBtn = document.getElementById("room-edit");
     const resetBtn = document.getElementById("room-reset");
-    editBtn.textContent = on ? "✔" : "🛠";
+    editBtn.innerHTML = on ? '✔<span class="hud-btn-label">배치 끝내기</span>' : '🛠<span class="hud-btn-label">배치 바꾸기</span>';
     editBtn.setAttribute("aria-label", on ? "배치 끝내기" : "배치 바꾸기");
     editBtn.classList.toggle("on", on);
     resetBtn.hidden = !on;
