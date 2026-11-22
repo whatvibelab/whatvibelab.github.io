@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>무슨상 아카이브 | 무슨상연구소</title>
-<meta name="description" content="지금까지 완료한 유형 테스트 결과를 한 곳에 모아 보고, 나의 성향 경향을 한 줄로 확인해요. 이 기기의 브라우저에만 기록돼요." />
+<title>내 연구실 | 무슨상연구소</title>
+<meta name="description" content="내 연구원의 칭호와 레벨, 출석, 칭호 도감, 상장, 완료한 유형 테스트 결과를 한 곳에서 확인해요. 기록은 이 기기의 브라우저에만 저장돼요." />
 <link rel="stylesheet" href="assets/css/common.css" />
 <style>
   .doc { padding: 24px 0 24px; }
@@ -50,6 +50,273 @@
   }
   .archive-empty a { font-weight: 700; }
 
+  /* 내 연구실 (dev.md #52) — 연구소 벽 타일 배경 */
+  body.lab-page {
+    background-color: #eef6fd;
+    background-image:
+      linear-gradient(#dcebf8 1px, transparent 1px),
+      linear-gradient(90deg, #dcebf8 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .lab-back {
+    display: inline-flex; align-items: center; gap: 6px; margin: 0 0 14px; padding: 7px 14px 7px 12px;
+    border-radius: 999px; background: var(--card-bg); border: 1px solid var(--border);
+    font-size: 13px; font-weight: 800; color: var(--text); text-decoration: none; box-shadow: var(--shadow);
+  }
+  .lab-back:hover { border-color: var(--accent); color: var(--accent-dark); }
+  .lab-scene { margin: -22px -20px 0; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden; line-height: 0; }
+  .lab-scene-img { width: 100%; height: auto; aspect-ratio: 60 / 34; }
+  .lab-profile {
+    margin: 0 0 8px; padding: 22px 20px 18px; text-align: center;
+    border-radius: var(--radius-lg); background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow);
+  }
+  .lab-avatar-box { display: inline-block; padding: 10px; border-radius: var(--radius-md); background: var(--blue-soft); }
+  .lab-avatar { width: 128px; height: 128px; }
+  .lab-nick { display: flex; justify-content: center; align-items: center; gap: 8px; max-width: 320px; margin: 12px auto 0; }
+  .lab-nick-name { font-size: 14px; font-weight: 800; color: var(--accent-dark); }
+  .lab-title { margin: 12px 0 2px; font-size: 21px; font-weight: 800; word-break: keep-all; }
+  .lab-line { margin: 0 0 14px; font-size: 13px; color: var(--text-sub); }
+  .lab-profile .me-level { max-width: 320px; margin: 0 auto; }
+  .lab-stats { margin: 10px 0 0; font-size: 13px; color: var(--text-sub); }
+  .lab-days { display: flex; justify-content: center; gap: 6px; margin: 14px 0 0; padding: 0; list-style: none; }
+  .lab-day { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11px; color: var(--text-sub); }
+  .lab-day span {
+    display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%;
+    border: 2px dashed var(--border); font-size: 14px; font-weight: 800; color: #fff;
+  }
+  .lab-day.on span { border: 0; background: #2fae91; }
+  .lab-h2 { margin: 28px 0 10px; font-size: 17px; }
+  .lab-h2 small { font-size: 13px; color: var(--text-sub); font-weight: 700; }
+  .lab-help { margin: 0 0 10px; font-size: 13px; line-height: 1.6; color: var(--text-sub); }
+  .lab-look { padding: 14px; border-radius: var(--radius-lg); background: var(--card-bg); border: 1px solid var(--border); }
+  .lab-look-title { margin: 0 0 8px; font-size: 13px; font-weight: 800; }
+  .lab-look-title small { font-weight: 600; color: var(--text-sub); }
+  .lab-look-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; margin: 0 0 14px; }
+  .lab-look-row .me-hair-btn.locked { opacity: 0.45; cursor: default; }
+  .lab-dex { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .lab-dex-cell {
+    padding: 10px 12px; border-radius: var(--radius-sm); border: 1px dashed var(--border); background: var(--bg);
+    font-size: 12px; color: var(--text-sub); line-height: 1.5;
+  }
+  .lab-dex-cell strong { display: block; font-size: 14px; color: var(--text-sub); }
+  .lab-dex-cell.open { border-style: solid; background: var(--card-bg); }
+  .lab-dex-cell.open strong { color: var(--accent-dark); }
+  .lab-badges { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .lab-badge {
+    display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: var(--radius-md);
+    border: 1px solid var(--border); background: var(--card-bg); opacity: 0.75;
+  }
+  .lab-badge.got { opacity: 1; background: var(--gold-soft); border-color: #f3dc9a; }
+  .lab-badge-mark { font-size: 22px; line-height: 1; }
+  .lab-badge strong { font-size: 14px; }
+  .lab-badge p { margin: 2px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--body); }
+  .lab-badge .lab-badge-sub { color: var(--text-sub); }
+  .lab-rules { margin: 0; padding-left: 18px; font-size: 13.5px; line-height: 1.9; }
+  .lab-rules b { color: var(--accent-dark); }
+  /* 게임 방 (dev.md #56, assets/js/lab-room.js) */
+  .lab-profile-compact { padding: 16px 18px 14px; text-align: center; }
+  .lab-profile-compact .lab-nick { margin-top: 0; }
+  .lab-profile-compact .lab-title { margin-top: 6px; }
+  .room { margin: 16px 0 8px; }
+  .room-stage {
+    position: relative; border-radius: var(--radius-lg); overflow: hidden; line-height: 0;
+    border: 3px solid #2b2320; box-shadow: 0 10px 0 rgba(43, 35, 32, 0.12), var(--shadow); background: #e3f1ff;
+  }
+  .room-canvas {
+    display: block; width: 100%; height: auto; aspect-ratio: 192 / 160;
+    image-rendering: pixelated; image-rendering: crisp-edges; cursor: pointer; touch-action: manipulation;
+  }
+  .room-canvas:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+  .room-hint {
+    margin: 10px 0 0; min-height: 22px; text-align: center; font-size: 13.5px; font-weight: 700; color: var(--body);
+  }
+  .room-tools { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+  .room-tool {
+    padding: 8px 14px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--card-bg);
+    font: inherit; font-size: 13px; font-weight: 800; color: var(--text); cursor: pointer;
+  }
+  .room-tool.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .room-legend {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 12px; margin: 10px 0 0; padding: 0; list-style: none;
+    font-size: 12px; color: var(--text-sub);
+  }
+  .room-legend b { color: var(--text); }
+
+  /* 화면 전체 게임 (dev.md #56-2) — JS 가 body 에 lab-game 을 붙이면 사이트 본문은 숨기고 게임만 */
+  body.lab-game { overflow: hidden; background: #e3f1ff; }
+  body.lab-game > .wrap { display: none; }
+  .game { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; background: #e3f1ff; }
+  .game-stage {
+    flex: 1; min-height: 0; display: flex; align-items: flex-start; justify-content: center; overflow: hidden;
+    background: linear-gradient(#e3f1ff 0 30%, #e9dccb 30% 100%);
+  }
+  .game .room-canvas {
+    display: block; aspect-ratio: auto; image-rendering: pixelated; image-rendering: crisp-edges; cursor: pointer; touch-action: none;
+    -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+  }
+  .game .room-canvas:focus { outline: none; }
+  .game .room-canvas:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+  .game-hud {
+    flex-shrink: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "hint hint" "me btns";
+    gap: 6px 10px; align-items: center; padding: 8px 12px calc(10px + env(safe-area-inset-bottom));
+    background: #2b2320; border-top: 4px solid #4a3a32; color: #fff6ec;
+  }
+  @media (min-width: 720px) {
+    .game-hud { grid-template-columns: minmax(220px, 300px) 1fr auto; grid-template-areas: "me hint btns"; }
+  }
+  .hud-hint { grid-area: hint; margin: 0; font-size: 12.5px; font-weight: 700; color: #ffe9b0; text-align: center; min-height: 18px; }
+  .hud-me {
+    grid-area: me; display: grid; gap: 2px; min-width: 0; padding: 6px 10px; border-radius: 10px; text-align: left;
+    background: #3b302b; border: 2px solid #5a4a42; color: #fff6ec; font: inherit; cursor: pointer;
+  }
+  .hud-me-name { font-size: 12px; font-weight: 800; color: #9fd2ff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hud-me-title { font-size: 13.5px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hud-me-lv { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .hud-me-lv b { color: #ffd84a; }
+  .hud-me .xp-bar { height: 8px; background: #5a4a42; }
+  .hud-ticket { flex-shrink: 0; font-size: 11.5px; font-weight: 800; color: #ffd84a; }
+  .hud-btns { grid-area: btns; display: flex; gap: 6px; }
+  .hud-btn {
+    width: 42px; height: 42px; border-radius: 10px; border: 2px solid #5a4a42; background: #3b302b;
+    font-size: 18px; line-height: 1; cursor: pointer;
+  }
+  .hud-btn.on { background: var(--accent); border-color: #9fd2ff; }
+  .hud-btn:hover { border-color: #9fd2ff; }
+  .me-sheet { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .me-sheet .lab-nick { justify-content: flex-start; margin: 0 0 4px; }
+  .me-sheet .lab-title { margin: 0; text-align: left; font-size: 18px; }
+  .me-sheet .lab-line { margin: 2px 0 0; text-align: left; }
+  .me-go { display: block; width: 100%; margin-top: 14px; text-align: center; }
+
+  /* 가구 창: 휴대폰은 아래에서 올라오는 시트, 넓은 화면은 가운데 창 */
+  .room-panel-backdrop { position: fixed; inset: 0; background: rgba(20, 26, 54, 0.45); z-index: 50; }
+  .room-panel {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 51; max-height: 82vh; overflow-y: auto;
+    padding: 16px 18px 24px; border-radius: 22px 22px 0 0; background: var(--bg);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+  }
+  @media (min-width: 640px) {
+    .room-panel { left: 50%; right: auto; bottom: auto; top: 50%; width: min(560px, 92vw); transform: translate(-50%, -50%); border-radius: 22px; }
+  }
+  .room-panel-head { display: flex; align-items: center; justify-content: space-between; margin: 0 0 10px; }
+  .room-panel-head h2 { margin: 0; font-size: 18px; }
+  .room-panel-close {
+    width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--card-bg);
+    font-size: 16px; cursor: pointer;
+  }
+  body.room-panel-open { overflow: hidden; }
+  .room-door-actions { display: flex; flex-direction: column; gap: 8px; }
+  .room-door-actions .btn { width: 100%; text-align: center; }
+
+  /* 꾸미기·뽑기·도감 (dev.md #57) — 등급색: 일반 회색 · 레어 파랑 · 유니크 보라 · 전설 금색 */
+  .g0 { --gc: #8a7d74; --gbg: #f6f2ed; }
+  .g1 { --gc: #1d6fdc; --gbg: #e3f1ff; }
+  .g2 { --gc: #8a4fd8; --gbg: #efe6fb; }
+  .g3 { --gc: #d18b00; --gbg: #fff1c7; }
+  .grade-tag { display: inline-block; padding: 2px 8px; border-radius: 999px; background: var(--gbg); color: var(--gc); font-size: 11.5px; font-weight: 800; }
+  .wd-top { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .wd-preview { flex-shrink: 0; padding: 8px; border-radius: var(--radius-md); background: var(--blue-soft); line-height: 0; }
+  .wd-big { width: 96px; height: 96px; }
+  .wd-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+  .wd-tab {
+    padding: 7px 12px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--card-bg);
+    font: inherit; font-size: 12.5px; font-weight: 800; color: var(--text-sub); cursor: pointer;
+  }
+  .wd-tab.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .wd-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+  .wd-item {
+    position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 4px;
+    border-radius: var(--radius-sm); border: 2px solid var(--gbg, var(--border)); background: var(--gbg, var(--card-bg));
+    font: inherit; cursor: pointer;
+  }
+  .wd-item canvas { width: 48px; height: 48px; image-rendering: pixelated; }
+  .wd-item[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+  .wd-name { font-size: 11px; font-weight: 700; line-height: 1.3; color: var(--text); text-align: center; word-break: keep-all; }
+  .wd-item.g3 .wd-name { color: #9a6700; }
+  .wd-count { position: absolute; top: 4px; right: 6px; font-size: 10.5px; font-weight: 800; color: var(--gc, var(--text-sub)); }
+
+  .gacha-box { text-align: center; padding: 14px; border-radius: var(--radius-lg); background: var(--card-bg); border: 1px solid var(--border); }
+  .gacha-result { min-height: 132px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .gacha-capsule {
+    width: 72px; height: 72px; border-radius: 50%; border: 4px solid #2b2320;
+    background: linear-gradient(180deg, #ff8a3d 0 50%, #fff 50% 100%);
+  }
+  .gacha-capsule.idle { animation: cap-bob 2s ease-in-out infinite; }
+  .gacha-capsule.spin { animation: cap-shake 0.18s linear infinite; }
+  @keyframes cap-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes cap-shake { 0% { transform: rotate(-12deg); } 50% { transform: rotate(12deg); } 100% { transform: rotate(-12deg); } }
+  @media (prefers-reduced-motion: reduce) { .gacha-capsule.idle, .gacha-capsule.spin { animation: none; } }
+  .gacha-wait { margin: 8px 0 0; font-weight: 800; color: var(--text-sub); }
+  .gacha-card {
+    display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: var(--radius-md);
+    background: var(--gbg); border: 2px solid var(--gc); text-align: left; animation: card-pop 0.35s ease-out;
+  }
+  .gacha-card.g3 { box-shadow: 0 0 0 4px #fff1c7, 0 0 24px rgba(242, 182, 50, 0.7); }
+  @keyframes card-pop { 0% { transform: scale(0.6); opacity: 0; } 70% { transform: scale(1.06); } 100% { transform: scale(1); opacity: 1; } }
+  .gacha-art { width: 80px; height: 80px; image-rendering: pixelated; }
+  .gacha-name { margin: 6px 0 0; font-size: 16px; font-weight: 800; }
+  .gacha-slot { margin: 2px 0 8px; font-size: 12px; color: var(--text-sub); }
+  .gacha-new, .gacha-dup { margin-left: 6px; font-size: 11px; font-weight: 900; color: #e8505b; }
+  .gacha-dup { color: var(--text-sub); }
+  .gacha-new.up { color: #8a4fd8; }
+  .gacha-tickets { margin: 10px 0 6px; font-size: 15px; font-weight: 700; }
+  .gacha-tickets b { color: var(--accent-dark); font-size: 20px; }
+  .gacha-pull { width: 100%; max-width: 260px; }
+  .gx-title { margin: 18px 0 4px; font-size: 15px; }
+  .gx-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .gx-row {
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 4px 10px; padding: 8px 10px;
+    border-radius: var(--radius-sm); background: var(--card-bg); border: 1px solid var(--border); font-size: 13px;
+  }
+  .gx-row small { grid-column: 1 / -1; color: var(--text-sub); font-size: 11.5px; }
+  .gx-btn:disabled { opacity: 0.45; cursor: default; }
+
+  .item-dex { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .item-cell {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 76px; padding: 6px 2px;
+    border-radius: var(--radius-sm); border: 1.5px dashed var(--gc); background: #fff; text-align: center;
+  }
+  .item-cell.got { border-style: solid; background: var(--gbg); }
+  .item-cell canvas { width: 40px; height: 40px; image-rendering: pixelated; }
+  .item-cell b { font-size: 22px; color: var(--gc); line-height: 1.2; }
+  .item-cell span { font-size: 10.5px; font-weight: 700; line-height: 1.25; color: var(--text); word-break: keep-all; }
+
+  /* 배치 모드: 가구 보관함 + 고른 가구 도구 (dev.md #57 B) — HUD 바로 위에 겹쳐 뜬다 */
+  .edit-dock {
+    position: absolute; left: 0; right: 0; z-index: 45; max-height: 34vh; overflow-y: auto; transition: opacity 0.15s ease;
+    padding: 10px 12px 12px; background: rgba(43, 35, 32, 0.94); border-top: 3px solid #4a3a32; color: #fff6ec;
+  }
+  .edit-dock .wd-tabs { margin-bottom: 8px; }
+  .edit-dock.dragging { opacity: 0.12; pointer-events: none; } /* 끄는 동안 방이 보이게 */
+  .edit-dock.placing .edit-storage { display: none; } /* 꺼내는 동안 한 줄 안내만 */
+  .edit-dock.placing .edit-tools { margin: 0; padding: 0; border: 0; }
+  .edit-dock .wd-tab { background: #3b302b; border-color: #5a4a42; color: #f1e8dd; }
+  .edit-dock .wd-tab.on { background: var(--accent); border-color: #9fd2ff; color: #fff; }
+  .edit-dock .lab-help { color: #e8dccf; }
+  .edit-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 10px; padding: 0 0 10px; border-bottom: 1px dashed #5a4a42; }
+  .edit-tools-name { flex: 1 1 100%; font-size: 13px; font-weight: 800; color: #ffd84a; }
+  .edit-tools .room-tool { background: #3b302b; border-color: #5a4a42; color: #fff6ec; }
+  .storage-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 6px; }
+  .storage-item {
+    position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px;
+    min-height: 82px; padding: 6px 4px; border-radius: 10px; border: 2px solid var(--gc, #5a4a42); background: #3b302b;
+    font: inherit; cursor: pointer;
+  }
+  .storage-item canvas { max-width: 56px; max-height: 44px; width: auto; height: auto; image-rendering: pixelated; transform: scale(1.6); transform-origin: bottom center; margin-top: 18px; }
+  .storage-item .wd-name { color: #fff6ec; font-size: 10.5px; }
+  .storage-item .wd-count { color: #ffd84a; }
+  .storage-item:disabled { opacity: 0.4; cursor: default; }
+  .storage-item.placing, .storage-item[aria-pressed="true"] { border-color: #ffd84a; box-shadow: 0 0 0 2px rgba(255, 216, 74, 0.4); }
+  .storage-swatch { width: 34px; height: 34px; border-radius: 6px; margin-bottom: 4px; }
+  .storage-swatch.wallpaper { background: repeating-linear-gradient(90deg, #e3f1ff 0 7px, #d0e4f6 7px 8px); }
+  .storage-swatch.flooring { background: conic-gradient(#efe4d6 25%, #e4d5c2 0 50%, #efe4d6 0 75%, #e4d5c2 0) 0 0 / 16px 16px; }
+  .gacha-capsule.blue { background: linear-gradient(180deg, #2a86ff 0 50%, #fff 50% 100%); }
+  .gacha-cats { justify-content: center; }
+  .gacha-tickets small { font-size: 11.5px; color: var(--text-sub); font-weight: 600; }
+  .item-cell canvas, .gacha-art { object-fit: contain; }
+
+  /* 출석 달력 스타일은 assets/css/common.css 로 옮김 (홈 카드 달력과 공용) */
+
   .archive-actions { display: flex; gap: 10px; }
   .archive-actions .btn { flex: 1; }
 
@@ -58,6 +325,7 @@
   }
 </style>
 <!-- SEO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
+<meta name="robots" content="noindex" />
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=20260921" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 <link rel="manifest" href="manifest.webmanifest" />
@@ -66,21 +334,25 @@
 <meta property="og:site_name" content="무슨상연구소" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ko_KR" />
-<meta property="og:title" content="무슨상 아카이브 | 무슨상연구소" />
-<meta property="og:description" content="지금까지 완료한 유형 테스트 결과를 한 곳에 모아 보고, 나의 성향 경향을 한 줄로 확인해요. 이 기기의 브라우저에만 기록돼요." />
+<meta property="og:title" content="내 연구실 | 무슨상연구소" />
+<meta property="og:description" content="내 연구원의 칭호와 레벨, 출석, 칭호 도감, 상장, 완료한 유형 테스트 결과를 한 곳에서 확인해요. 기록은 이 기기의 브라우저에만 저장돼요." />
 <meta property="og:image" content="https://whatvibelab.com/assets/img/og-default.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="canonical" href="https://whatvibelab.com/archive.html" />
 <meta property="og:url" content="https://whatvibelab.com/archive.html" />
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"무슨상 아카이브 | 무슨상연구소","description":"지금까지 완료한 유형 테스트 결과를 한 곳에 모아 보고, 나의 성향 경향을 한 줄로 확인해요. 이 기기의 브라우저에만 기록돼요.","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소","url":"https://whatvibelab.com/"},"url":"https://whatvibelab.com/archive.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"내 연구실 | 무슨상연구소","description":"내 연구원의 칭호와 레벨, 출석, 칭호 도감, 상장, 완료한 유형 테스트 결과를 한 곳에서 확인해요. 기록은 이 기기의 브라우저에만 저장돼요.","inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"무슨상연구소","url":"https://whatvibelab.com/"},"url":"https://whatvibelab.com/archive.html"}]}</script>
 <script src="assets/js/analytics-config.js"></script>
 <script src="assets/js/analytics.js"></script>
+<script defer src="assets/js/profile-data.js"></script>
+<script defer src="assets/js/avatar-parts.js"></script>
+<script defer src="assets/js/interior-parts.js"></script>
+<script defer src="assets/js/profile.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1429945929826005" crossorigin="anonymous"></script>
 <!-- SEO:END -->
 </head>
-<body>
+<body class="lab-page">
   <div class="wrap">
     <!-- SITE-HEADER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
 <header class="site-header">
@@ -93,12 +365,15 @@
     </header>
 <!-- SITE-HEADER:END -->
     <main class="doc">
-      <h1>무슨상 아카이브</h1>
+      <a class="lab-back" id="lab-back" href="index.html"><span aria-hidden="true">←</span> 돌아가기</a>
+      <h1>내 연구실</h1>
       <p class="lead">
-        지금까지 완료한 테스트 결과를 모아 보여드려요. 결과는 서버가 아니라
-        <strong>이 기기의 브라우저에만</strong> 기록되고, 테스트당 가장 최근 결과 1건만 남아요.
-        자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.
+        내 연구원의 칭호·레벨·출석·상장과 지금까지 완료한 테스트를 모아 보여드려요.
+        기록은 서버가 아니라 <strong>이 기기의 브라우저에만</strong> 저장돼요. 브라우저 기록을 지우거나
+        다른 기기로 바꾸면 처음부터 시작해요. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.
       </p>
+
+      <div id="lab-app"></div>
 
       <div id="archive-app">
         <noscript>
@@ -113,7 +388,7 @@
         <a href="index.html">홈</a>
         <a href="about.html">소개</a>
         <a href="blog/index.html">읽을거리</a>
-        <a href="archive.html">내 아카이브</a>
+        <a href="archive.html">내 연구실</a>
         <a href="terms.html">이용약관</a>
         <a href="privacy.html">개인정보처리방침</a>
       </nav>
@@ -125,7 +400,9 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="assets/js/tests-data.js"></script>
   <script src="assets/js/results-index.js"></script>
+  <script src="assets/js/lab-room.js"></script>
   <script src="assets/js/archive.js"></script>
   <script src="assets/js/ad-config.js"></script>
   <script src="assets/js/ads.js"></script>

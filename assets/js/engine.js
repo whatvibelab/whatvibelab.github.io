@@ -107,17 +107,60 @@
         `질문 ${config.questions.length}개 · 약 ${intro.estMinutes || 1}분`
       );
       setText("start-btn", intro.startLabel || "테스트 시작하기");
-      document.title = config.meta.title;
+      // meta.pageTitle(선택): 검색 결과용 제목. 공유·결과 카드에는 계속 meta.title을 쓴다.
+      document.title = config.meta.pageTitle || config.meta.title;
 
       const nickInput = $("nickname-input");
       if (nickInput) {
+        let saved = "";
         try {
-          const saved = localStorage.getItem(NICKNAME_KEY);
+          saved = localStorage.getItem(NICKNAME_KEY) || "";
           if (saved) nickInput.value = saved;
         } catch (e) {
           /* 시크릿 모드 등 localStorage 접근 불가 시 그냥 빈 값으로 둠 */
         }
+        setupNicknameField(nickInput, saved.trim());
       }
+    }
+
+    // 닉네임 = "내 연구원" 이름(사이트 공통, 홈 카드에서 처음 정함 — dev.md #55).
+    // 이미 정했으면 입력칸 대신 "○○님으로 테스트해요 · 바꾸기" 한 줄만 보여준다.
+    // 아직 없으면(공유 링크로 테스트에 바로 들어온 사람 등) 입력칸을 그대로 두고, 여기서 정한 이름이 사이트 공통 이름이 된다.
+    function setupNicknameField(nickInput, saved) {
+      const field = nickInput.closest(".nickname-field");
+      if (!field) return;
+      const label = field.querySelector(".nickname-label");
+      let chip = field.querySelector(".nick-chip");
+      if (!saved) {
+        field.classList.remove("has-nick");
+        if (label) label.textContent = "내 연구원 이름(닉네임)을 정해 주세요";
+        nickInput.placeholder = "닉네임 입력 (선택) — 다음부터는 묻지 않아요";
+        if (chip) chip.hidden = true;
+        return;
+      }
+      field.classList.add("has-nick");
+      if (!chip) {
+        chip = document.createElement("p");
+        chip.className = "nick-chip";
+        field.insertBefore(chip, field.firstChild);
+      }
+      chip.hidden = false;
+      chip.innerHTML = "";
+      const who = document.createElement("span");
+      who.textContent = `🧪 ${saved}님으로 테스트해요`;
+      const change = document.createElement("button");
+      change.type = "button";
+      change.className = "nick-change";
+      change.textContent = "바꾸기";
+      change.addEventListener("click", () => {
+        field.classList.remove("has-nick");
+        chip.hidden = true;
+        if (label) label.textContent = "바꿀 이름을 입력해 주세요";
+        nickInput.focus();
+        nickInput.select();
+      });
+      chip.appendChild(who);
+      chip.appendChild(change);
     }
 
     // ---------- 퀴즈 ----------
@@ -181,6 +224,39 @@
     }
 
     // ---------- 결과 ----------
+    // 결과별 "따라 하는 법"(선택, results[].howto = [{label, text}]). 쓰는 테스트에서만
+    // 설명 아래에 블록을 만들고, 다른 테스트의 화면·마크업은 그대로 둔다. 결과 이미지 카드에는 넣지 않는다.
+    function renderHowto(result) {
+      let el = $("result-howto");
+      const items = result.howto || [];
+      if (!el) {
+        if (!items.length) return;
+        const traits = $("result-traits");
+        if (!traits) return;
+        el = document.createElement("div");
+        el.className = "result-howto";
+        el.id = "result-howto";
+        traits.parentNode.insertBefore(el, traits);
+      }
+      el.hidden = !items.length;
+      el.innerHTML = "";
+      if (!items.length) return;
+      const title = document.createElement("p");
+      title.className = "result-howto-title";
+      title.textContent = config.howtoTitle || "이렇게 따라 해 보세요";
+      el.appendChild(title);
+      const list = document.createElement("dl");
+      items.forEach((item) => {
+        const dt = document.createElement("dt");
+        dt.textContent = item.label;
+        const dd = document.createElement("dd");
+        dd.textContent = item.text;
+        list.appendChild(dt);
+        list.appendChild(dd);
+      });
+      el.appendChild(list);
+    }
+
     function showResult(type, opts) {
       const result = config.results[type];
       if (!result) {
@@ -190,7 +266,18 @@
         return;
       }
       const shared = !!(opts && opts.shared);
+      // "내 연구원"(profile.js, dev.md #52): 직접 끝낸 결과에만 경험치·칭호·상장 반영.
+      // profile.js 가 없으면 아무 일도 하지 않는다. 판정을 위해 saveToArchive 보다 먼저 부른다.
+      let reward = null;
+      if (!shared && window.Profile) {
+        try {
+          reward = window.Profile.recordResult(config.meta.id, type);
+        } catch (e) {
+          reward = null;
+        }
+      }
       if (!shared) saveToArchive(config.meta.id, type);
+      if (window.Profile) window.Profile.renderReward(reward);
       // 공유 링크로 들어온 경우 URL의 닉네임(보낸 사람)을, 아니면 방금
       // 입력한 내 닉네임을 결과 화면 전체에서 이어서 쓴다.
       const sharerNickname = shared ? (opts && opts.sharerNickname) || "" : "";
@@ -207,6 +294,7 @@
       setText("result-name", result.name);
       setText("result-tagline", result.tagline);
       setText("result-desc", result.desc);
+      renderHowto(result);
 
       const traitsEl = $("result-traits");
       traitsEl.innerHTML = "";

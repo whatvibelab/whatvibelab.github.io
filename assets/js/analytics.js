@@ -5,6 +5,8 @@
 
    측정 이벤트 (marketing.md §8 KPI 용):
      test_start / test_complete / share_link / save_image / recommend_click
+   내 연구원 (profile.js, dev.md #52):
+     attendance / xp_gain / level_up / badge_earned / title_change / customize / profile_view
    ========================================================================== */
 
 (function () {

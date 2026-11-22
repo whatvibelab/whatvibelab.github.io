@@ -9,6 +9,8 @@
      2) 나머지는 이 배열에서 **나중에 추가한 것부터**(최신순) 보인다 → 새 테스트는 배열 맨 끝에 추가하면
         고정 항목 바로 뒤, 맨 위로 올라온다. (배열의 앞뒤를 직접 옮겨 순서를 만들지 말 것)
         새 테스트는 2개씩 묶어 올린다 — 둘 중 맨 위에 보일 것을 배열 맨 끝에, 두 번째를 그 바로 앞에 넣는다.
+   group: "내 연구원" 상장 묶음 — food(미식)·life(생활)·relation(관계)·mood(감성)·outside(바깥).
+     assets/js/profile-data.js 의 groups 와 같은 값. 새 테스트를 추가할 때도 꼭 정할 것 (ideas.md §8-5).
    ========================================================================== */
 
 window.TESTS = [
@@ -20,6 +22,7 @@ window.TESTS = [
     subtitle: "요즘 화제인 피자설기, 토핑을 고르고 즐기는 태도로 알아보는 유형 테스트",
     path: "tests/pizza-seolgi/index.html",
     status: "live",
+    group: "food",
   },
   {
     id: "four-cut",
@@ -29,6 +32,7 @@ window.TESTS = [
     subtitle: "네컷사진 찍는 습관으로 알아보는 포즈 유형 테스트",
     path: "tests/four-cut/index.html",
     status: "live",
+    group: "mood",
   },
   {
     id: "dujjonku",
@@ -38,6 +42,7 @@ window.TESTS = [
     subtitle: "요즘 핫한 쫀득 초콜릿 쿠키 취향 테스트",
     path: "tests/dujjonku/index.html",
     status: "live",
+    group: "food",
   },
   {
     id: "petmatch",
@@ -47,6 +52,7 @@ window.TESTS = [
     subtitle: "돌보고 함께하는 방식으로 알아보는 반려동물 유형 테스트",
     path: "tests/petmatch/index.html",
     status: "live",
+    group: "relation",
   },
   {
     id: "cafedrink",
@@ -56,6 +62,7 @@ window.TESTS = [
     subtitle: "메뉴 고르는 습관으로 알아보는 음료 유형 테스트",
     path: "tests/cafedrink/index.html",
     status: "live",
+    group: "food",
   },
   {
     id: "bomdong-bibimbap",
@@ -65,6 +72,7 @@ window.TESTS = [
     subtitle: "제철 나물이 화제인 그 한 그릇, 재료를 고르고 비비는 방식으로 알아보는 유형 테스트",
     path: "tests/bomdong-bibimbap/index.html",
     status: "live",
+    group: "food",
   },
   {
     id: "plant-mate",
@@ -74,6 +82,7 @@ window.TESTS = [
     subtitle: "식물을 키우는 방식으로 알아보는 나를 닮은 식물 테스트",
     path: "tests/plant-mate/index.html",
     status: "live",
+    group: "outside",
   },
   {
     id: "cat-type",
@@ -83,6 +92,7 @@ window.TESTS = [
     subtitle: "고양이가 된 나를 상상하며 알아보는 나를 닮은 고양이 테스트",
     path: "tests/cat-type/index.html",
     status: "live",
+    group: "relation",
   },
   {
     id: "ideal-sang",
@@ -92,6 +102,7 @@ window.TESTS = [
     subtitle: "끌리는 사람의 모습으로 알아보는 이상형 동물상 테스트",
     path: "tests/ideal-sang/index.html",
     status: "live",
+    group: "relation",
   },
   {
     id: "chat-reply",
@@ -101,6 +112,7 @@ window.TESTS = [
     subtitle: "메신저를 대하는 태도로 알아보는 나의 답장 유형 테스트",
     path: "tests/chat-reply/index.html",
     status: "live",
+    group: "relation",
   },
   {
     id: "team-role",
@@ -110,6 +122,7 @@ window.TESTS = [
     subtitle: "조별과제를 대하는 태도로 알아보는 나의 역할 유형 테스트",
     path: "tests/team-role/index.html",
     status: "live",
+    group: "relation",
   },
   {
     id: "bag-item",
@@ -119,6 +132,7 @@ window.TESTS = [
     subtitle: "가방을 싸고 정리하는 습관으로 알아보는 나를 닮은 물건 테스트",
     path: "tests/bag-item/index.html",
     status: "live",
+    group: "life",
   },
   {
     id: "wake-alarm",
@@ -128,6 +142,7 @@ window.TESTS = [
     subtitle: "아침에 일어나는 습관으로 알아보는 나의 알람 유형 테스트",
     path: "tests/wake-alarm/index.html",
     status: "live",
+    group: "life",
   },
   {
     id: "malatang-topping",
@@ -137,6 +152,7 @@ window.TESTS = [
     subtitle: "재료를 고르는 습관으로 알아보는 나의 마라탕 토핑 유형 테스트",
     path: "tests/malatang-topping/index.html",
     status: "live",
+    group: "food",
   },
   {
     id: "deokjil-style",
@@ -146,6 +162,7 @@ window.TESTS = [
     subtitle: "좋아하는 마음을 표현하는 습관으로 알아보는 나의 덕질 유형 테스트",
     path: "tests/deokjil-style/index.html",
     status: "live",
+    group: "relation",
   },
   {
     id: "winter-snack",
@@ -155,6 +172,7 @@ window.TESTS = [
     subtitle: "간식을 고르고 나누는 방식으로 알아보는 나의 겨울 간식 유형 테스트",
     path: "tests/winter-snack/index.html",
     status: "live",
+    group: "food",
   },
   {
     id: "travel-course",
@@ -164,6 +182,7 @@ window.TESTS = [
     subtitle: "여행을 계획하고 다니는 방식으로 알아보는 나의 여행 코스 유형 테스트",
     path: "tests/travel-course/index.html",
     status: "live",
+    group: "outside",
   },
   {
     id: "weekend-style",
@@ -173,6 +192,7 @@ window.TESTS = [
     subtitle: "쉬는 날을 보내는 방식으로 알아보는 나의 주말 유형 테스트",
     path: "tests/weekend-style/index.html",
     status: "live",
+    group: "life",
   },
   {
     id: "shopping-cart",
@@ -182,6 +202,7 @@ window.TESTS = [
     subtitle: "물건을 담고 고르는 습관으로 알아보는 나의 장바구니 유형 테스트",
     path: "tests/shopping-cart/index.html",
     status: "live",
+    group: "life",
   },
   {
     id: "room-vibe",
@@ -191,6 +212,7 @@ window.TESTS = [
     subtitle: "내 방을 꾸미고 쓰는 습관으로 알아보는 나의 방 유형 테스트",
     path: "tests/room-vibe/index.html",
     status: "live",
+    group: "life",
   },
   {
     id: "exam-season",
@@ -200,6 +222,7 @@ window.TESTS = [
     subtitle: "시험을 준비하는 습관으로 알아보는 나의 시험 기간 유형 테스트",
     path: "tests/exam-season/index.html",
     status: "live",
+    group: "outside",
   },
   {
     id: "weather-type",
@@ -209,6 +232,7 @@ window.TESTS = [
     subtitle: "날씨를 대하는 습관으로 알아보는 나의 날씨 유형 테스트",
     path: "tests/weather-type/index.html",
     status: "live",
+    group: "mood",
   },
   {
     id: "movie-genre",
@@ -218,6 +242,7 @@ window.TESTS = [
     subtitle: "영화를 고르고 즐기는 습관으로 알아보는 나의 영화 장르 유형 테스트",
     path: "tests/movie-genre/index.html",
     status: "live",
+    group: "mood",
   },
   {
     id: "ride-type",
@@ -227,6 +252,7 @@ window.TESTS = [
     subtitle: "이동하는 습관으로 알아보는 나의 탈것 유형 테스트",
     path: "tests/ride-type/index.html",
     status: "live",
+    group: "outside",
   },
   {
     id: "reading-style",
@@ -236,6 +262,7 @@ window.TESTS = [
     subtitle: "책을 고르고 읽는 습관으로 알아보는 나의 책 유형 테스트",
     path: "tests/reading-style/index.html",
     status: "live",
+    group: "mood",
   },
   {
     id: "color-taste",
@@ -245,6 +272,7 @@ window.TESTS = [
     subtitle: "일상에서 색을 고르는 습관으로 알아보는 나의 색 유형 테스트",
     path: "tests/color-taste/index.html",
     status: "live",
+    group: "mood",
   },
   {
     id: "workout-habit",
@@ -254,6 +282,7 @@ window.TESTS = [
     subtitle: "운동을 대하는 습관으로 알아보는 나의 운동 유형 테스트",
     path: "tests/workout-habit/index.html",
     status: "live",
+    group: "life",
   },
   {
     id: "shoe-type",
@@ -263,6 +292,7 @@ window.TESTS = [
     subtitle: "신발을 고르고 신는 습관으로 알아보는 나의 신발 유형 테스트",
     path: "tests/shoe-type/index.html",
     status: "live",
+    group: "life",
   },
   {
     id: "playlist-type",
@@ -272,6 +302,7 @@ window.TESTS = [
     subtitle: "음악을 대하는 습관으로 알아보는 나의 플레이리스트 유형 테스트",
     path: "tests/playlist-type/index.html",
     status: "live",
+    group: "mood",
   },
   {
     id: "study-cafe",
@@ -281,6 +312,7 @@ window.TESTS = [
     subtitle: "카페에서 공부하는 습관으로 알아보는 나의 카공템 유형 테스트",
     path: "tests/study-cafe/index.html",
     status: "live",
+    group: "outside",
   },
   {
     id: "scent-type",
@@ -290,6 +322,7 @@ window.TESTS = [
     subtitle: "향을 고르고 맡는 습관으로 알아보는 나의 향 유형 테스트",
     path: "tests/scent-type/index.html",
     status: "live",
+    group: "mood",
   },
   {
     id: "gallery-type",
@@ -299,6 +332,7 @@ window.TESTS = [
     subtitle: "사진을 찍고 모으는 습관으로 알아보는 나의 사진첩 유형 테스트",
     path: "tests/gallery-type/index.html",
     status: "live",
+    group: "mood",
   },
   {
     // 2026-10-29 트리 장식과 2종 묶음 업로드 — woody 지정 순서(1번 트리 장식, 2번 버터 디저트)라 트리 장식 바로 앞에 둠
@@ -309,6 +343,7 @@ window.TESTS = [
     subtitle: "빵을 고르고 나눠 먹는 습관으로 알아보는 나의 버터 디저트 유형 테스트",
     path: "tests/butter-dessert/index.html",
     status: "live",
+    group: "food",
   },
   {
     id: "tree-ornament",
@@ -318,5 +353,47 @@ window.TESTS = [
     subtitle: "크리스마스를 준비하는 습관으로 알아보는 나의 트리 장식 유형 테스트",
     path: "tests/tree-ornament/index.html",
     status: "live",
+    group: "outside",
+  },
+  // 2026-11-21 신규 4종 (content.md #32~35, 2종 묶음 2개) — 허브 맨 위부터 놀이기구·조선시대 직업·판타지 직업·동네 가게
+  {
+    id: "neighborhood-shop",
+    emoji: "🏪",
+    color: "#efdccb",
+    title: "나는 어떤 동네 가게일까?",
+    subtitle: "가게를 꾸리고 손님을 맞는 방식으로 알아보는 나의 동네 가게 유형 테스트",
+    path: "tests/neighborhood-shop/index.html",
+    status: "live",
+    group: "life",
+  },
+  {
+    id: "fantasy-job",
+    emoji: "🪄",
+    color: "#dedaf6",
+    title: "나는 어떤 판타지 직업일까?",
+    subtitle: "판타지 마을에서 모험과 일상을 대하는 태도로 알아보는 직업 유형 테스트",
+    path: "tests/fantasy-job/index.html",
+    status: "live",
+    group: "mood",
+  },
+  {
+    id: "joseon-job",
+    emoji: "📜",
+    color: "#dbe7df",
+    title: "나는 어떤 조선시대 직업일까?",
+    subtitle: "조선시대 마을의 하루를 보내는 방식으로 알아보는 직업 유형 테스트",
+    path: "tests/joseon-job/index.html",
+    status: "live",
+    group: "relation",
+  },
+  {
+    id: "amusement-ride",
+    emoji: "🎡",
+    color: "#ffdcd2",
+    title: "나는 어떤 놀이기구일까?",
+    subtitle: "놀이공원에서 노는 방식으로 알아보는 나의 놀이기구 유형 테스트",
+    path: "tests/amusement-ride/index.html",
+    status: "live",
+    group: "outside",
   },
 ];
