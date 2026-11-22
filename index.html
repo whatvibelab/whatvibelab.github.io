@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="assets/css/common.css" />
 <style>
   .hub-mark {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 8px;
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
     filter: drop-shadow(0 6px 10px rgba(40, 110, 220, 0.22));
   }
 </style>
@@ -38,25 +38,34 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"무슨상연구소","url":"https://whatvibelab.com/","description":"무슨상연구소 — 유형 테스트 모음. 요즘 유행하는 컨셉으로 나는 어떤 OO인지 알아보세요.","inLanguage":"ko-KR"}]}</script>
 <script src="assets/js/analytics-config.js"></script>
 <script src="assets/js/analytics.js"></script>
+<script defer src="assets/js/profile-data.js"></script>
+<script defer src="assets/js/avatar-parts.js"></script>
+<script defer src="assets/js/interior-parts.js"></script>
+<script defer src="assets/js/profile.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1429945929826005" crossorigin="anonymous"></script>
 <!-- SEO:END -->
 </head>
 <body>
   <div class="wrap hub-wrap">
     <header class="hub-header">
-      <img class="hub-mark" src="assets/img/logo.svg" alt="" width="56" height="56" />
-      <p class="hub-logo">무슨상연구소</p>
-      <h1 class="hub-title">나는 어떤<br />OO일까?</h1>
-      <p class="hub-subtitle">유형 테스트 모음 — 요즘 뜨는 컨셉으로 즐기는 나 탐구</p>
+      <img class="hub-mark" src="assets/img/logo.svg" alt="" width="64" height="64" />
+      <div class="hub-head-text">
+        <p class="hub-logo">무슨상연구소</p>
+        <h1 class="hub-title">나는 어떤 OO일까?</h1>
+        <p class="hub-subtitle">유형 테스트 모음 — 요즘 뜨는 컨셉으로 즐기는 나 탐구</p>
+      </div>
     </header>
+
+    <!-- 내 연구원 카드 (dev.md #52) — assets/js/profile.js 가 채운다. JS가 없거나 실패하면 숨겨진 채로 둔다. -->
+    <section class="me-card" id="me-card" aria-label="내 연구원" hidden></section>
 
     <!-- STATIC-INFO:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
 <main class="hub-main" id="static-info">
       <div class="tabs" id="hub-tabs">
       <div class="tab-list" role="tablist" aria-label="무슨상연구소 메뉴">
         <button type="button" class="tab-btn" role="tab" id="tab-tests" aria-controls="panel-tests" aria-selected="true">테스트 모아보기</button>
-        <button type="button" class="tab-btn" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="false" tabindex="-1">무슨상연구소는 어떤 곳인가요?</button>
-        <button type="button" class="tab-btn" role="tab" id="tab-howto" aria-controls="panel-howto" aria-selected="false" tabindex="-1">이렇게 이용하세요</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="false" tabindex="-1">연구소 소개</button>
+        <button type="button" class="tab-btn" role="tab" id="tab-howto" aria-controls="panel-howto" aria-selected="false" tabindex="-1">이용 방법</button>
         <button type="button" class="tab-btn" role="tab" id="tab-faq" aria-controls="panel-faq" aria-selected="false" tabindex="-1">자주 묻는 질문</button>
       </div>
 
@@ -73,14 +82,18 @@
         </form>
         <p class="hub-search-status" id="hub-search-status" role="status" aria-live="polite"></p>
         <div class="today-pick" id="today-pick">
-          <span class="today-pick-emoji" aria-hidden="true">🍊</span>
+          <span class="today-pick-emoji" aria-hidden="true">🗓️</span>
           <div class="today-pick-body">
-            <p class="today-pick-text">오늘 당신은 왠지 <strong>'까다 말고 딴생각에 빠지는 귤'</strong> 같은 날이에요</p>
-            <p class="today-pick-tagline">이 껍질은 왜 이렇게 벗겨지지?</p>
-            <a class="today-pick-link" href="tests/winter-snack/index.html">나는 어떤 겨울 간식일까? 해보기 →</a>
+            <p class="today-pick-text">오늘 당신은 왠지 <strong>'한 주를 미리 설계해 두는 준비 주말'</strong> 같은 날이에요</p>
+            <p class="today-pick-tagline">쉬는 것도 계획의 일부야</p>
+            <a class="today-pick-link" href="tests/weekend-style/index.html">나는 어떤 주말일까? 해보기 →</a>
           </div>
         </div>
         <div class="card-list" id="card-list">
+          <a class="test-card live" href="tests/amusement-ride/index.html" data-search="나는 어떤 놀이기구일까? 놀이공원에서 노는 방식으로 알아보는 나의 놀이기구 유형 테스트 어떤 기구부터 타고, 줄은 어떻게 기다리고, 마지막엔 뭘 탈까요? 놀이공원에서 노는 방식으로 알아보는 나의 놀이기구 유형! 정해진 길을 도는 꼬마 기차 불빛이 반짝이는 회전목마 다 같이 앉아 도는 회전 찻잔 일단 타고 보는 롤러코스터 꼭대기에서 노을을 기다리는 관람차 나갈 때마다 길이 바뀌는 거울 미로 코스를 외워서 달리는 고카트 물보라에 다 같이 젖는 후룸라이드 혼자 바람을 가르는 집라인 부딪혀도 웃음이 터지는 범퍼카 다른 세계로 데려가는 4d 영화관 가장 높이 올라가는 자이로드롭 하늘을 나는 회전그네 박자 맞춰 크게 흔드는 바이킹 어떻게 만들었는지 궁금한 귀신의 집 인형을 따서 나눠 주는 사격 게임"><div class="test-card-emoji" style="background:#ffdcd2">🎡</div><div class="test-card-body"><p class="test-card-title">나는 어떤 놀이기구일까?</p><p class="test-card-sub">놀이공원에서 노는 방식으로 알아보는 나의 놀이기구 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/joseon-job/index.html" data-search="나는 어떤 조선시대 직업일까? 조선시대 마을의 하루를 보내는 방식으로 알아보는 직업 유형 테스트 내가 조선시대 마을에 태어났다면, 무슨 일을 하며 살고 있을까요? 마을의 하루를 보내는 방식으로 알아보는 나의 조선시대 직업 유형! 하루도 빠짐없이 기록하는 사관 장터를 들썩이게 하는 풍물패 마을 사람을 살피는 약방 의원 전국 장터를 누비는 보부상 밤하늘을 기록하는 천문관 신기한 물건을 궁리하는 발명가 집 한 채를 통째로 설계하는 도편수 장터에서 이야기책을 읽어 주는 전기수 말없이 가구를 짜는 소목장 나그네가 쉬어 가는 주막 주인 산과 강을 화폭에 담는 화원 큰 상단을 이끄는 행수 흙을 빚어 그릇을 만드는 도공 원칙대로 가르치는 서당 훈장 낯선 나라 말을 익히는 역관 마을 잔치를 이끄는 잔칫집 숙수"><div class="test-card-emoji" style="background:#dbe7df">📜</div><div class="test-card-body"><p class="test-card-title">나는 어떤 조선시대 직업일까?</p><p class="test-card-sub">조선시대 마을의 하루를 보내는 방식으로 알아보는 직업 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/fantasy-job/index.html" data-search="나는 어떤 판타지 직업일까? 판타지 마을에서 모험과 일상을 대하는 태도로 알아보는 직업 유형 테스트 판타지 세계의 작은 마을에서 눈을 떴다면, 나는 무슨 일을 하고 있을까요? 모험과 일상을 대하는 태도로 알아보는 나의 판타지 직업 유형! 한 치 오차 없는 지도 제작자 광장을 들썩이게 하는 음유시인 약초 바구니를 든 마을 치유사 일단 길부터 나서는 모험가 별의 움직임을 기록하는 천문학자 펑! 소리 나는 실험 연금술사 주문서를 설계하는 마법사 아기 용을 키우는 용 조련사 말없이 두드리는 대장장이 모두가 쉬어 가는 여관 주인 숲속 동물과 이야기하는 숲지기 원정대를 이끄는 기사단장 마법 실로 망토를 짓는 재봉사 의뢰판을 척척 정리하는 길드 관리인 마법 도서관의 호기심 많은 사서 마을을 하나로 모으는 축제 기획자"><div class="test-card-emoji" style="background:#dedaf6">🪄</div><div class="test-card-body"><p class="test-card-title">나는 어떤 판타지 직업일까?</p><p class="test-card-sub">판타지 마을에서 모험과 일상을 대하는 태도로 알아보는 직업 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
+          <a class="test-card live" href="tests/neighborhood-shop/index.html" data-search="나는 어떤 동네 가게일까? 가게를 꾸리고 손님을 맞는 방식으로 알아보는 나의 동네 가게 유형 테스트 우리 동네에 내 가게를 연다면, 어떤 간판이 걸려 있을까요? 손님과 이웃을 대하는 방식으로 알아보는 나의 동네 가게 유형! 약속한 날 꼭 맞춰 주는 세탁소 웃음소리 끊이지 않는 분식집 단골 바지 길이까지 기억하는 수선집 목청 좋은 과일 가게 골목 끝 작은 동네 서점 별별 물건이 다 있는 만물상 어떤 자물쇠든 풀어내는 열쇠 가게 계절마다 문 앞이 바뀌는 꽃집 필요한 것만 딱 있는 철물점 덤을 꼭 얹어 주는 반찬 가게 오래 사랑받은 동네 사진관 골목을 든든하게 지키는 동네 슈퍼 골목 안 작은 도자기 공방 주문이 몰려도 척척 돌아가는 중국집 오래된 라디오를 고치는 전파사 명절이면 동네가 다 모이는 방앗간"><div class="test-card-emoji" style="background:#efdccb">🏪</div><div class="test-card-body"><p class="test-card-title">나는 어떤 동네 가게일까?</p><p class="test-card-sub">가게를 꾸리고 손님을 맞는 방식으로 알아보는 나의 동네 가게 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
           <a class="test-card live" href="tests/tree-ornament/index.html" data-search="나는 어떤 트리 장식일까? 크리스마스를 준비하는 습관으로 알아보는 나의 트리 장식 유형 테스트 트리를 꾸미고, 선물을 고르고, 모임을 준비하는 방식에 나다움이 그대로 묻어나요. 크리스마스를 보내는 습관으로 알아보는 나의 트리 장식 유형! 제일 먼저 반짝이는 줄전구 장식 매년 같은 상자에서 꺼내는 빨간 오너먼트 장식 모두의 이름을 달아 둔 양말 장식 흔들면 바로 울리는 종 장식 창가에서 조용히 빛나는 촛불 장식 거꾸로 걸어도 재밌는 지팡이 사탕 장식 모양까지 계산한 눈송이 장식 보이는 곳마다 묶고 싶은 리본 장식 꾸미지 않아도 멋있는 솔방울 장식 다 같이 나눠 먹는 진저브레드 쿠키 장식 창밖을 바라보는 작은 눈사람 장식 트리 꼭대기를 맡은 큰 별 장식 기분 따라 자리를 옮기는 곰인형 장식 트리 아래 줄 맞춰 놓인 선물 상자 장식 속이 궁금한 유리구슬 장식 모두를 이끌고 달리는 순록 장식"><div class="test-card-emoji" style="background:#f6d9de">🎄</div><div class="test-card-body"><p class="test-card-title">나는 어떤 트리 장식일까?</p><p class="test-card-sub">크리스마스를 준비하는 습관으로 알아보는 나의 트리 장식 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
           <a class="test-card live" href="tests/butter-dessert/index.html" data-search="나는 어떤 버터 디저트일까? 빵을 고르고 나눠 먹는 습관으로 알아보는 나의 버터 디저트 유형 테스트 빵을 고르고, 기다리고, 나눠 먹는 방식에 나다움이 그대로 묻어나요. 버터 디저트를 즐기는 습관으로 알아보는 나의 버터 디저트 유형! 갓 나와서 줄 서게 만드는 크루아상 매일 같은 시간에 사 가는 소금빵 통에 꽉 채워 나눠 주는 버터 쿠키 보이자마자 집어 드는 버터 와플 차 한 잔과 천천히 먹는 스콘 떡인지 빵인지 헷갈리는 버터떡 틀부터 단단하게 잡은 버터 타르트 팥이랑 만나 설레는 앙버터 군더더기 없이 짭짤한 버터 프레첼 다 같이 뜯어 먹는 버터 모닝빵 한 입에 그날이 떠오르는 마들렌 금괴처럼 반듯한 휘낭시에 그날 기분 따라 고르는 꾸덕한 버터바 한 장씩 순서대로 쌓는 버터 팬케이크 결이 몇 겹인지 세어 보고 싶은 퀸아망 모두의 날을 챙기는 버터크림 케이크"><div class="test-card-emoji" style="background:#fbefc8">🧈</div><div class="test-card-body"><p class="test-card-title">나는 어떤 버터 디저트일까?</p><p class="test-card-sub">빵을 고르고 나눠 먹는 습관으로 알아보는 나의 버터 디저트 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
           <a class="test-card live" href="tests/gallery-type/index.html" data-search="나는 어떤 사진첩일까? 사진을 찍고 모으는 습관으로 알아보는 나의 사진첩 유형 테스트 무엇을 찍고 어떻게 모아 두는지에 나의 취향이 그대로 담겨요. 사진을 대하는 습관으로 알아보는 나의 사진첩 유형! 단톡방에 바로 올라가는 웃음 가득 사진첩 날짜순으로 빠짐없이 쌓인 기록 사진첩 가족과 친구 사진이 가득한 따뜻한 사진첩 놓치기 전에 연사로 담은 현장 사진첩 한 장 한 장 의미가 담긴 조용한 사진첩 이상한 각도로 가득한 실험 사진첩 찍기 전에 구도를 정해 둔 계획 사진첩 갑자기 꽂힌 순간이 가득한 설렘 사진첩 꼭 필요한 것만 남긴 실속 사진첩 다 같이 찍은 모임 사진이 가득한 사진첩 나만 알고 싶은 하늘이 가득한 감성 사진첩 해낸 일을 남겨 두는 성과 사진첩 그날 기분 따라 쌓이는 자유로운 사진첩 폴더별로 각 잡은 정리 사진첩 구조가 궁금해서 가까이 찍은 탐구 사진첩 친구에게 보내 주려고 모은 선물 사진첩"><div class="test-card-emoji" style="background:#fbdcea">🖼️</div><div class="test-card-body"><p class="test-card-title">나는 어떤 사진첩일까?</p><p class="test-card-sub">사진을 찍고 모으는 습관으로 알아보는 나의 사진첩 유형 테스트</p></div><span class="test-card-badge">테스트 하기</span></a>
@@ -124,8 +137,8 @@
         <h2 class="panel-title">무슨상연구소는 <span class="hl">어떤 곳</span>인가요?</h2>
         <p class="lead">무슨상연구소는 요즘 화제가 되는 음식, 취미, 일상 소재를 주제로 몇 가지 질문에 답하면 나와 닮은 유형을 알려주는 <strong>유형 테스트 모음</strong>이에요. 각 테스트는 16개의 질문과 16가지 결과로 이루어져 있고, <strong>1분 안팎</strong>이면 결과를 확인할 수 있어요. 결과는 이름과 한 줄 요약, 설명, 특징, 잘 맞는 궁합으로 보여드리며 친구에게 <strong>링크나 이미지 카드</strong>로 공유할 수도 있어요.</p>
         <div class="stats">
-          <div class="stat"><img src="assets/img/hub/stat-tests.svg" alt="" width="44" height="44" /><div><span class="num">34개</span><span class="lab">준비된 테스트</span></div></div>
-          <div class="stat"><img src="assets/img/hub/stat-results.svg" alt="" width="44" height="44" /><div><span class="num">544가지</span><span class="lab">나올 수 있는 결과</span></div></div>
+          <div class="stat"><img src="assets/img/hub/stat-tests.svg" alt="" width="44" height="44" /><div><span class="num">38개</span><span class="lab">준비된 테스트</span></div></div>
+          <div class="stat"><img src="assets/img/hub/stat-results.svg" alt="" width="44" height="44" /><div><span class="num">608가지</span><span class="lab">나올 수 있는 결과</span></div></div>
           <div class="stat"><img src="assets/img/hub/stat-time.svg" alt="" width="44" height="44" /><div><span class="num">1분 안팎</span><span class="lab">테스트 하나당</span></div></div>
           <div class="stat"><img src="assets/img/hub/stat-free.svg" alt="" width="44" height="44" /><div><span class="num">무료</span><span class="lab">가입 없이 바로</span></div></div>
         </div>
@@ -232,11 +245,12 @@
     <!-- SITE-FOOTER:START (tools/build-static.js가 생성 — 직접 수정 금지) -->
 <footer class="hub-footer">
       새로운 테스트가 계속 추가될 예정이에요 🍪<br />
-      <a href="index.html">홈</a> · <a href="about.html">소개</a> · <a href="blog/index.html">읽을거리</a> · <a href="archive.html">내 아카이브</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a>
+      <a href="index.html">홈</a> · <a href="about.html">소개</a> · <a href="blog/index.html">읽을거리</a> · <a href="archive.html">내 연구실</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a>
     </footer>
 <!-- SITE-FOOTER:END -->
   </div>
 
+  <script src="assets/js/season.js"></script>
   <script src="assets/js/tests-data.js"></script>
   <script src="assets/js/results-index.js"></script>
   <script src="assets/js/hub.js"></script>
