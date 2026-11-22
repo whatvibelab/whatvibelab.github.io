@@ -2111,3 +2111,12 @@ button.me-stamp:hover { filter: brightness(0.97); }
     max-height: none;
   }
 }
+
+/* 잘 안 맞는 궁합 (dev.md #65) — 잘 맞는 궁합 바로 아래, 한 단계 옅은 회색으로 구분. 두 줄은 한 묶음처럼 가깝게 */
+.result-match { gap: 12px; }
+.result-match .result-match-label { flex-shrink: 0; white-space: nowrap; }
+.result-match .result-match-value { text-align: right; word-break: keep-all; overflow-wrap: anywhere; }
+.result-match.has-pair { margin-bottom: 8px; }
+.result-mismatch { background: #f1f3f6; }
+.result-mismatch .result-match-label { color: var(--text-sub); }
+.result-mismatch .result-match-value { color: var(--body); }

@@ -76,6 +76,18 @@
     return url.toString();
   }
 
+  // 네 글자를 모두 반대로 (E↔I, S↔N, T↔F, J↔P) — 잘 안 맞는 궁합 계산용
+  const OPPOSITE = { E: "I", I: "E", S: "N", N: "S", T: "F", F: "T", J: "P", P: "J" };
+  function oppositeCode(code) {
+    if (typeof code !== "string" || code.length !== 4) return null;
+    let out = "";
+    for (const ch of code) {
+      if (!OPPOSITE[ch]) return null;
+      out += OPPOSITE[ch];
+    }
+    return out;
+  }
+
   function computeType(answers) {
     const tally = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
     answers.forEach((a) => {
@@ -320,6 +332,35 @@
       } else if (matchEl) {
         matchEl.hidden = true;
       }
+
+      // 잘 안 맞는 궁합 (dev.md #65): config 에 mismatch 가 있으면 그것, 없으면 네 글자를 모두 뒤집은 결과.
+      // 화면에는 이름·이모지만 (내부 코드는 노출하지 않음). 자리는 잘 맞는 궁합 바로 아래에 만든다.
+      let mismatchEl = $("result-mismatch");
+      if (!mismatchEl && matchEl) {
+        mismatchEl = document.createElement("div");
+        mismatchEl.className = "result-match result-mismatch";
+        mismatchEl.id = "result-mismatch";
+        mismatchEl.hidden = true;
+        matchEl.insertAdjacentElement("afterend", mismatchEl);
+      }
+      const mismatchKey = result.mismatch || oppositeCode(type);
+      const mm = mismatchKey && mismatchKey !== type && mismatchKey !== result.match ? config.results[mismatchKey] : null;
+      if (mismatchEl && mm) {
+        mismatchEl.hidden = false;
+        mismatchEl.innerHTML = "";
+        const label = document.createElement("span");
+        label.className = "result-match-label";
+        label.textContent = "잘 안 맞는 궁합";
+        const value = document.createElement("span");
+        value.className = "result-match-value";
+        value.textContent = `${mm.emoji} ${mm.name}`;
+        mismatchEl.appendChild(label);
+        mismatchEl.appendChild(value);
+      } else if (mismatchEl) {
+        mismatchEl.hidden = true;
+      }
+      // 두 줄이 다 있으면 한 묶음처럼 간격을 좁힌다
+      if (matchEl) matchEl.classList.toggle("has-pair", !matchEl.hidden && !!mismatchEl && !mismatchEl.hidden);
 
       const saveCardBtn = $("save-card-btn");
       if (saveCardBtn) {
