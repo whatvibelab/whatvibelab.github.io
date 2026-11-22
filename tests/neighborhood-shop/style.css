@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 동네 가게일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fbf6f1;
+  --card-bg: #ffffff;
+  --text: #3a2a20;
+  --text-sub: #a08a7a;
+  --accent: #9b5a3c;
+  --accent-dark: #7d4630;
+  --accent-soft: #f1e2d6;
+  --border: #efe2d7;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 조선시대 직업일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #f7f5ef;
+  --card-bg: #ffffff;
+  --text: #26302b;
+  --text-sub: #87968e;
+  --accent: #2f6f5e;
+  --accent-dark: #22584a;
+  --accent-soft: #dcebe4;
+  --border: #e4ebe6;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}

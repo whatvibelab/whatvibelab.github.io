@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style.css — "나는 어떤 놀이기구일까?" 스킨. (draft 제안 팔레트)
+   구조/레이아웃은 common.css 공용 스타일을 그대로 쓰고, 색상/장식만 덮어씀.
+   ========================================================================== */
+
+:root {
+  --bg: #fff6f3;
+  --card-bg: #ffffff;
+  --text: #3d2622;
+  --text-sub: #b08a82;
+  --accent: #ff6b4a;
+  --accent-dark: #d9502f;
+  --accent-soft: #ffe2d9;
+  --border: #fbe3dc;
+  --shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.intro-emoji,
+.result-emoji {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.16));
+}
