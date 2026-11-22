@@ -837,9 +837,126 @@
       if (setupBtn) setupBtn.onclick = openSetupModal;
     }
     root.hidden = false;
+    sparkleButtons();
     alignHubCard();
     track("profile_view", { place: "hub" });
   }
+
+  // ---------- 행동 버튼 반짝이 (2026-11-22 woody: "twinkle·sparkle 느낌으로 더 많이") ----------
+  // 버튼 둘레에 별 10개: 커졌다 돌며 사라지고(twinkle), 한 번 반짝일 때마다 둘레의 다른 자리로 옮겨 간다(sparkle).
+  const SPARK_COLORS = ["#ffc93c", "#4dabf7", "#ff8fb1", "#3cc8a0", "#ffb000", "#6cb8f5"]; // 흰 카드 위에서도 보이는 색
+  const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function placeSpark(sp) {
+    // 버튼 가장자리 근처(바깥쪽으로 살짝)에 무작위 자리
+    const edge = Math.floor(Math.random() * 4);
+    const t = Math.random() * 100;
+    const out = 6 + Math.random() * 10; // px
+    let x, y;
+    if (edge === 0) { x = t + "%"; y = -out + "px"; }
+    else if (edge === 1) { x = "calc(100% + " + out + "px)"; y = t + "%"; }
+    else if (edge === 2) { x = t + "%"; y = "calc(100% + " + out + "px)"; }
+    else { x = -out + "px"; y = t + "%"; }
+    const size = 7 + Math.random() * 9;
+    sp.style.left = x;
+    sp.style.top = y;
+    sp.style.width = size + "px";
+    sp.style.height = size + "px";
+    sp.style.color = SPARK_COLORS[Math.floor(Math.random() * SPARK_COLORS.length)];
+  }
+  function sparkle(el) {
+    // 버튼 글씨가 새로 써지면(hub.js 오늘의 무슨상) 별이 지워지므로, 별이 있는지로 판단
+    if (!el || reduceMotion || el.querySelector(".spark")) return;
+    for (let i = 0; i < 10; i++) {
+      const sp = document.createElement("span");
+      sp.className = "spark";
+      sp.setAttribute("aria-hidden", "true");
+      placeSpark(sp);
+      // 재생 시간·시작 시점은 처음 한 번만 (도중에 바꾸면 진행 위치가 튀어 끊겨 보임)
+      const dur = 1.8 + Math.random() * 1.2;
+      sp.style.animationDuration = dur.toFixed(2) + "s";
+      sp.style.animationDelay = (-Math.random() * dur).toFixed(2) + "s";
+      sp.addEventListener("animationiteration", () => placeSpark(sp));
+      el.appendChild(sp);
+    }
+  }
+  function sparkleButtons() {
+    document.querySelectorAll(".today-pick-link, .me-link").forEach(sparkle);
+  }
+
+  // 홈에 처음 온 사람: 닉네임(내 연구원 이름)부터 (2026-11-22 woody)
+  // 닉네임이 없을 때만 홈에서 한 번 뜬다. 공유 링크로 테스트에 바로 온 사람은 테스트 시작 화면 입력칸(기존대로).
+  // "나중에 할게요"를 누르면 이번 방문(탭) 동안은 다시 안 뜨고, 다음 방문 때 다시 물어본다.
+  const WELCOME_SKIP_KEY = "musunsang_welcome_skip";
+  function maybeWelcome() {
+    if (!storageOK || getNick()) return;
+    try {
+      if (sessionStorage.getItem(WELCOME_SKIP_KEY)) return;
+    } catch (e) {
+      /* 무시 */
+    }
+    openWelcomeModal();
+  }
+  function openWelcomeModal() {
+    closeCalendarModal();
+    const v = view();
+    const bd = document.createElement("div");
+    bd.className = "cal-modal-backdrop";
+    bd.id = "cal-modal-backdrop";
+    const box = document.createElement("section");
+    box.className = "cal-modal welcome-modal";
+    box.id = "cal-modal";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-labelledby", "welcome-title");
+    box.innerHTML = `
+      <div class="welcome-avatar"></div>
+      <h2 id="welcome-title">무슨상연구소에 온 걸 환영해요!</h2>
+      <p class="cal-summary">먼저 <b>내 연구원 이름(닉네임)</b>을 지어 주세요.<br />테스트 결과와 내 연구실에 이 이름이 나와요.</p>
+      <form class="me-name welcome-form" autocomplete="off">
+        <label class="sr-only" for="welcome-name">내 연구원 이름</label>
+        <input id="welcome-name" class="me-name-input" type="text" maxlength="${NICK_MAX}" placeholder="이름 (최대 ${NICK_MAX}자)" enterkeyhint="done" />
+        <button type="submit" class="btn btn-primary welcome-go">시작하기</button>
+      </form>
+      <button type="button" class="welcome-skip">나중에 할게요</button>`;
+    document.body.appendChild(bd);
+    document.body.appendChild(box);
+    box.querySelector(".welcome-avatar").appendChild(avatarCanvas("welcome-avatar-img", v.look));
+    const input = box.querySelector("#welcome-name");
+    const skip = () => {
+      try {
+        sessionStorage.setItem(WELCOME_SKIP_KEY, "1");
+      } catch (e) {
+        /* 무시 */
+      }
+      track("welcome_skip", {});
+      closeCalendarModal();
+    };
+    box.querySelector(".welcome-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!input.value.trim()) {
+        input.focus();
+        input.classList.add("shake");
+        setTimeout(() => input.classList.remove("shake"), 400);
+        return;
+      }
+      setNick(input.value);
+      track("welcome_named", {});
+      closeCalendarModal();
+      renderHubCard();
+    });
+    box.querySelector(".welcome-skip").onclick = skip;
+    bd.onclick = skip;
+    welcomeEsc = (e) => {
+      if (e.key === "Escape") {
+        document.removeEventListener("keydown", welcomeEsc);
+        skip();
+      }
+    };
+    document.addEventListener("keydown", welcomeEsc);
+    setTimeout(() => input.focus(), 50);
+    track("welcome_view", {});
+  }
+  let welcomeEsc = null;
 
   // 이름·머리 모양 정하기 창 (첫 테스트를 끝낸 뒤 홈 카드에서, dev.md #60)
   function openSetupModal() {
@@ -996,6 +1113,7 @@
       if (el) el.remove();
     });
     document.removeEventListener("keydown", calEsc);
+    if (welcomeEsc) document.removeEventListener("keydown", welcomeEsc);
     const btn = document.getElementById("me-stamp");
     if (btn && document.activeElement === document.body) btn.focus();
   }
@@ -1136,7 +1254,14 @@
 
   function init() {
     ready();
-    if (document.getElementById("me-card")) renderHubCard();
+    if (document.getElementById("me-card")) {
+      renderHubCard();
+      maybeWelcome();
+      sparkleButtons();
+      const pick = document.getElementById("today-pick");
+      if (pick && window.MutationObserver) new MutationObserver(sparkleButtons).observe(pick, { childList: true, subtree: true });
+      setTimeout(sparkleButtons, 300); // hub.js 가 오늘의 무슨상을 새로 그린 뒤
+    }
     else if (document.getElementById("screen-intro") || document.getElementById("screen-result")) attendanceToast();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

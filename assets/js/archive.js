@@ -133,6 +133,10 @@
       onLongPress: () => {
         if (!room.isEdit()) setEditMode(true);
       },
+      // 꾹 눌러 끌어 옮긴 뒤 손을 떼면 배치 모드 끝(확인 버튼 생략)
+      onQuickDropEnd: () => {
+        if (room.isEdit()) setEditMode(false);
+      },
       onDrag: (on) => {
         const dock = document.getElementById("edit-dock");
         if (dock) dock.classList.toggle("dragging", on);
@@ -150,10 +154,14 @@
     window.LabRoom.current = room;
     fitRoom();
     let t = null;
-    window.addEventListener("resize", () => {
+    const refit = () => {
       clearTimeout(t);
       t = setTimeout(fitRoom, 120);
-    });
+    };
+    window.addEventListener("resize", refit);
+    // HUD 높이가 바뀌면(안내 문구 줄바꿈·배치 도구 막대 등) 방 크기도 다시 맞춘다
+    const stageEl = document.getElementById("room-stage");
+    if (stageEl && window.ResizeObserver) new ResizeObserver(refit).observe(stageEl);
 
     const editBtn = document.getElementById("room-edit");
     const resetBtn = document.getElementById("room-reset");
@@ -196,18 +204,22 @@
   }
 
   // 화면에 맞춰 방 크기(칸)와 한 칸 크기를 정한다. 한 칸은 화면 폭 12칸·높이 10칸 중 작은 쪽, 28~64px.
+  // 방은 HUD 위의 보이는 공간(#room-stage)에 딱 맞춘다 — HUD 에 가려지는 줄이 없게 (2026-11-22 woody)
+  // 폭은 칸 수로 꽉 채우고, 세로는 가장 가까운 칸 수로 맞춘 뒤 남는 몇 px 은 칸 높이를 아주 조금(최대 반 칸 이내) 늘려 메운다.
   function fitRoom() {
     if (!room) return;
+    const stage = document.getElementById("room-stage");
     const hud = document.getElementById("game-hud");
-    const vw = window.innerWidth;
-    const vh = window.innerHeight - (hud ? hud.offsetHeight : 0);
+    const vw = (stage && stage.clientWidth) || window.innerWidth;
+    const vh = (stage && stage.clientHeight) || window.innerHeight - (hud ? hud.offsetHeight : 0);
+    if (vw <= 0 || vh <= 0) return;
     const target = Math.max(28, Math.min(64, Math.floor(Math.min(vw / 12, vh / 10))));
     const cols = Math.max(12, Math.floor(vw / target));
-    const tile = vw / cols; // 폭을 꽉 채우도록 한 칸 크기를 맞춘다(아래쪽 반 칸 정도는 잘려도 됨)
-    const rows = Math.max(10, Math.ceil(vh / tile)); // 아래 HUD 까지 빈틈 없이 (마지막 줄은 조금 잘릴 수 있음)
+    const tile = vw / cols;
+    const rows = Math.max(10, Math.round(vh / tile));
     room.resize(cols, rows);
     room.canvas.style.width = vw + "px";
-    room.canvas.style.height = rows * tile + "px";
+    room.canvas.style.height = vh + "px";
   }
 
   // HUD 왼쪽: 이름·칭호·레벨 (누르면 "내 정보")

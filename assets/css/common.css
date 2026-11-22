@@ -185,7 +185,7 @@ button {
   text-align: left;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  background: linear-gradient(135deg, #ffffff 0%, #fff1e6 55%, #e3f1ff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #eef6ff 55%, #d9ecff 100%);
   box-shadow: var(--shadow);
 }
 
@@ -1390,8 +1390,10 @@ button {
   gap: 9px;
   padding: 9px 15px 9px 9px;
   border-radius: 22px 22px 6px 22px;
-  background: var(--accent);
-  color: var(--text);
+  /* 질문 말풍선: 진한 파랑은 글씨가 안 읽혀서 밝은 하늘색 + 짙은 남색 글씨 (2026-11-22) */
+  background: #d6eaff;
+  border: 1px solid #b9dafc;
+  color: #17345e;
   font-family: var(--font-display);
   font-weight: 400;
   font-size: 16px;
@@ -1782,9 +1784,9 @@ html:is(.season-halloween, .season-christmas) .hub-header {
   margin-top: 84px; /* 휴대폰: 가랜드 밑 틈에 유령·호박이 들어감 */
   border-color: rgba(255, 255, 255, 0.14);
   background:
-    linear-gradient(135deg, rgba(255, 138, 61, 0.22) 0%, rgba(255, 201, 60, 0.08) 50%, rgba(130, 203, 255, 0.16) 100%),
+    linear-gradient(135deg, rgba(42, 134, 255, 0.3) 0%, rgba(130, 203, 255, 0.1) 50%, rgba(47, 174, 145, 0.14) 100%),
     rgba(16, 22, 46, 0.78);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 216, 74, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(159, 210, 255, 0.12);
 }
 @media (min-width: 600px) {
   html:is(.season-halloween, .season-christmas) .hub-header { margin-top: 76px; }
@@ -1965,4 +1967,147 @@ button.me-stamp:hover { filter: brightness(0.97); }
   .today-pick-link { margin-top: 6px; padding: 6px 14px; }
   .tabs.js-tabs .tab-list { padding: 4px; gap: 4px; margin-bottom: 14px; }
   .tab-btn { min-height: 42px; padding: 8px; }
+}
+
+/* 홈의 행동 버튼(내 연구실 →, ○○ 해보기 →)도 FAQ 질문 말풍선과 같은 밝은 하늘색 계열 (2026-11-22 woody)
+   진한 파랑보다 눈이 편하고, 짙은 남색 글씨로 잘 읽히게. 은은한 빛 효과는 유지. */
+.today-pick-link,
+.me-link,
+.me-card .me-link,
+.me-row .me-link {
+  background: #d6eaff;
+  color: #17345e;
+  border: 1px solid #b9dafc;
+  box-shadow: 0 3px 10px rgba(29, 111, 220, 0.14);
+  animation-name: cta-glow-soft;
+}
+.today-pick-link:hover,
+.me-link:hover {
+  background: #c4e0ff;
+  color: #102a4d;
+}
+@keyframes cta-glow-soft {
+  0%, 70%, 100% { box-shadow: 0 3px 10px rgba(29, 111, 220, 0.14), 0 0 0 0 rgba(108, 184, 245, 0.55); }
+  85% { box-shadow: 0 3px 10px rgba(29, 111, 220, 0.14), 0 0 0 7px rgba(108, 184, 245, 0); }
+}
+
+/* 홈 첫 방문 환영 창: 닉네임 먼저 (2026-11-22) */
+.welcome-modal { text-align: center; padding: 22px 20px 18px; }
+.welcome-avatar { display: inline-block; padding: 8px; border-radius: var(--radius-md); background: var(--blue-soft); line-height: 0; }
+.welcome-avatar-img { width: 80px; height: 80px; }
+.welcome-modal h2 { margin: 12px 0 6px; font-size: 19px; }
+.welcome-form { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.welcome-form .me-name-input { text-align: center; font-size: 16px; padding: 12px; }
+.welcome-go { width: 100%; }
+.welcome-skip { margin-top: 10px; border: 0; background: none; color: var(--text-sub); font: inherit; font-size: 12.5px; text-decoration: underline; cursor: pointer; }
+.me-name-input.shake { animation: name-shake 0.35s ease; border-color: #e8505b; }
+@keyframes name-shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+
+/* 행동 버튼 반짝이 (2026-11-22 woody): 빛줄기가 스쳐 지나가고, 모서리에 별 두 개가 번갈아 반짝 */
+.today-pick-link,
+.me-link {
+  position: relative;
+  overflow: visible;
+  background-image: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.85) 48%, transparent 60%);
+  background-repeat: no-repeat;
+  background-size: 260% 100%;
+  background-position: 160% 0;
+  animation: cta-glow-soft 2.8s ease-in-out infinite, cta-shine 3.4s ease-in-out infinite;
+}
+.today-pick-link::before,
+.today-pick-link::after,
+.me-link::before,
+.me-link::after {
+  content: "✦";
+  position: absolute;
+  pointer-events: none;
+  line-height: 1;
+  opacity: 0;
+  animation: cta-twinkle 2.4s ease-in-out infinite;
+}
+.today-pick-link::before,
+.me-link::before {
+  top: -8px;
+  right: -3px;
+  font-size: 13px;
+  color: #ffc93c;
+  text-shadow: 0 0 4px rgba(255, 216, 74, 0.8);
+}
+.today-pick-link::after,
+.me-link::after {
+  bottom: -6px;
+  left: 2px;
+  font-size: 10px;
+  color: #6cb8f5;
+  text-shadow: 0 0 4px rgba(130, 203, 255, 0.9);
+  animation-delay: 1.2s;
+}
+@keyframes cta-shine {
+  0%, 55% { background-position: 160% 0; }
+  85%, 100% { background-position: -60% 0; }
+}
+@keyframes cta-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  35% { opacity: 1; transform: scale(1.15) rotate(20deg); }
+  60% { opacity: 0.85; transform: scale(0.9) rotate(35deg); }
+  80% { opacity: 0; transform: scale(0.5) rotate(45deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .today-pick-link,
+  .me-link { animation: none; }
+  .today-pick-link::before,
+  .today-pick-link::after,
+  .me-link::before,
+  .me-link::after { animation: none; opacity: 0.9; }
+}
+
+/* 반짝이 별 (profile.js sparkle) — 네 갈래 별 모양, 커졌다 돌며 사라짐 */
+.spark {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: spark-twinkle 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+/* 은은한 빛 번짐 */
+.spark::before {
+  content: "";
+  position: absolute;
+  inset: -70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, currentColor 0%, transparent 62%);
+  opacity: 0.35;
+}
+/* 네 갈래 별 */
+.spark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  clip-path: polygon(50% 0%, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0% 50%, 42% 42%);
+}
+@keyframes spark-twinkle {
+  0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: translate(-50%, -50%) scale(1) rotate(90deg); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0) rotate(180deg); opacity: 0; }
+}
+/* 반짝이가 버튼 밖으로 나가도 잘리지 않게 */
+.today-pick, .today-pick-body, .me-card .me-row { overflow: visible; }
+
+/* 넓은 PC 오른쪽 고정 카드: 반짝이 별이 카드 밖으로 살짝 나가도 스크롤바가 생기지 않게 (2026-11-22 woody)
+   화면 높이가 넉넉하면 넘침 허용, 아주 낮은 화면에서만 세로 스크롤(스크롤바는 숨김) */
+@media (min-width: 1300px) {
+  .hub-wrap .me-card {
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+  .hub-wrap .me-card::-webkit-scrollbar { display: none; }
+}
+@media (min-width: 1300px) and (min-height: 600px) {
+  .hub-wrap .me-card {
+    overflow: visible;
+    max-height: none;
+  }
 }

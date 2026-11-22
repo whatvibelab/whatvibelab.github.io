@@ -41,13 +41,13 @@
   };
   // 기본 배치 (사용자가 바꾸면 Profile 에 저장된 값이 우선)
   const DEFAULT_LAYOUT = {
-    wardrobe: { x: 2, y: 3 },
+    wardrobe: { x: 4, y: 3 },
     bookshelf: { x: 8, y: 3 },
     desk: { x: 9, y: 7 },
     plant: { x: 11, y: 3 },
     gacha: { x: 0, y: 6 },
     rug: { x: 4, y: 6 },
-    calendar: { x: 5, y: 0 },
+    calendar: { x: 3, y: 0 },
     frame: { x: 8, y: 0 },
     window: { x: 10, y: 0 },
   };
@@ -80,14 +80,20 @@
     // 기본 배치는 방 크기에 맞춰 퍼뜨린다. 한 번이라도 직접 옮기면(저장값) 그 배치를 그대로 쓴다.
     function defaultsFor(c, r) {
       const mid = Math.round(r * 0.5);
+      // 옷장은 출입문(0~1칸) 바로 옆에 붙이지 않는다 (2026-11-22 woody: 문 바로 옆은 답답해 보임)
+      // 넓은 방: 뒷벽 왼쪽 1/4 지점. 좁은 방(휴대폰, 12~15칸): 뒷벽이 꽉 차므로 왼쪽 바닥 공간에.
+      const narrow = c < 16;
+      const wx = Math.max(4, Math.round(c * 0.25));
+      const wardrobe = narrow ? { x: 0, y: Math.max(5, Math.round(r * 0.35)) } : { x: wx, y: 3 };
+      const gachaY = Math.min(r - 1, Math.max(narrow ? wardrobe.y + 3 : 6, Math.round(r * 0.66)));
       return {
-        wardrobe: { x: 2, y: 3 },
+        wardrobe: wardrobe,
         bookshelf: { x: Math.min(c - 4, Math.max(9, Math.round(c * 0.7))), y: 3 },
         plant: { x: c - 1, y: 3 },
         rug: { x: Math.round(c / 2) - 2, y: Math.max(6, mid - 1) },
         desk: { x: c - 3, y: Math.max(7, mid + 1) },
-        gacha: { x: 0, y: Math.max(6, Math.round(r * 0.66)) },
-        calendar: { x: 5, y: 0 },
+        gacha: { x: 0, y: gachaY },
+        calendar: { x: narrow ? 4 : Math.max(3, wx - 2), y: 0 },
         // 벽 물건은 키 큰 가구 바로 위를 피한다(말풍선이 아래로 달려서 겹치지 않게)
         frame: { x: Math.max(6, Math.round(c * 0.45)), y: 0 },
         window: { x: c - 2, y: 0 },
@@ -355,6 +361,34 @@
     }
     canvas.addEventListener("contextmenu", (ev) => ev.preventDefault()); // 휴대폰 길게 누르기 메뉴 막기
 
+    // 평소 모드에서 가구 집어 들기 — 꾹 누르기(long) 또는 누른 채 바로 끌기(2026-11-22 woody: 꾹 안 눌러도 끌면 이동)
+    // 손을 떼면 그 자리에 놓이고 배치 모드도 닫힌다(endDrag 의 fromLong).
+    function startQuickDrag(l, long) {
+      opts.onLongPress && opts.onLongPress(); // 바깥(archive.js)에서 배치 모드 켜기 → setEdit(true)
+      if (!edit) edit = true;
+      player.path = [];
+      player.pending = null;
+      drag = { id: l.id, offX: l.offX, offY: l.offY, sx: l.sx, sy: l.sy, moved: true, tx: l.tx, ty: l.ty, fromLong: true };
+      setPicked(l.id);
+      opts.onDrag && opts.onDrag(true);
+      suppressClick = true;
+      if (long) {
+        try {
+          // 실제로 화면을 만진 적이 있을 때만(아니면 브라우저가 막고 콘솔 오류를 남김)
+          const ua = navigator.userActivation;
+          if (navigator.vibrate && (!ua || ua.hasBeenActive)) navigator.vibrate(15);
+        } catch (e) {
+          /* 무시 */
+        }
+      }
+      try {
+        canvas.setPointerCapture(l.pid);
+      } catch (e) {
+        /* 무시 */
+      }
+      hint("끌어서 원하는 자리에 놓으세요 — 손을 떼면 옮겨져요");
+    }
+
     canvas.addEventListener("pointerdown", (ev) => {
       if (!edit) {
         const p0 = toLocal(ev);
@@ -366,27 +400,7 @@
           const l = lp;
           lp = null;
           if (!l) return;
-          opts.onLongPress && opts.onLongPress(); // 바깥(archive.js)에서 배치 모드 켜기 → setEdit(true)
-          if (!edit) edit = true;
-          player.path = [];
-          player.pending = null;
-          drag = { id: l.id, offX: l.offX, offY: l.offY, sx: l.sx, sy: l.sy, moved: true, tx: l.tx, ty: l.ty, fromLong: true };
-          setPicked(l.id);
-          opts.onDrag && opts.onDrag(true);
-          suppressClick = true;
-          try {
-            // 실제로 화면을 만진 적이 있을 때만(아니면 브라우저가 막고 콘솔 오류를 남김)
-            const ua = navigator.userActivation;
-            if (navigator.vibrate && (!ua || ua.hasBeenActive)) navigator.vibrate(15);
-          } catch (e) {
-            /* 무시 */
-          }
-          try {
-            canvas.setPointerCapture(l.pid);
-          } catch (e) {
-            /* 무시 */
-          }
-          hint("배치 모드 — 끌어서 원하는 자리에 놓으세요");
+          startQuickDrag(l, true);
         }, LONG_PRESS_MS);
         return;
       }
@@ -405,8 +419,12 @@
       }
     });
     canvas.addEventListener("pointermove", (ev) => {
-      // 꾹 누르는 중 손가락이 움직이면(스와이프) 취소
-      if (lp && Math.abs(ev.clientX - lp.sx) + Math.abs(ev.clientY - lp.sy) > 8) cancelLongPress();
+      // 가구를 누른 채 움직이면(8px 넘게) 꾹 누르지 않아도 바로 끌기 시작
+      if (lp && Math.abs(ev.clientX - lp.sx) + Math.abs(ev.clientY - lp.sy) > 8) {
+        const l = lp;
+        cancelLongPress();
+        startQuickDrag(l, false);
+      }
       if (!edit) return;
       const p = toLocal(ev);
       if (placing) {
@@ -444,11 +462,16 @@
         }
         if (moveTo(d.id, tt.x, tt.y)) {
           setPicked(null);
-          hint("옮겼어요! 다른 가구도 끌어서 옮길 수 있어요");
+          // 꾹 눌러 시작한 이동은 손을 떼면 끝 — 배치 모드도 바로 닫는다(확인 버튼 없이, 2026-11-22 woody)
+          if (d.fromLong) {
+            opts.onQuickDropEnd && opts.onQuickDropEnd();
+            hint(`${it.name} 자리를 옮겼어요!`);
+          } else hint("옮겼어요! 다른 가구도 끌어서 옮길 수 있어요");
           return;
         }
       }
       setPicked(null);
+      if (d.fromLong) opts.onQuickDropEnd && opts.onQuickDropEnd();
       hint("거기는 놓을 수 없어서 원래 자리로 돌아갔어요");
     };
     canvas.addEventListener("pointerup", (ev) => {
